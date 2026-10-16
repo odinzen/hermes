@@ -1,0 +1,43 @@
+cff-version: 1.2.0
+message: "If you use Hermes, please cite it as below, together with pyzentropy and Fisher and Hong."
+title: "Hermes: an all-in-one entropy tool"
+type: software
+version: 0.1.0
+date-released: 2026-10-16
+license: MIT
+repository-code: "https://github.com/odinzen/hermes"
+authors:
+  - family-names: Bustamante
+    given-names: Michael E.
+    orcid: "https://orcid.org/0009-0009-9001-8151"
+    affiliation: "Odinzen LLC, Houston, TX, United States"
+  - family-names: Hew
+    given-names: Nigel L. E.
+    affiliation: "Phases Research Lab, The Pennsylvania State University"
+keywords:
+  - entropy
+  - zentropy
+  - thermodynamics
+  - molecular dynamics
+  - information theory
+references:
+  - type: software
+    title: pyzentropy
+    version: 0.1.1
+    authors:
+      - family-names: Hew
+        given-names: Nigel L. E.
+    doi: 10.5281/zenodo.18262305
+    repository-code: "https://github.com/PhasesResearchLab/pyzentropy"
+  - type: article
+    title: "Thermodynamic Entropy as Information -- A compression-based demonstration of the Shannon-Boltzmann equivalence in condensed matter"
+    authors:
+      - family-names: Fisher
+        given-names: Dallin
+      - family-names: Hong
+        given-names: Qi-Jun
+    year: 2025
+    url: "https://arxiv.org/abs/2512.02221"
+    identifiers:
+      - type: other
+        value: "arXiv:2512.02221"
