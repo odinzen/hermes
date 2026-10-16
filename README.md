@@ -68,6 +68,13 @@ The test suite has 168 tests (four need pycalphad and ESPEI). Of 77 errors plant
 catches 75; the other two change no result. `tools/check_references.py` checks every reference against its registry
 record.
 
+## Notebook
+
+[notebooks/EntropyWithHermes](notebooks/EntropyWithHermes/EntropyWithHermes.ipynb) takes fcc Cu on an EAM potential
+at 480 K and 1150 K, reads its entropy from the MD trajectories, carries the 480 K value up with the heat capacity, and
+compares each with thermodynamic integration on the same potential. The data are included; running it needs matplotlib
+as well. `tools/build_notebook.py` rebuilds it. `examples/codespace/Fe3Pt.ipynb` shows the inherited zentropy core.
+
 ## Install
 
 Hermes is not on PyPI (the `hermes` name there belongs to an unrelated project). Clone this repository
