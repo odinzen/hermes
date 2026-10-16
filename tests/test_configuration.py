@@ -12,6 +12,9 @@ from hermes.configuration import Configuration
 # Load test data once for all tests
 # Contains FM, SF22, and SF28 using DFTTK EV and Debye
 test_data_path = os.path.join(os.path.dirname(__file__), "test_data", "Fe3Pt_three_configs.pkl")
+if not os.path.exists(test_data_path):
+    pytest.skip("pyzentropy's Fe3Pt test data (tests/test_data) is not in this copy; it is in the full "
+                "repository, github.com/odinzen/hermes", allow_module_level=True)
 with open(test_data_path, "rb") as f:
     config_data = pickle.load(f)
 
