@@ -108,9 +108,13 @@ Odinzen LLC.
 
 ## Citation
 
-Hermes on Zenodo, all versions: https://doi.org/10.5281/zenodo.23423225. See `CITATION.cff`. If you use
-`hermes.compression_entropy`, please cite the method's authors [1]; for the zentropy machinery, cite pyzentropy [2];
-for the liquid and mixing routes, [3-6]; for the magnetic term, [8, 9].
+Hermes on Zenodo:
+
+- version 0.2.0: https://doi.org/10.5281/zenodo.23573417
+- all versions: https://doi.org/10.5281/zenodo.23423225
+
+See `CITATION.cff`. If you use `hermes.compression_entropy`, please cite the method's authors [1]; for the zentropy
+machinery, cite pyzentropy [2]; for the liquid and mixing routes, [3-6]; for the magnetic term, [8, 9].
 
 ## References
 

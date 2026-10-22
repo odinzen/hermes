@@ -5,7 +5,14 @@ type: software
 version: 0.2.0
 date-released: 2026-10-22
 license: MIT
-doi: 10.5281/zenodo.23423225
+doi: 10.5281/zenodo.23573417
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23573417
+    description: "This version, 0.2.0"
+  - type: doi
+    value: 10.5281/zenodo.23423225
+    description: "All versions"
 repository-code: "https://github.com/odinzen/hermes"
 authors:
   - family-names: Bustamante
