@@ -10,7 +10,7 @@
 project = 'hermes'
 copyright = '2026, Nigel Lee En Hew'
 author = 'Nigel Lee En Hew'
-release = '0.1.0'
+release = '0.2.0'
 __version__ = release
 
 # -- General configuration ---------------------------------------------------

@@ -2,9 +2,10 @@ cff-version: 1.2.0
 message: "If you use Hermes, please cite it as below, together with pyzentropy and Fisher and Hong."
 title: "Hermes: an all-in-one entropy tool"
 type: software
-version: 0.1.0
-date-released: 2026-10-16
+version: 0.2.0
+date-released: 2026-10-22
 license: MIT
+doi: 10.5281/zenodo.23423225
 repository-code: "https://github.com/odinzen/hermes"
 authors:
   - family-names: Bustamante

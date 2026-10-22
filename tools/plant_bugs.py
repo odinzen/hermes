@@ -30,10 +30,12 @@ for root, _, files in os.walk(WORK):
 LIQ, QC, CF = "hermes/liquid_entropy.py", "hermes/quantum_correction.py", "hermes/concentration_fluctuations.py"
 EM, MD, CE = "hermes/excess_model.py", "hermes/md_configuration.py", "hermes/compression_entropy.py"
 HC, FO = "hermes/heat_capacity.py", "hermes/formation.py"
+CFL, MAG, EL = "hermes/crystal_field.py", "hermes/magnetic.py", "hermes/electronic.py"
 TESTS = {LIQ: ["tests/test_liquid_entropy.py"], QC: ["tests/test_quantum_correction.py"],
          CF: ["tests/test_concentration_fluctuations.py"], EM: ["tests/test_excess_model.py"],
          MD: ["tests/test_compression_entropy.py"], HC: ["tests/test_heat_capacity.py"], FO: ["tests/test_formation.py"],
-         CE: ["tests/test_compression_entropy.py", "tests/test_crystal_correlation.py"]}
+         CE: ["tests/test_compression_entropy.py", "tests/test_crystal_correlation.py"],
+         CFL: ["tests/test_crystal_field.py"], MAG: ["tests/test_magnetic.py"], EL: ["tests/test_electronic.py"]}
 NL = chr(10)
 MUTANTS = [
     (LIQ, "ideal 5/2 -> 3/2", "(2.5 - np.sum", "(1.5 - np.sum"),
@@ -113,6 +115,43 @@ MUTANTS = [
     (FO, "HM and SM swapped", 'QUANTITIES = {"HM": "enthalpy", "SM": "entropy", "CPM": "heat_capacity"}', 'QUANTITIES = {"HM": "entropy", "SM": "enthalpy", "CPM": "heat_capacity"}'),
     (FO, "temperature check off", "if ref.temperatures.shape != phase.temperatures.shape or not np.allclose(ref.temperatures, phase.temperatures):", "if False:"),
     (FO, "values laid out flat", '"values": [[[float(v)] for v in values]],', '"values": [[float(v) for v in values]],'),
+    (CFL, "cm-1 conversion without 100", "scipy.constants.c * 100.0 / scipy.constants.k", "scipy.constants.c / scipy.constants.k"),
+    (CFL, "meV conversion without 1e-3", '"meV": 1e-3 * scipy.constants.e', '"meV": scipy.constants.e'),
+    (CFL, "S without <E>/kT", '"entropy": GAS_CONSTANT * (log_z + mean)', '"entropy": GAS_CONSTANT * log_z'),
+    (CFL, "C from <E^2>, not the variance", "/ z - mean**2", "/ z"),
+    (CFL, "ground level not set to zero", "    e = e - e.min()" + NL, ""),
+    (CFL, "ground degeneracy flag inverted", "if not include_ground_degeneracy:", "if include_ground_degeneracy:"),
+    (CFL, "ground degeneracy over all levels", "np.log(g[e == 0].sum())", "np.log(g.sum())"),
+    (CFL, "degeneracies ignored", "w = g * np.exp(-x)", "w = np.exp(-x)"),
+    (CFL, "per-atom scale inverted", "scale = ions_per_formula / atoms_per_formula", "scale = atoms_per_formula / ions_per_formula"),
+    (CFL, "Gibbs sign", '"gibbs_energy": -GAS_CONSTANT * tt * log_z', '"gibbs_energy": GAS_CONSTANT * tt * log_z'),
+    (CFL, "Hund: J = L + S below half filling", "return abs(orbital - spin) if n_electrons < capacity else orbital + spin", "return orbital + spin"),
+    (MAG, "D: 518/1125 -> 518/1225", "d = 518.0 / 1125.0", "d = 518.0 / 1225.0"),
+    (MAG, "79/(140 p) without p", "79.0 * t_star / (140.0 * p) + t * k", "79.0 * t_star / 140.0 + t * k"),
+    (MAG, "tau^9/135 -> /153", "lo**9 / 135", "lo**9 / 153"),
+    (MAG, "g above T* sign", "g_above = -t *", "g_above = t *"),
+    (MAG, "entropy below T* sign", "s_below = -(1.0 - k / d", "s_below = (1.0 - k / d"),
+    (MAG, "C above T*: 2 tau^-5 -> tau^-5", "c_above = (2 * hi**-5 +", "c_above = (hi**-5 +"),
+    (MAG, "ln(beta + 1) -> ln(beta)", "np.log(moment + 1.0)", "np.log(moment)"),
+    (MAG, "paramagnetic entropy not added", "        entropy = entropy + r_ln" + NL, ""),
+    (MAG, "ordering enthalpy kept on the ordered reference", '    if reference == "ordered":' + NL + "        gibbs = gibbs - r_ln * g0" + NL, ""),
+    (MAG, "branch switch at 0.9 T*", "below = tau <= 1.0", "below = tau <= 0.9"),
+    (MAG, "spin-only moment S not 2S", "return 2.0 * float(spin)", "return float(spin)"),
+    (MAG, "negative T* accepted", "if critical_temperature <= 0:", "if False:"),
+    (MAG, "bcc p 0.40 -> 0.28", "STRUCTURE_FACTOR_BCC = 0.40", "STRUCTURE_FACTOR_BCC = 0.28"),
+    (EL, "Fermi function sign", "expit(-(x - mu) / kt)))", "expit((x - mu) / kt)))"),
+    (EL, "entropy drops the y f term", " + y * expit(-y)", ""),
+    (EL, "per cell in J/K, not eV/K", "s * BOLTZMANN_EV if per_cell", "s * scipy.constants.k if per_cell"),
+    (EL, "per mole of cells, not atoms", "s * GAS_CONSTANT / atoms", "s * GAS_CONSTANT"),
+    (EL, "spin down dropped", "g = g.sum(axis=0)", "g = g[0]"),
+    (EL, "window 30 -> 3 k_B T", "WINDOW_KT = 30.0", "WINDOW_KT = 3.0"),
+    (EL, "states below the window dropped", "return _states_below(e, g, max(mu - WINDOW_KT * kt, e[0])) + float(", "return 0.0 + float("),
+    (EL, "partial grid interval dropped", "pts = np.append(e[below], x)", "pts = e[below]"),
+    (EL, "free energy sign", "out.append(-0.5 * ti * float(", "out.append(0.5 * ti * float("),
+    (EL, "Gauss weights not halved", "w = (0.5 * width[:, None] * _GAUSS_W).ravel()", "w = (width[:, None] * _GAUSS_W).ravel()"),
+    (EL, "Gauss nodes not shifted onto the piece", "(_GAUSS_X + 1.0)", "(_GAUSS_X + 0.0)"),
+    (EL, "pieces kT/2 -> 2 kT", "np.ceil(2 * np.diff(edges) / kt)", "np.ceil(0.5 * np.diff(edges) / kt)"),
+    (EL, "band cut by the window accepted", "if (g[0] > 0 and mu - e[0] < WINDOW_KT * kt) or", "if False and (g[0] > 0 and mu - e[0] < WINDOW_KT * kt) or"),
 ]
 check = subprocess.run([PY, "-c", "import hermes, sys; print(hermes.__file__)"], cwd=WORK, capture_output=True, text=True)
 assert WORK in check.stdout, check.stdout

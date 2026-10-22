@@ -29,6 +29,27 @@ hermes.quantum_correction
    :members:
    :show-inheritance:
 
+hermes.crystal_field
+--------------------
+
+.. automodule:: hermes.crystal_field
+   :members:
+   :show-inheritance:
+
+hermes.magnetic
+---------------
+
+.. automodule:: hermes.magnetic
+   :members:
+   :show-inheritance:
+
+hermes.electronic
+-----------------
+
+.. automodule:: hermes.electronic
+   :members:
+   :show-inheritance:
+
 hermes.liquid_entropy
 ---------------------
 

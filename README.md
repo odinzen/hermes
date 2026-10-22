@@ -23,7 +23,9 @@ Hong, who treat entropy as a message: the number of bits needed to tell a receiv
 | Liquid | partial pair distribution functions [3, 4] | `hermes.liquid_entropy` | within 2 % for pure liquids |
 | Ideal mixing | composition | `hermes.liquid_entropy` | exact |
 | Excess mixing (chemical short-range order) | long-wavelength composition fluctuations [5] | `hermes.concentration_fluctuations`, `hermes.excess_model` | failed its held-out test; 7 to 25 % too small on Cu-Zr |
-| Electronic | DFT density of states | input to `configuration_from_md` | supplied, not computed |
+| Electronic | DFT density of states, Fermi-Dirac occupation | `hermes.electronic` | exact cases only; no test against measurement yet |
+| Crystal field, open-4f lanthanide ions | measured crystal-field levels | `hermes.crystal_field` | exact cases only; test against measurement pre-registered, not run |
+| Magnetic, transition-metal ions | ordering temperature and moment, Inden / Hillert-Jarl [8, 9] | `hermes.magnetic` | exact cases only; test against measurement pre-registered, not run |
 
 **Crystals.** Coding each atom on its own counts more than once the entropy the atoms share, so Hermes subtracts the
 total correlation of the displacements, taken exactly from the crystal's translations
@@ -39,6 +41,20 @@ point and carries it up with the enthalpy of NPT runs: S(T) = S(T0) + int C_P / 
 mixing and excess, as a CALPHAD model does. `hermes.excess_model` fits L_k = a_k + b_k T to MD mixing enthalpies and
 composition fluctuations together; candidate models and their selection by modified AICc follow ESPEI [6], and the
 fit being linear, its uncertainties are exact without sampling. Supply about ten compositions or more.
+
+**Terms atomic motion does not carry.** MD sees the atoms move, not the electrons or spins, so three terms are
+added from other inputs, never fitted to the data they are meant to predict. `hermes.crystal_field` gives the
+Schottky entropy, heat capacity and Gibbs energy of the crystal-field levels of a lanthanide ion, from level energies
+measured by spectroscopy or neutron scattering; with the whole ground multiplet it reaches R ln(2J+1) at high
+temperature. `hermes.magnetic` gives the magnetic terms of the Inden / Hillert-Jarl model from T_C or T_N, the mean
+moment and the structure factor, rising to R ln(2S+1) for a spin-only ion. An MLIP or DFT energy of an ordered cell
+already holds the ordering energy, so the module asks which energy its term is added to (`reference="ordered"`,
+`"disordered"` or `"calphad"`) and has no default. `hermes.electronic` gives the electronic entropy and free energy of
+a density of states, such as the Materials Project's, with the chemical potential solved at each temperature; it is
+gamma T for a metal and vanishes for a wide-gap insulator. Their limits: crystal-field levels and the density of states
+are held fixed in temperature and volume; the magnetic model knows spins only, so orbital moments (Co2+, high-spin
+Fe2+) carry entropy it misses, and it takes the 0 K cell's magnetic order to be the ground state; a band gap that DFT
+closes gives a spurious electronic entropy. None has yet been tested against measured entropies.
 
 ## CALPHAD output
 
@@ -64,9 +80,9 @@ potential, in tests whose pass rule was written before the runs existed. All of 
 - **Excess mixing entropy** (liquid Cu-Zr): within 0.28 of exact at ten compositions but 7 to 25 % too small, and the
   test failed on its second criterion.
 
-The test suite has 168 tests (four need pycalphad and ESPEI). Of 77 errors planted in the modules one at a time, it
-catches 75; the other two change no result. `tools/check_references.py` checks every reference against its registry
-record.
+The test suite has 231 tests (six need pycalphad, four of them ESPEI too). Of 114 errors planted in the modules one at
+a time, it catches 112; the other two change no result. `tools/check_references.py` checks every reference against its
+registry record.
 
 ## Notebook
 
@@ -92,8 +108,9 @@ Odinzen LLC.
 
 ## Citation
 
-See `CITATION.cff`. If you use `hermes.compression_entropy`, please cite the method's authors [1];
-for the zentropy machinery, cite pyzentropy [2]; for the liquid and mixing routes, [3-6].
+Hermes on Zenodo, all versions: https://doi.org/10.5281/zenodo.23423225. See `CITATION.cff`. If you use
+`hermes.compression_entropy`, please cite the method's authors [1]; for the zentropy machinery, cite pyzentropy [2];
+for the liquid and mixing routes, [3-6]; for the magnetic term, [8, 9].
 
 ## References
 
@@ -113,3 +130,7 @@ for the zentropy machinery, cite pyzentropy [2]; for the liquid and mixing route
    Cu-Mg", MRS Communications 9, 618 (2019). https://doi.org/10.1557/mrc.2019.59
 7. S. Menon, Y. Lysogorskiy, J. Rogal and R. Drautz, "Automated free-energy calculation from atomistic simulations",
    Phys. Rev. Materials 5, 103801 (2021). https://doi.org/10.1103/PhysRevMaterials.5.103801
+8. M. Hillert and M. Jarl, "A model for alloying in ferromagnetic metals", Calphad 2, 227 (1978).
+   https://doi.org/10.1016/0364-5916(78)90011-1
+9. G. Inden, "The role of magnetism in the calculation of phase diagrams", Physica B+C 103, 82 (1981).
+   https://doi.org/10.1016/0378-4363(81)91004-4

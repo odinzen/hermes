@@ -6,12 +6,12 @@ tests Hermes and nothing else. The validation scripts and run outputs are availa
 
 Four kinds of check stand behind this page:
 
-- **Exact cases** in the test suite (`python -m pytest -o addopts="" -q`, 168 tests, four of which need pycalphad and
-  ESPEI), each named below.
+- **Exact cases** in the test suite (`python -m pytest -o addopts="" -q`, 231 tests, six of which need pycalphad and
+  four of those ESPEI too), each named below.
 - **Held-out tests**: the pass rule, the cases and a fingerprint of the code were written down before any of the test
   runs existed, and nothing was changed after the results were read. All of them are listed, failures included.
-- **Planted bugs**: 77 deliberate errors (wrong factors, signs, units, dropped terms) were put into the modules one at a
-  time, and the test suite catches 75. The other two change no result: leaving the wavevector phases unconjugated only
+- **Planted bugs**: 114 deliberate errors (wrong factors, signs, units, dropped terms) were put into the modules one at a
+  time, and the test suite catches 112. The other two change no result: leaving the wavevector phases unconjugated only
   swaps each wavevector with its mirror image, and dividing the covariances by n instead of n - 1 rescales both sides
   of the shared-entropy difference alike.
 - **References**: `tools/check_references.py` compares every cited work with its Crossref, DataCite or arXiv record,
@@ -110,11 +110,47 @@ Fit formation data with `generate_parameters(..., ridge_alpha=1e-100)`. With ESP
 LinearRegression (version 1.9) drops the badly scaled 1/T term of the heat capacity without warning; this was found
 while building the export and has been reported to ESPEI.
 
+## Crystal-field, magnetic and electronic terms
+
+These terms come from measured or DFT inputs, not from MD, and are added to the vibrational entropy. So far they are
+checked only against exact results; a test against measured entropies is written down but has not been run (see
+below). Use them with that in mind.
+
+| Check | Agreement | Test |
+|---|---|---|
+| Two-level Schottky anomaly: heat capacity and entropy against the closed form, peak 0.4392 R at 0.4168 delta | 1e-10 | `tests/test_crystal_field.py::test_two_level_schottky_anomaly` |
+| Crystal field of Nd3+ (five doublets) reaches R ln(2J+1) = R ln 10 at high temperature | 1e-5 | `tests/test_crystal_field.py::test_high_temperature_limit_is_r_ln_2j_plus_1` |
+| Ground-level degeneracy R ln g_0 counted or left out, as chosen | 1e-12 | `tests/test_crystal_field.py::test_low_temperature_limit_is_the_ground_degeneracy` |
+| cm^-1 and meV converted with h, c, k_B and e written out | 1e-9 | `tests/test_crystal_field.py::test_entropy_from_first_principles_constants` |
+| Hund's rules give J of all fifteen trivalent lanthanides | exact | `tests/test_crystal_field.py::test_hund_rules_give_the_lanthanide_ground_multiplets` |
+| Hillert-Jarl Gibbs energy against the published polynomials, bcc and other p | 1e-9 | `tests/test_magnetic.py::test_gibbs_energy_against_the_published_form` |
+| Magnetic heat capacity integrates to R ln(beta + 1), with the fraction p of the ordering enthalpy above T* | 1e-9 | `tests/test_magnetic.py::test_ordering_releases_r_ln_beta_plus_1_and_p_of_the_enthalpy_lies_above_t_star` |
+| Spin-only ion (Mn2+) reaches R ln(2S+1) = R ln 6 | 1e-9 | `tests/test_magnetic.py::test_spin_only_paramagnetic_limit` |
+| The three references: no ordering enthalpy on an ordered cell, all of it on a disordered one | exact | `tests/test_magnetic.py::test_the_three_references` |
+| pycalphad's magnetic model, fcc and bcc Fe (its R = 8.3145 allowed for) | 1e-9 | `tests/test_magnetic.py::test_pycalphad_magnetic_model_agrees` |
+| Free-electron metal against the Sommerfeld gamma T | 5e-4 (the (k_B T / E_F)^2 correction) | `tests/test_electronic.py::test_free_electron_metal_gives_gamma_t` |
+| gamma = 2.357 mJ/(K^2 mol) per state/eV/atom from k_B, N_A and e written out | 1e-6 | `tests/test_electronic.py::test_sommerfeld_coefficient_from_first_principles_constants` |
+| Wide-gap insulator (5 eV) at 1500 K: no electronic entropy | below 1e-5 | `tests/test_electronic.py::test_wide_gap_insulator_has_no_electronic_entropy` |
+| Two levels across a gap, against the closed form | 1e-4 | `tests/test_electronic.py::test_two_levels_across_a_gap` |
+
+The pycalphad comparison found that pycalphad 0.11.1 returns no magnetic energy at exactly T = T_C, because its
+piecewise conditions are strict on both sides; one degree either side it agrees.
+
+**Test against measurement, written down before any data are scored, not yet run.** Lanthanide orthophosphates
+LnPO4: the crystal-field term against the excess entropy left when the lattice part, taken from LaPO4, LuPO4 and
+YPO4, is removed from the measured entropy. Magnetic oxides NiO, CoO, MnO, Fe2O3 and Cr2O3: vibrational plus magnetic
+entropy against the measured S(298.15 K) and S(T) up to 1000 K, with CoO predicted in advance to fall short because
+Co2+ carries an orbital moment. The rule, cases, pass criteria and code fingerprint were fixed on 2026-10-22, before
+any data were scored; like the other validation scripts, they are available on request.
+
 ## Limits
 
 - **Solids near melting:** use the heat-capacity route; the direct route reads up to 1.4 high there.
 - **Random alloys:** the shared entropy needs the crystal's translations, which random species break; they are refused.
 - **Excess mixing entropy:** underestimated by 7 to 25 % on Cu-Zr; untested on other systems.
+- **Crystal-field, magnetic and electronic terms:** exact cases only, no test against measured entropies yet. The
+  levels and the density of states are held fixed in temperature and volume; the magnetic model knows spins only and
+  takes the 0 K cell's magnetic order to be the ground state.
 - **Classical MD below about 0.8 thermal wavelengths of vibration:** the compression cannot resolve the positions; use
   the Gaussian route or phonons, and `hermes.quantum_correction` for the quantum part.
 

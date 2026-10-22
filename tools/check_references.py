@@ -20,6 +20,7 @@ REFERENCES = [
      "Thermodynamic Entropy as Information -- A compression-based demonstration of the Shannon-Boltzmann "
      "equivalence in condensed matter", 2025, None, None),
     ("10.5281/zenodo.18262305", ["Hew"], "pyzentropy", None, None, None),
+    ("10.5281/zenodo.23423225", ["Bustamante", "Hew"], "Hermes: an all-in-one entropy tool", None, None, None),
     ("10.1063/1.1744724", ["Nettleton", "Green"],
      "Expression in Terms of Molecular Distribution Functions for the Entropy Density in an Infinite System",
      1958, "29", "1365"),
@@ -35,6 +36,9 @@ REFERENCES = [
     ("10.1080/14786430902832773", ["Mendelev", "Kramer", "Ott", "Sordelet", "Yagodin", "Popel"],
      "Development of suitable interatomic potentials for simulation of liquid and amorphous Cu-Zr alloys",
      2009, "89", "967"),
+    ("10.1016/0364-5916(78)90011-1", ["Hillert", "Jarl"], "A model for alloying in ferromagnetic metals", 1978, "2", "227"),
+    ("10.1016/0378-4363(81)91004-4", ["Inden"], "The role of magnetism in the calculation of phase diagrams", 1981,
+     "103", "82"),
     # interatomic potentials of docs/validation.md
     ("10.1103/PhysRevB.33.7983", ["Foiles", "Baskes", "Daw"],
      "Embedded-atom-method functions for the fcc metals Cu, Ag, Au, Ni, Pd, Pt, and their alloys", 1986, "33", "7983"),
