@@ -65,8 +65,8 @@ returns the entropy of the crystal's centre of mass, which the simulation holds 
     run = runs[t]
     x, cell = run["positions"].astype(float), run["cell"]
     masses = np.full(x.shape[1], float(run["mass_amu"]))
-    shared = crystal_correlation_entropy(x, cell)
-    gauss = gaussian_entropy(x, cell, masses, t)
+    shared = crystal_correlation_entropy(x, cell, limit="box")
+    gauss = gaussian_entropy(x, cell, masses, t, limit="box")
     comp = trajectory_entropy(x, cell, masses, t, n_pairs=60,
                               min_separation=10)
     compression = (comp["mean"] + CLASSICAL_ENTROPY_OFFSET

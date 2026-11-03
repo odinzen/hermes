@@ -1,0 +1,20 @@
+calculations:
+- mode: fe
+  lattice: start_fe_a.data
+  reference_phase: solid
+  element: [Fe]
+  mass: [55.845]
+  temperature: 630
+  pressure: 0
+  npt: true
+  pair_style: [eam/fs]
+  pair_coeff: ["* * /home/busta/opt/lammps-mace/potentials/Fe_mm.eam.fs Fe"]
+  n_equilibration_steps: 25000
+  n_switching_steps: 50000
+  n_iterations: 1
+  lammps_executable: /home/busta/miniforge3/envs/lammps-full/bin/lmp_mpi
+  mpi_executable: /home/busta/miniforge3/envs/lammps-full/bin/mpirun
+  folder_prefix: fe_a
+  queue:
+    scheduler: local
+    cores: 4

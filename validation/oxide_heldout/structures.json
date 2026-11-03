@@ -1,0 +1,200 @@
+{
+ "beo": {
+  "formula": "BeO",
+  "polymorph": "bromellite (wurtzite)",
+  "space_group": "P6_3mc",
+  "material_id": "mp-2542",
+  "energy_above_hull_eV_atom": 0.0,
+  "conventional_atoms": 4,
+  "abc": [
+   2.6942767113365518,
+   2.6942767113365518,
+   4.37601889
+  ],
+  "angles": [
+   90.0,
+   90.0,
+   120.00000000000001
+  ]
+ },
+ "cao": {
+  "formula": "CaO",
+  "polymorph": "lime",
+  "space_group": "Fm-3m",
+  "material_id": "mp-2605",
+  "energy_above_hull_eV_atom": 0.0,
+  "conventional_atoms": 8,
+  "abc": [
+   4.807111392065781,
+   4.807111392065781,
+   4.807111392065781
+  ],
+  "angles": [
+   90.0,
+   90.0,
+   90.0
+  ]
+ },
+ "sro": {
+  "formula": "SrO",
+  "polymorph": "rock salt",
+  "space_group": "Fm-3m",
+  "material_id": "mp-2472",
+  "energy_above_hull_eV_atom": 0.0,
+  "conventional_atoms": 8,
+  "abc": [
+   5.1675693775763,
+   5.1675693775763,
+   5.1675693775763
+  ],
+  "angles": [
+   90.0,
+   90.0,
+   90.0
+  ]
+ },
+ "bao": {
+  "formula": "BaO",
+  "polymorph": "rock salt",
+  "space_group": "Fm-3m",
+  "material_id": "mp-1342",
+  "energy_above_hull_eV_atom": 0.0,
+  "conventional_atoms": 8,
+  "abc": [
+   5.580783419036325,
+   5.580783419036325,
+   5.580783419036325
+  ],
+  "angles": [
+   90.0,
+   90.0,
+   90.0
+  ]
+ },
+ "li2o": {
+  "formula": "Li2O",
+  "polymorph": "antifluorite",
+  "space_group": "Fm-3m",
+  "material_id": "mp-1960",
+  "energy_above_hull_eV_atom": 0.0,
+  "conventional_atoms": 12,
+  "abc": [
+   4.653708763836069,
+   4.653708763836069,
+   4.653708763836069
+  ],
+  "angles": [
+   90.0,
+   90.0,
+   90.0
+  ]
+ },
+ "zro2": {
+  "formula": "ZrO2",
+  "polymorph": "baddeleyite",
+  "space_group": "P2_1/c",
+  "material_id": "mp-2858",
+  "energy_above_hull_eV_atom": 0.0,
+  "conventional_atoms": 12,
+  "abc": [
+   5.153987836787771,
+   5.22810872,
+   5.329696159145639
+  ],
+  "angles": [
+   90.0,
+   99.43692258379697,
+   90.0
+  ]
+ },
+ "mg2sio4": {
+  "formula": "Mg2SiO4",
+  "polymorph": "forsterite",
+  "space_group": "Pnma",
+  "material_id": "mp-2895",
+  "energy_above_hull_eV_atom": 0.0,
+  "conventional_atoms": 28,
+  "abc": [
+   4.75094062,
+   5.96986766,
+   10.18288019
+  ],
+  "angles": [
+   90.0,
+   90.0,
+   90.0
+  ]
+ },
+ "zrsio4": {
+  "formula": "ZrSiO4",
+  "polymorph": "zircon",
+  "space_group": "I4_1/amd",
+  "material_id": "mp-4820",
+  "energy_above_hull_eV_atom": 0.0,
+  "conventional_atoms": 24,
+  "abc": [
+   6.61984140428893,
+   6.61984140428893,
+   5.995332204398737
+  ],
+  "angles": [
+   90.0,
+   90.0,
+   90.0
+  ]
+ },
+ "andalusite": {
+  "formula": "Al2SiO5",
+  "polymorph": "andalusite",
+  "space_group": "Pnnm",
+  "material_id": "mp-4753",
+  "energy_above_hull_eV_atom": 0.002039848749999962,
+  "conventional_atoms": 32,
+  "abc": [
+   5.55410567,
+   7.78363494,
+   7.88722262
+  ],
+  "angles": [
+   90.0,
+   90.0,
+   90.0
+  ]
+ },
+ "kyanite": {
+  "formula": "Al2SiO5",
+  "polymorph": "kyanite",
+  "space_group": "P-1",
+  "material_id": "mp-5065",
+  "energy_above_hull_eV_atom": 0.0,
+  "conventional_atoms": 32,
+  "abc": [
+   5.565274988273769,
+   7.117811314607624,
+   7.846168482428564
+  ],
+  "angles": [
+   105.9938464970774,
+   89.99270945341907,
+   101.11058065751875
+  ]
+ },
+ "sillimanite": {
+  "formula": "Al2SiO5",
+  "polymorph": "sillimanite (Pbnm setting)",
+  "space_group": "Pnma",
+  "material_id": "mp-4934",
+  "energy_above_hull_eV_atom": 0.004670723749999439,
+  "conventional_atoms": 32,
+  "abc": [
+   5.76742386,
+   7.49185802,
+   7.66267377
+  ],
+  "angles": [
+   90.0,
+   90.0,
+   90.0
+  ]
+ }
+}

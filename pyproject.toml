@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "hermes"
 # Fork of pyzentropy 0.1.1 (Phases Research Lab, MIT).
-version = "0.2.0"
+version = "0.3.0"
 description = "All-in-one entropy tool: the entropy of a phase from MD and DFT, term by term, and CALPHAD parameters from it"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -103,6 +103,7 @@ isort.split-on-trailing-comma = false
 
 [tool.pytest.ini_options]
 addopts = "--durations=30 --quiet -r xXs --color=yes -p no:warnings --import-mode=importlib"
+testpaths = ["tests"]  # validation/ holds frozen scripts that need the authors' data and spglib
 
 [tool.mypy]
 ignore_missing_imports = true

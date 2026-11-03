@@ -1,0 +1,520 @@
+{
+ "levels": {
+  "Nd": {
+   "source": "Antic-Fidancev, Holsa, Lemaitre-Blaise and Porcher, J. Phys.: Condens. Matter 3, 6829 (1991), doi 10.1088/0953-8984/3/35/012",
+   "locator": "Table 2, p. 6836 (pdf p. 9), NdPO4 experimental column",
+   "method": "optical absorption",
+   "unit": "cm-1",
+   "note": "All five 4I9/2 doublets observed in pure NdPO4. Added 2026-10-24, still before any LnPO4 thermal data were read.",
+   "multiplets": {
+    "4I9/2": [
+     [
+      "",
+      0,
+      2,
+      "observed"
+     ],
+     [
+      "",
+      64,
+      2,
+      "observed"
+     ],
+     [
+      "",
+      210,
+      2,
+      "observed"
+     ],
+     [
+      "",
+      314,
+      2,
+      "observed"
+     ],
+     [
+      "",
+      456,
+      2,
+      "observed"
+     ]
+    ]
+   }
+  },
+  "Eu": {
+   "source": "Dexpert-Ghys, Mauricot and Faucher, J. Lumin. 69, 203 (1996), doi 10.1016/S0022-2313(96)00094-4",
+   "locator": "Table 2, p. 210 (pdf p. 8), EuPO4 column",
+   "method": "luminescence, 77 K",
+   "unit": "cm-1",
+   "note": "Site C1, all singlets. 7F1 is the excited multiplet the rule requires; 7F2 is included as measured. Which lines are electronic was decided with the authors' crystal-field analysis (p. 211).",
+   "multiplets": {
+    "7F0": [
+     [
+      "",
+      0,
+      1,
+      "observed"
+     ]
+    ],
+    "7F1": [
+     [
+      "I",
+      257,
+      1,
+      "observed"
+     ],
+     [
+      "II",
+      418,
+      1,
+      "observed"
+     ],
+     [
+      "III",
+      457,
+      1,
+      "observed"
+     ]
+    ],
+    "7F2": [
+     [
+      "I",
+      939,
+      1,
+      "observed"
+     ],
+     [
+      "II",
+      970,
+      1,
+      "observed"
+     ],
+     [
+      "III",
+      1025,
+      1,
+      "observed"
+     ],
+     [
+      "IV",
+      1099,
+      1,
+      "observed"
+     ],
+     [
+      "V",
+      1176,
+      1,
+      "observed"
+     ]
+    ]
+   }
+  },
+  "Gd": {
+   "source": "none needed: 8S7/2 splits by under 1 cm-1, one eight-fold level (the rule's built-in check)",
+   "locator": "-",
+   "method": "-",
+   "unit": "cm-1",
+   "note": "",
+   "multiplets": {
+    "8S7/2": [
+     [
+      "",
+      0,
+      8,
+      "observed"
+     ]
+    ]
+   }
+  },
+  "Tb": {
+   "source": "Loong, Soderholm, Goodman, Abraham and Boatner, Phys. Rev. B 48, 6124 (1993), doi 10.1103/PhysRevB.48.6124",
+   "locator": "Table II, p. 6129 (pdf p. 6)",
+   "method": "inelastic neutron scattering, 4.2 K and 15 K",
+   "unit": "cm-1",
+   "note": "Three levels not observed, taken from the paper's fit.",
+   "multiplets": {
+    "7F6": [
+     [
+      "G5",
+      0.0,
+      2,
+      "observed"
+     ],
+     [
+      "G3",
+      3.71,
+      1,
+      "observed"
+     ],
+     [
+      "G4",
+      7.82,
+      1,
+      "observed"
+     ],
+     [
+      "G1",
+      21.0,
+      1,
+      "observed"
+     ],
+     [
+      "G2",
+      74.2,
+      1,
+      "observed"
+     ],
+     [
+      "G5",
+      76.6,
+      2,
+      "fitted"
+     ],
+     [
+      "G3",
+      79.9,
+      1,
+      "fitted"
+     ],
+     [
+      "G1",
+      237.1,
+      1,
+      "observed"
+     ],
+     [
+      "G5",
+      251.6,
+      2,
+      "observed"
+     ],
+     [
+      "G4",
+      260.7,
+      1,
+      "fitted"
+     ]
+    ]
+   }
+  },
+  "Dy": {
+   "source": "Loong, Soderholm, Xue, Abraham and Boatner, J. Alloys Compd. 207-208, 165 (1994), doi 10.1016/0925-8388(94)90198-8",
+   "locator": "Fig. 2, p. 167 (pdf p. 3); observed peaks in the text, p. 166",
+   "method": "inelastic neutron scattering, 15 K",
+   "unit": "cm-1",
+   "note": "The figure is the fitted scheme; its lower five levels equal the observed peaks (8.5 meV inferred from an asymmetric peak, 16 meV weak). 37.5 and 38.9 meV not observed.",
+   "multiplets": {
+    "6H15/2": [
+     [
+      "G6",
+      0,
+      2,
+      "observed"
+     ],
+     [
+      "G6",
+      68.6,
+      2,
+      "observed"
+     ],
+     [
+      "G7",
+      76.6,
+      2,
+      "observed"
+     ],
+     [
+      "G6",
+      129,
+      2,
+      "observed"
+     ],
+     [
+      "G7",
+      147,
+      2,
+      "observed"
+     ],
+     [
+      "G7",
+      180,
+      2,
+      "observed"
+     ],
+     [
+      "G7",
+      302,
+      2,
+      "fitted"
+     ],
+     [
+      "G6",
+      313,
+      2,
+      "fitted"
+     ]
+    ]
+   }
+  },
+  "Ho": {
+   "source": "Loong, Soderholm, Hammonds, Abraham, Boatner and Edelstein, J. Phys.: Condens. Matter 5, 5121 (1993), doi 10.1088/0953-8984/5/29/009",
+   "locator": "Table 2, p. 5134 (pdf p. 15), HoPO4 observed column c; fit column b (neutron plus optical)",
+   "method": "inelastic neutron scattering, 15 K",
+   "unit": "cm-1",
+   "note": "G2 and G1 near 184 cm-1 are one unresolved peak, both given 184.3. Five levels from fit b.",
+   "multiplets": {
+    "5I8": [
+     [
+      "G5",
+      0.0,
+      2,
+      "observed"
+     ],
+     [
+      "G4",
+      66.1,
+      1,
+      "observed"
+     ],
+     [
+      "G1",
+      73.5,
+      1,
+      "fitted"
+     ],
+     [
+      "G3",
+      80.7,
+      1,
+      "observed"
+     ],
+     [
+      "G5",
+      94.0,
+      2,
+      "observed"
+     ],
+     [
+      "G4",
+      162.1,
+      1,
+      "observed"
+     ],
+     [
+      "G2",
+      184.3,
+      1,
+      "observed"
+     ],
+     [
+      "G1",
+      184.3,
+      1,
+      "observed"
+     ],
+     [
+      "G5",
+      222.7,
+      2,
+      "fitted"
+     ],
+     [
+      "G3",
+      244.4,
+      1,
+      "observed"
+     ],
+     [
+      "G2",
+      273.8,
+      1,
+      "fitted"
+     ],
+     [
+      "G5",
+      270.7,
+      2,
+      "fitted"
+     ],
+     [
+      "G1",
+      294.2,
+      1,
+      "fitted"
+     ]
+    ]
+   }
+  },
+  "Er": {
+   "source": "Loong, Soderholm, Hammonds, Abraham, Boatner and Edelstein, J. Phys.: Condens. Matter 5, 5121 (1993), doi 10.1088/0953-8984/5/29/009",
+   "locator": "Table 4, p. 5135 (pdf p. 16), neutron column; calculated column where not observed",
+   "method": "inelastic neutron scattering, 15-30 K",
+   "unit": "cm-1",
+   "note": "Raman (Becker 1985, 1986) puts the third G7 at 105 and the top G6 at 269; the authors keep the neutron assignment, followed here. Top two levels from the fit.",
+   "multiplets": {
+    "4I15/2": [
+     [
+      "G7",
+      0,
+      2,
+      "observed"
+     ],
+     [
+      "G6",
+      32.9,
+      2,
+      "observed"
+     ],
+     [
+      "G7",
+      52.2,
+      2,
+      "observed"
+     ],
+     [
+      "G7",
+      138.2,
+      2,
+      "observed"
+     ],
+     [
+      "G6",
+      144.3,
+      2,
+      "observed"
+     ],
+     [
+      "G6",
+      233.9,
+      2,
+      "observed"
+     ],
+     [
+      "G7",
+      242.3,
+      2,
+      "fitted"
+     ],
+     [
+      "G6",
+      322.6,
+      2,
+      "fitted"
+     ]
+    ]
+   }
+  },
+  "Tm": {
+   "source": "Loong, Soderholm, Abraham, Boatner and Edelstein, J. Chem. Phys. 98, 4214 (1993), doi 10.1063/1.465028",
+   "locator": "Table II, p. 4219 (pdf p. 7), observed column; fit b where not observed",
+   "method": "inelastic neutron scattering, 15 K and 100 K",
+   "unit": "cm-1",
+   "note": "254.9 and the pair at 338.0 come from weak, unresolved 100 K features. G4 277.9 from the fit.",
+   "multiplets": {
+    "3H6": [
+     [
+      "G1",
+      0.0,
+      1,
+      "observed"
+     ],
+     [
+      "G5",
+      29.0,
+      2,
+      "observed"
+     ],
+     [
+      "G3",
+      78.2,
+      1,
+      "observed"
+     ],
+     [
+      "G5",
+      136.3,
+      2,
+      "observed"
+     ],
+     [
+      "G2",
+      184.7,
+      1,
+      "observed"
+     ],
+     [
+      "G1",
+      254.9,
+      1,
+      "observed"
+     ],
+     [
+      "G4",
+      277.9,
+      1,
+      "fitted"
+     ],
+     [
+      "G5",
+      280.7,
+      2,
+      "observed"
+     ],
+     [
+      "G3",
+      338.0,
+      1,
+      "observed"
+     ],
+     [
+      "G4",
+      338.0,
+      1,
+      "observed"
+     ]
+    ]
+   }
+  },
+  "Yb": {
+   "source": "Loong, Loewenhaupt, Nipko, Braden and Boatner, Phys. Rev. B 60, R12549 (1999), doi 10.1103/PhysRevB.60.R12549",
+   "locator": "text, p. R12550 (pdf p. 2)",
+   "method": "single-crystal inelastic neutron scattering, 20 K",
+   "unit": "meV",
+   "note": "Peaks broadened and shifted by coupling to phonons; taken as measured (Michael's choice). The text gives the top level as ~43 meV on p. R12550 and about 45 meV on p. R12551; 43 used.",
+   "multiplets": {
+    "2F7/2": [
+     [
+      "G6",
+      0,
+      2,
+      "observed"
+     ],
+     [
+      "G7",
+      12,
+      2,
+      "observed"
+     ],
+     [
+      "G6",
+      32,
+      2,
+      "observed"
+     ],
+     [
+      "G7",
+      43,
+      2,
+      "observed"
+     ]
+    ]
+   }
+  }
+ },
+ "left_out": {
+  "Ce": "no measured 2F5/2 levels in CePO4 or Ce:LaPO4 found",
+  "Pr": "only a fit to susceptibility and Raman data (Mandal 2018), not a measured level set",
+  "Sm": "no measured 6H5/2 or 6H7/2 levels in SmPO4 or Sm:LaPO4 found"
+ }
+}

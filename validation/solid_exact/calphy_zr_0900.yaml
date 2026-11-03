@@ -1,0 +1,20 @@
+calculations:
+- mode: fe
+  lattice: start_zr_0900.data
+  reference_phase: solid
+  element: [Zr]
+  mass: [91.224]
+  temperature: 900
+  pressure: 0
+  npt: true
+  pair_style: [eam/fs]
+  pair_coeff: ["* * /home/busta/opt/lammps-mace/potentials/Zr_mm.eam.fs Zr"]
+  n_equilibration_steps: 25000
+  n_switching_steps: 50000
+  n_iterations: 1
+  lammps_executable: /home/busta/miniforge3/envs/lammps-full/bin/lmp_mpi
+  mpi_executable: /home/busta/miniforge3/envs/lammps-full/bin/mpirun
+  folder_prefix: zr_0900
+  queue:
+    scheduler: local
+    cores: 4

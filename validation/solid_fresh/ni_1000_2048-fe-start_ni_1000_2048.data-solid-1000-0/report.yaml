@@ -1,0 +1,20 @@
+average:
+  density: 0.08738001614923478
+  spring_constant: '2.5851999786435536'
+  vol_atom: 11.444347404477789
+input:
+  concentration: '1.0'
+  element: Ni
+  lattice: start_ni_1000_2048.data
+  pressure: 0.0
+  temperature: 1000
+results:
+  com_correction: -0.0010032804561874616
+  dissipation: -0.0005321051179900671
+  einstein_crystal: -0.4779290351928553
+  error: 0.0
+  free_energy: -4.777182558147877
+  pv: 0.0
+  reference_system: -0.47893231564904276
+  unit: eV/atom
+  work: -4.298250242498835

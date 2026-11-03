@@ -1,0 +1,5 @@
+analyze_solids.py frozen 2026-10-15T08:56:03-07:00, before any of the twelve solid runs existed
+sha256 (line endings normalized) 44973fd0edfd2af5a302fcc8193a4f24f7f5316c0c28159fb7ce017f25b10d18
+hermes/compression_entropy.py 288fcd6b5d6fa47887499e92e67bf260c54e3525717e018c5520c5a0935da256
+hermes/md_configuration.py 0e10322a636875e3cb8aec19aaeb03d48b66a941000a440bb94a5c6b37be0eb2
+Dry run on the Cu 1300 K development case only (72.45 vs 72.76).

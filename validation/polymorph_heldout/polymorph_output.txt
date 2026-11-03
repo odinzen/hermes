@@ -1,0 +1,22 @@
+Polymorph test, MACE MPA-0, Hermes 0.3 (limit='bulk'). Verdict: VOID (FAIL)
+C1 fails; C2 fails; scored 9, excluded 4. J/(K mol of atoms); err = predicted - measured; resid = err - D(T), D = +1.87 / +2.20.
+case                status     S 298    meas    err  resid box err  S 1000    meas    err  resid box err  QC298 QC1000 harmQ298 H resid   V md  V R&H
+quartz              excluded   16.81   13.82      -      -       -       -       -      -      -       -   6.86   0.83    15.39   26.97  24.79  22.69  [space group at 298.15 K is P6_422 (181), not 152]
+coesite             scored     14.09   12.83   1.25  -0.62    1.59       -       -      -      -       -   6.86   0.84    13.73    7.82  21.55  20.64
+stishovite          scored      9.25    9.27  -0.02  -1.89    0.49       -       -      -      -       -   6.58   0.71     8.89   22.07  14.78  14.01
+calcite             scored     19.52   18.34   1.17  -0.70    1.62       -       -      -      -       -   6.73   0.92    18.77   97.39  38.37  36.93
+aragonite           scored     21.37   17.60   3.77   1.90    4.08       -       -      -      -       -   6.61   0.88    19.94  100.01  36.42  34.15
+wollastonite        scored     17.87   16.34   1.53  -0.34    2.02   44.50   42.61   1.88  -0.32    2.37   5.01   0.56    16.89   19.62  41.67  39.90
+pseudowollastonite  excluded   19.54   17.44      -      -       -   46.01   43.50      -      -       -   4.86   0.56    18.80   16.93  42.03  40.08  [space group at 1000 K is P-1 (2), not 15]
+enstatite           scored     14.40   13.25   1.15  -0.72    1.42   40.99   39.41   1.58  -0.62    1.85   5.40   0.62    14.12   21.74  33.07  31.31
+clinoenstatite      excluded   14.30   13.57      -      -       -   41.07   38.59      -      -       -   5.39   0.62    14.05   22.25  33.01  31.28  [space group at 1000 K is C2/c (15), not 14]
+perovskite          excluded   20.94   18.73      -      -       -   49.56   47.52      -      -       -   2.89   0.30    20.01   20.10  35.00  33.63  [space group at 1000 K is Pc (7), not 62]
+chrysoberyl         scored     10.78    9.47   1.32  -0.55    1.59   36.65   34.90   1.75  -0.45    2.02   5.64   0.60    10.46   18.30  35.69  34.32
+diopside            scored     15.64   14.27   1.37  -0.50    1.64   42.21   40.30   1.90  -0.30    2.18   5.13   0.58    15.32   13.20  69.58  66.09
+jadeite             scored     14.55   13.35   1.20  -0.67    1.47   40.54   38.55   1.99  -0.21    2.27   5.56   0.63    14.11   20.08  63.73  60.40
+C1 at 298.15 K: 9 cases, RMS residual 1.04, largest |residual| 1.90, fails; uncorrected errors mean +1.42 against D +1.87, 8 of 9 positive
+C1 at 1000 K: 5 cases, RMS residual 0.41, largest |residual| 0.62, holds; uncorrected errors mean +1.82 against D +2.20, 5 of 5 positive
+C2 SiO2: not applied (a member is excluded)
+C2 CaCO3   aragonite - calcite @ 298.15 K         predicted +1.85, R&H -0.74, error +2.60
+C2 CaSiO3: not applied (a member is excluded)
+C2 MgSiO3: not applied (a member is excluded)

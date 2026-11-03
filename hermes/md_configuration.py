@@ -24,7 +24,8 @@ phonons there.
 The compression codes each atom on its own, so in a solid it counts more than once the entropy the
 atoms share (5 to 6 J/(K mol) in fcc Cu at 1300 K). That is measured by
 :func:`hermes.compression_entropy.crystal_correlation_entropy` and passed as
-``correlation_entropies``; the Einstein solids have none, their atoms being independent.
+``correlation_entropies``; the Einstein solids have none, their atoms being independent. Take it with
+``limit="bulk"`` for the macroscopic crystal, ``"box"`` to match thermodynamic integration on the same box.
 """
 
 # Third-Party Library Imports

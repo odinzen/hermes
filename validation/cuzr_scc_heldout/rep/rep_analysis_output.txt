@@ -1,0 +1,26 @@
+﻿x020 big_x020.dump: 1001 frames, 28 vectors, S_cc(0) 0.1531
+x020 rep_x020_s71031.dump: 501 frames, 28 vectors, S_cc(0) 0.1436
+x020 rep_x020_s90217.dump: 501 frames, 28 vectors, S_cc(0) 0.1897
+x020: S_cc(0) 0.1621 +- 0.0141   calphy-implied 0.1565-0.1850   PASS
+
+x036 big_x036.dump: 1001 frames, 28 vectors, S_cc(0) 0.1555
+x036 rep_x036_s71031.dump: 501 frames, 28 vectors, S_cc(0) 0.1477
+x036 rep_x036_s90217.dump: 501 frames, 28 vectors, S_cc(0) 0.1594
+x036: S_cc(0) 0.1542 +- 0.0035   calphy-implied 0.1611-0.1875   FAIL
+
+x050 big_x050.dump: 1001 frames, 40 vectors, S_cc(0) 0.1337
+x050 rep_x050_s71031.dump: 501 frames, 40 vectors, S_cc(0) 0.1300
+x050 rep_x050_s90217.dump: 501 frames, 40 vectors, S_cc(0) 0.1314
+x050: S_cc(0) 0.1317 +- 0.0011   calphy-implied 0.1419-0.1743   FAIL
+
+x070 big_x070.dump: 1001 frames, 40 vectors, S_cc(0) 0.1362
+x070 rep_x070_s71031.dump: 501 frames, 40 vectors, S_cc(0) 0.1316
+x070 rep_x070_s90217.dump: 501 frames, 40 vectors, S_cc(0) 0.1384
+x070: S_cc(0) 0.1354 +- 0.0020   calphy-implied 0.1322-0.1324   PASS
+
+excess model: [(0, 'a')], chi2_red 66.59
+x_Zr 0.200: S_ex   0.00 +- 0.00   exact  -1.27   FAIL
+x_Zr 0.360: S_ex   0.00 +- 0.00   exact  -1.72   FAIL
+x_Zr 0.500: S_ex   0.00 +- 0.00   exact  -1.71   FAIL
+x_Zr 0.700: S_ex   0.00 +- 0.00   exact  -1.01   FAIL
+S_ex verdict: FAIL

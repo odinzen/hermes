@@ -1,0 +1,20 @@
+average:
+  density: 0.04231011360421177
+  spring_constant: '1.454174987986999'
+  vol_atom: 23.63469440927978
+input:
+  concentration: '1.0'
+  element: Zr
+  lattice: start_zr_0900.data
+  pressure: 0.0
+  temperature: 900
+results:
+  com_correction: -0.0020856973472355585
+  dissipation: -0.0008579850358385599
+  einstein_crystal: -0.5238258415634839
+  error: 0.0
+  free_energy: -7.028891445167683
+  pv: 0.0
+  reference_system: -0.5259115389107194
+  unit: eV/atom
+  work: -6.5029799062569635

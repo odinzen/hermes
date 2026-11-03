@@ -1,0 +1,68 @@
+Frozen 2026-11-02 on Michael Bustamante's approval of the draft ("lets do it"). Not run: no MD of these cases has
+started. SHA-256 with line endings normalised to LF (the potential and the PDF are binary, hashed as is).
+
+validation/polymorph_heldout/RULE.md  241e2dee0d44412f439ab10ae9ec73c5cf13d4dd8bf72a3a31bac72fe7f301c6
+Code under test (hermes-private v0.3-bulk-and-gap, unchanged since 817f412):
+hermes/compression_entropy.py  512e1cf35bdd0b0e5728fe8c07f8dd1f707e5891e0f793a74a4e25176a246c77
+hermes/heat_capacity.py  541d7a3483bf84adc8949d6a492450e954284d4ff050bf7b6730e11838552b80
+hermes/quantum_correction.py  8d968a9b7c40ef36cbed0a64b6fe25339abb39de40d9b8deeb9db510928bbdf8
+Potential, MACE MPA-0 medium:
+macempa0mediummodel  75428afe3a1d7d8062e19bcaabd5c433623cabf308242ec9fb493e38604fb638
+Run and analysis:
+validation/oxide_vibration/run_oxides.py  8874d9a258624d6d4dbd044763bcbcf904e31528226780c3f75c9ada56b6ce25
+validation/oxide_heldout/analyze_heldout.py  e5cf7e4314f41c8aeacb82980c81993314762ca58090f4432eeeeee45313e030
+validation/polymorph_heldout/analyze_polymorph.py  caa3a3e914df56e23195d03044d07e51181517575d5a3413ba985e7dffe1c856
+validation/polymorph_heldout/test_judge.py  f0fcd2b4f0e52868027db0bdb67c6a39fa31b3a5c7ffe25c2706b0c19e199f4e
+validation/polymorph_heldout/volumes_rh1995.json  d3156ae789f9fdbe0a074aa71e2ba1d125f3ce5ebe794c2f3b19e01dab69259d
+Structures:
+validation/polymorph_heldout/fetch_structures.py  ff894656dc400d01b2e42aafce8d51548b3bd5790797d5daaa2626e8bff86729
+validation/polymorph_heldout/structures.json  862d4ec82a222c50d8ea1156841df0b803ec7c118b1dff450574aa94b0d078ba
+validation/oxide_vibration/structures/quartz.cif  9c7c5fca533ebf83874cfc3855b1368ada0a91871a4cb88b6071f70f03b75c65
+validation/oxide_vibration/structures/coesite.cif  c1f0df349d2c57594a573e29da0596b4a448c13e19607a3fbf1260a19f2eef41
+validation/oxide_vibration/structures/stishovite.cif  059aa75b6d25efd55e6d6e006fdc544a7076246dc3fff171b771011b3bf73ad9
+validation/oxide_vibration/structures/calcite.cif  953813ef409fb08df7723c240b0cba0c69b8e23e40474f578b139724c6f6aa8d
+validation/oxide_vibration/structures/aragonite.cif  e55552b2a6686c0887f67d2300db5cec1a3658af9322ae063cf3e58814b43c76
+validation/oxide_vibration/structures/wollastonite.cif  895021e710eaf8ab9185109b90b03bda5aff960eb132b88ab9d95e32711b2e94
+validation/oxide_vibration/structures/pseudowollastonite.cif  71a4eae055f8b4ec042d17443099bee6112ce0eaff4c848239d2ddb591698cc0
+validation/oxide_vibration/structures/enstatite.cif  7ba557241323caa90b7156dfe79c2dbbdee9546f1effa916c6ced29dba4c2a41
+validation/oxide_vibration/structures/clinoenstatite.cif  ca31a14b30bb6770e9ca91d57018ce79c1008da0c4bccf5417d5d9cba09122da
+validation/oxide_vibration/structures/perovskite.cif  42ee308980d56b0da0a6874587a752e68f5c073820906cc43f059b5fed87c89d
+validation/oxide_vibration/structures/chrysoberyl.cif  1d112f86f6c1a9412b79ad5d8650acbdd29cf9301d4b79e4ed96099e233eb31a
+validation/oxide_vibration/structures/diopside.cif  7f969965f337cff7e948be0add88de2d8eb0ac35ae4841f3748b232dcb7b02f8
+validation/oxide_vibration/structures/jadeite.cif  4da364fcfebbb7d018e30387577c347cb0355272681e535b181a4f9797c33b86
+Measured values: the 21 records meas:robie_hemingway_1995:heldout2_* in juno assessments/Refractory-Oxides/
+manifest.json, ingested unseen in juno 29db75f; SHA-256 of the records alone (sorted by id, JSON with sorted keys),
+which analyze_polymorph.py checks before scoring:  60a272dd9d6411cd03dd6d9092fce35d54155b78829442e1be6dc610c90e0472
+Ingest (juno assessments/Refractory-Oxides/_work, gitignored, kept locally):
+add_heldout2_robie_entropies.py  7f55ba901a892e74ac2a4b1fa10c12c2b0ce18ff7a00b9208dcec5cc63de63c9
+robie_tables.py  396ecf78de1fb81db3a3f651b9cce5132b598793c2c5362d10ded4f642bf76ba
+artifacts/CaO-CO2-H2O/robiehemingway1995.pdf  ca89fc07fd110a0441f3bc01d5fe67d749a944da2e7f2537520dbaf367f49dd8
+
+Setup files written later are appended below with their date, before any production MD starts.
+Setup, 2026-11-02T17:10-0700, before any production MD (the stishovite smoke of the local rehearsal and the parity
+gate only): Sol package validation/sol_polymorph/, built by build_package.py to Downloads/hermes-polymorph-sol:
+run_oxides.py byte-identical (8874d9a2...), MPA-0 weights 75428afe..., 13 cases, results to the sibling folder
+hermes-polymorph-sol-results. Gate before any case runs: the cuEquivariance parity on Sol and the forces of the CaO
+frame against the local GPU's (reference_forces_mpa-0.npz) within 1 meV/A and 0.1 meV/atom. Rehearsed in WSL: check
+PASS (1.9e-6 eV/A), stishovite smoke through every stage, every box built with the atom count of the rule's table,
+submit.sh against a stand-in sbatch giving the check and the 13-case array waiting on it.
+validation/sol_polymorph/sol_config.sh  615c9c9b769ca51bf212a41a006cf8f366e9597cb7b26d57d732cf21f3e541ac
+validation/sol_polymorph/env.yml  6a18a6a76bba9af7ac20bbbd8a5653476a9e8cd7894e522775cf3b61353fd2e8
+validation/sol_polymorph/cases.txt  0ff93434bc414e74e0efaf4c8ff6775a6cadae83f662b2f0121c149d5e3ec555
+validation/sol_polymorph/setup_env.sh  8e6e05b0e421bb5bc747609e6b9c2b3d7bda18b88e54573e364949cc8f6eaeb1
+validation/sol_polymorph/submit.sh  618fcdd79bab8de8a808d7ef2042f51b87302b4bed557b19f80c92fee762707c
+validation/sol_polymorph/run_check.slurm  7e65e5cd6b0a67cb5e0533761f6152ba9d0c2b0eaa21df9bc6cfc278a27e20ed
+validation/sol_polymorph/run_case.slurm  9314321b128143c3ccfd05ef01cca74dcd3267b7c32c32db277b4cee3cf33c80
+validation/sol_polymorph/sol_run.py  f49b35ca345919bf044ebad462858495c20811614dd5c5845d45c831524f4052
+validation/sol_polymorph/build_package.py  5d37214e58c92102c921cd803274f02981ac6122bd239aa53f6175fc6e8a59f6
+validation/sol_polymorph/test_local.sh  ab1c1db8ea9f43af23386c43d59225273bdf0b5e546a36006a4f5a9c1a169b04
+validation/sol_polymorph/CHECKLIST.md  e484ebdb4ddd97cc6521b89b12269bee84584d29e5a0c3d71a08b6ef953ada1b
+validation/sol_polymorph/reference_forces_mpa-0.npz  002e9e10517c1f69e670430e25747d62c7d388684acc97d83c86ce6ff4b773b3
+
+Addendum 2026-11-03T08:20-0700 (execution only, no setting changed; nothing scored, no measured value read):
+Sol check job 357500 PASS (cuEquivariance parity 2.4e-6 eV/A; forces against the local GPU 2.4e-6 eV/A, energy
+5.7e-7 eV/atom), array 357502 [1-13] all JOB DONE with CASE_DONE, one A100 per case, 2026-11-02T18:52 to
+2026-11-03T01:43 -0700. Downloaded and unpacked into juno
+assets/local-archive/hermes-validation/data/polymorph-sol-2026-11-03/results (zip sha256
+a6e02b4b88d07ffe228db9fbfaf7cfd049132ce2bd39856490ec68003759afaa); each box has the atom count of the rule's table
+and finite NVT trajectories at both temperatures. Next: analyze_polymorph.py on that folder.

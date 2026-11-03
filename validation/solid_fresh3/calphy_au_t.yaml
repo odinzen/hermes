@@ -1,0 +1,20 @@
+calculations:
+- mode: fe
+  lattice: start_au_t.data
+  reference_phase: solid
+  element: [Au]
+  mass: [196.97]
+  temperature: 1080
+  pressure: 0
+  npt: true
+  pair_style: [eam]
+  pair_coeff: ["* * /home/busta/opt/lammps-mace/potentials/Au_u3.eam"]
+  n_equilibration_steps: 25000
+  n_switching_steps: 50000
+  n_iterations: 1
+  lammps_executable: /home/busta/miniforge3/envs/lammps-full/bin/lmp_mpi
+  mpi_executable: /home/busta/miniforge3/envs/lammps-full/bin/mpirun
+  folder_prefix: au_t
+  queue:
+    scheduler: local
+    cores: 4

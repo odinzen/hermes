@@ -1,0 +1,236 @@
+{
+ "quartz": {
+  "formula": "SiO2",
+  "mineral": "alpha-quartz",
+  "space_group": "P3_121",
+  "material_id": "mp-7000",
+  "energy_above_hull_eV_atom": 0.0,
+  "conventional_atoms": 9,
+  "abc": [
+   4.914966176727704,
+   4.914966176727704,
+   5.43130114
+  ],
+  "angles": [
+   90.0,
+   90.0,
+   119.99999999999999
+  ]
+ },
+ "coesite": {
+  "formula": "SiO2",
+  "mineral": "coesite",
+  "space_group": "C2/c",
+  "material_id": "mp-11684",
+  "energy_above_hull_eV_atom": 0.013725869722224004,
+  "conventional_atoms": 48,
+  "abc": [
+   7.136336831953809,
+   12.39429007918691,
+   7.133126164920701
+  ],
+  "angles": [
+   90.0,
+   119.4589742602558,
+   90.0
+  ]
+ },
+ "stishovite": {
+  "formula": "SiO2",
+  "mineral": "stishovite",
+  "space_group": "P4_2/mnm",
+  "material_id": "mp-6947",
+  "energy_above_hull_eV_atom": 0.20171111388889074,
+  "conventional_atoms": 6,
+  "abc": [
+   4.233169,
+   4.233169,
+   2.693495
+  ],
+  "angles": [
+   90.0,
+   90.0,
+   90.0
+  ]
+ },
+ "calcite": {
+  "formula": "CaCO3",
+  "mineral": "calcite",
+  "space_group": "R-3c",
+  "material_id": "mp-3953",
+  "energy_above_hull_eV_atom": 0.0,
+  "conventional_atoms": 30,
+  "abc": [
+   5.006801275052415,
+   5.006801275052415,
+   16.990127897630487
+  ],
+  "angles": [
+   90.0,
+   90.0,
+   120.00000000000001
+  ]
+ },
+ "aragonite": {
+  "formula": "CaCO3",
+  "mineral": "aragonite",
+  "space_group": "Pnma",
+  "material_id": "mp-4626",
+  "energy_above_hull_eV_atom": 0.000996054500003396,
+  "conventional_atoms": 20,
+  "abc": [
+   4.960528406095077,
+   5.697732542947265,
+   7.95652799158929
+  ],
+  "angles": [
+   90.0,
+   90.0,
+   90.0
+  ]
+ },
+ "wollastonite": {
+  "formula": "CaSiO3",
+  "mineral": "wollastonite",
+  "space_group": "P-1",
+  "material_id": "mp-4429",
+  "energy_above_hull_eV_atom": 0.0,
+  "conventional_atoms": 30,
+  "abc": [
+   7.084383562575756,
+   7.325270900936239,
+   7.933160089358137
+  ],
+  "angles": [
+   103.39798124595103,
+   95.2806928449447,
+   90.04923165610953
+  ]
+ },
+ "pseudowollastonite": {
+  "formula": "CaSiO3",
+  "mineral": "pseudowollastonite",
+  "space_group": "C2/c",
+  "material_id": "mp-561086",
+  "energy_above_hull_eV_atom": 0.020230711166667525,
+  "conventional_atoms": 120,
+  "abc": [
+   6.905572,
+   11.98745,
+   19.796271224871667
+  ],
+  "angles": [
+   90.0,
+   90.65719054439319,
+   90.0
+  ]
+ },
+ "enstatite": {
+  "formula": "MgSiO3",
+  "mineral": "orthoenstatite",
+  "space_group": "Pbca",
+  "material_id": "mp-5834",
+  "energy_above_hull_eV_atom": 0.007866088916666847,
+  "conventional_atoms": 80,
+  "abc": [
+   5.245794,
+   8.945396,
+   18.449503
+  ],
+  "angles": [
+   90.0,
+   90.0,
+   90.0
+  ]
+ },
+ "clinoenstatite": {
+  "formula": "MgSiO3",
+  "mineral": "low clinoenstatite",
+  "space_group": "P2_1/c",
+  "material_id": "mp-3470",
+  "energy_above_hull_eV_atom": 0.0076780379166647705,
+  "conventional_atoms": 40,
+  "abc": [
+   5.164353738546743,
+   8.7965239,
+   9.377797697676204
+  ],
+  "angles": [
+   90.0,
+   103.33185171858442,
+   90.0
+  ]
+ },
+ "perovskite": {
+  "formula": "CaTiO3",
+  "mineral": "perovskite",
+  "space_group": "Pnma",
+  "material_id": "mp-4019",
+  "energy_above_hull_eV_atom": 0.0,
+  "conventional_atoms": 20,
+  "abc": [
+   5.37204886,
+   5.46279649,
+   7.63635962
+  ],
+  "angles": [
+   90.0,
+   90.0,
+   90.0
+  ]
+ },
+ "chrysoberyl": {
+  "formula": "BeAl2O4",
+  "mineral": "chrysoberyl",
+  "space_group": "Pnma",
+  "material_id": "mp-3081",
+  "energy_above_hull_eV_atom": 0.0,
+  "conventional_atoms": 28,
+  "abc": [
+   4.42148734,
+   5.46804335,
+   9.39372523
+  ],
+  "angles": [
+   90.0,
+   90.0,
+   90.0
+  ]
+ },
+ "diopside": {
+  "formula": "CaMgSi2O6",
+  "mineral": "diopside",
+  "space_group": "C2/c",
+  "material_id": "mp-6766",
+  "energy_above_hull_eV_atom": 0.0,
+  "conventional_atoms": 40,
+  "abc": [
+   9.8917,
+   9.029906,
+   5.329826579988696
+  ],
+  "angles": [
+   90.0,
+   106.40015686867686,
+   90.0
+  ]
+ },
+ "jadeite": {
+  "formula": "NaAlSi2O6",
+  "mineral": "jadeite",
+  "space_group": "C2/c",
+  "material_id": "mp-6124",
+  "energy_above_hull_eV_atom": 0.030991357562491828,
+  "conventional_atoms": 40,
+  "abc": [
+   9.56377,
+   8.66696,
+   5.2923974037273505
+  ],
+  "angles": [
+   90.0,
+   107.77920438721124,
+   90.0
+  ]
+ }
+}

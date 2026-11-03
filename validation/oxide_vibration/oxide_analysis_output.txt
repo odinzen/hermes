@@ -1,0 +1,14 @@
+Closed-shell oxide vibration test, rule frozen 2026-10-23. Verdict: FAIL
+scored 7, excluded 1, no data 2; J/(K mol of atoms)
+case      status   S_vib 298    meas    err S_vib 1000    meas    err  QC298 QC1000 harmQ298 spread
+mgo       scored       17.00   13.46   3.54      45.18   41.13   4.05   2.86   0.29    16.19   0.03
+al2o3     scored       12.54   10.18   2.35      39.35   36.04   3.30   4.85   0.50    11.63   0.01
+tio2      scored       21.51   16.82   4.69      48.68   43.94   4.74   2.92   0.32    19.89   0.10
+y2o3      scored       22.26   19.83   2.43      51.15       -      -   2.32   0.23    21.90   0.01
+sc2o3     no data      17.80       -      -      46.12       -      -   3.08   0.31    17.26      -
+lu2o3     scored       23.88   21.99   1.88      52.64       -      -   2.46   0.24    23.56   0.00
+la2o3     scored       29.96   25.46   4.50      60.08       -      -   1.60   0.15    28.58   0.00
+srtio3    no data      24.96       -      -      52.67       -      -   2.52   0.26    23.62      -
+mgtio3    scored       18.33   14.92   3.42      46.26   42.55   3.71   3.31   0.34    17.17   0.01
+mg3po42   excluded     17.05   14.48      -      43.76   40.13      -   5.25   0.63    16.35   0.00  [space group at T1 is P-1 (2), not 14]
+298.15 K errors: mean +3.26, range +1.88 to +4.69

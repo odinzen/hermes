@@ -1,0 +1,74 @@
+Potential benchmark, outside every verdict. J/(K mol of atoms); err = predicted - measured.
+Check: MACE-MP-0 box-limit S_vib reproduces all 22 frozen values (worst 2.8e-14).
+Every run on Sol A100s except MACE-MP-0 Al2O3, run on the local GPU (same run_oxides.py).
+
+Molar volume at 298.15 K, MD against measured (Robie and Hemingway 1995)
+case      meas      mp-0     mpa-0    mp-0b3
+mgo      11.25    +4.43%    +4.67%    +4.64%
+al2o3    25.58    +3.88%    +3.78%    +3.94%
+tio2     18.82    +3.71%    +4.03%    +3.98%
+nio      10.97    +3.64%    +5.95%    +5.32%
+mno      13.22    +6.76%    +6.93%    +6.06%
+coo      11.64    +2.15%    +6.16%    +1.97%
+fe2o3    30.27    +6.20%    +8.27%    +6.42%
+cr2o3    29.09    +6.86%    +7.37%    +6.95%
+mean |dev|         4.70%     5.90%     4.91%   over the 8 oxides all models ran
+
+Entropy, limit='bulk': error at 298.15 K | 1000 K (Hermes 0.3)
+case      group  meas298 meas1000          mp-0         mpa-0        mp-0b3
+mgo       oxide    13.46    41.13   2.95   3.46   1.80   2.39   2.29   2.91
+al2o3     oxide    10.18    36.04   1.86   2.81   1.39   2.18   1.81   2.75
+tio2      oxide    16.82    43.94   4.23   4.27   3.24   3.30   3.34   3.58
+y2o3      oxide    19.83        -   2.21      -   1.26      -   1.57      -
+sc2o3     oxide        -        -      -      -      -      -      -      -
+lu2o3     oxide    21.99        -   1.66      -   0.94      -   0.89      -
+la2o3     oxide    25.46        -   3.98      -   3.25      -   3.90      -
+srtio3    oxide        -        -      -      -      -      -      -      -
+mgtio3    oxide    14.92    42.55   2.95   3.24   1.85   2.13   2.03   2.59
+mg3po42   oxide    14.48    40.13   2.19   3.24*   1.52   2.47   1.91   2.86
+nio       arm A    19.10        -   7.21      -   2.42      -   9.23      -*
+mno       arm A    30.30    60.19   6.16   5.91*   2.01   1.38   5.95   6.58
+coo       arm A    26.45    59.26   7.79   4.80   4.56   2.24  13.78  10.97
+fe2o3     arm A    17.48    50.58   4.12   4.63   4.52   3.74   5.03   5.76
+cr2o3     arm A    16.23    44.90   5.18   5.12   3.06   2.65   8.26   8.96
+ndpo4     B2       20.48        -   2.19      -   1.80      -   1.70      -
+eupo4     B2       19.51    47.28   4.62   5.66   4.39   5.06   4.69   5.98*
+gdpo4     B2       20.66    46.32   2.16   3.05   1.95   2.96   2.01   3.00
+hopo4     B2       21.23        -   0.44      -   0.18      -   0.59      -
+erpo4     B2       19.44    45.58   1.13   1.27   0.66   0.74   0.92   0.92
+tmpo4     B2       21.32    47.81   0.02  -0.12  -0.39  -0.61  -0.17  -0.34
+ybpo4     B2       18.28    44.68   9.63   9.89*   7.39   8.26*   6.95   8.33*
+  mean 298.15 K error, valid oxide cases: mp-0 +2.83 (n=7), mpa-0 +1.90 (n=8), mp-0b3 +2.22 (n=8)
+  mean 298.15 K error, valid arm A cases: mp-0 +6.07 (n=4), mpa-0 +3.31 (n=5), mp-0b3 +8.25 (n=4)
+  mean 298.15 K error, valid B2 cases: mp-0 +1.76 (n=6), mpa-0 +1.43 (n=6), mp-0b3 +1.01 (n=5)
+
+Entropy, limit='box': error at 298.15 K | 1000 K (the frozen tests' limit)
+case      group  meas298 meas1000          mp-0         mpa-0        mp-0b3
+mgo       oxide    13.46    41.13   3.54   4.05   2.41   3.00   2.89   3.51
+al2o3     oxide    10.18    36.04   2.35   3.30   1.88   2.67   2.30   3.24
+tio2      oxide    16.82    43.94   4.69   4.74   3.71   3.77   3.81   4.06
+y2o3      oxide    19.83        -   2.43      -   1.48      -   1.80      -
+sc2o3     oxide        -        -      -      -      -      -      -      -
+lu2o3     oxide    21.99        -   1.88      -   1.17      -   1.12      -
+la2o3     oxide    25.46        -   4.50      -   3.78      -   4.42      -
+srtio3    oxide        -        -      -      -      -      -      -      -
+mgtio3    oxide    14.92    42.55   3.42   3.71   2.33   2.60   2.51   3.06
+mg3po42   oxide    14.48    40.13   2.57   3.62*   1.91   2.86   2.29   3.24
+nio       arm A    19.10        -   7.79      -   3.03      -   9.80      -*
+mno       arm A    30.30    60.19   6.72   6.47*   2.61   1.97   6.52   7.14
+coo       arm A    26.45    59.26   8.20   5.22   4.99   2.67  14.18  11.37
+fe2o3     arm A    17.48    50.58   4.59   5.10   4.99   4.21   5.50   6.23
+cr2o3     arm A    16.23    44.90   5.66   5.60   3.54   3.14   8.73   9.43
+ndpo4     B2       20.48        -   2.61      -   2.22      -   2.11      -
+eupo4     B2       19.51    47.28   5.02   6.07   4.79   5.46   5.09   6.38*
+gdpo4     B2       20.66    46.32   2.58   3.46   2.36   3.38   2.43   3.41
+hopo4     B2       21.23        -   0.89      -   0.64      -   1.05      -
+erpo4     B2       19.44    45.58   1.55   1.70   1.11   1.19   1.38   1.39
+tmpo4     B2       21.32    47.81   0.47   0.33   0.06  -0.16   0.27   0.11
+ybpo4     B2       18.28    44.68  10.05  10.31*   7.81   8.68*   7.37   8.75*
+  mean 298.15 K error, valid oxide cases: mp-0 +3.26 (n=7), mpa-0 +2.33 (n=8), mp-0b3 +2.64 (n=8)
+  mean 298.15 K error, valid arm A cases: mp-0 +6.56 (n=4), mpa-0 +3.83 (n=5), mp-0b3 +8.73 (n=4)
+  mean 298.15 K error, valid B2 cases: mp-0 +2.19 (n=6), mpa-0 +1.86 (n=6), mp-0b3 +1.45 (n=5)
+
+* symmetry lost or route refused; such a case is reported, not counted in the means.
+Space group changes: mp-0 mg3po42 P2_1/c/P-1 (ref P2_1/c); mp-0b3 nio Fm-3m/P1 (ref Fm-3m); mp-0 mno Fm-3m/P1 (ref Fm-3m); mp-0b3 eupo4 P2_1/c/P-1 (ref P2_1/c); mp-0 ybpo4 I4_1/amd/P1 (ref I4_1/amd); mpa-0 ybpo4 I4_1/amd/P2_1 (ref I4_1/amd); mp-0b3 ybpo4 I4_1/amd/P1 (ref I4_1/amd)

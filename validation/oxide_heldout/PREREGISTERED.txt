@@ -1,0 +1,56 @@
+Frozen 2026-10-28T08:24-0700 on Michael Bustamante's approval ("Freeze the held-out rule as drafted, C2 included,
+and build the Sol package"). Not run: no MD of these cases has started.
+SHA-256 with line endings normalised to LF (the potential is binary, hashed as is).
+
+validation/oxide_heldout/RULE.md  6729c45e261a8d3e462462cc49735302429cc43dbc214ec4eab7f47754be2d47
+Code under test (hermes-private v0.3-bulk-and-gap, 817f412):
+hermes/compression_entropy.py  512e1cf35bdd0b0e5728fe8c07f8dd1f707e5891e0f793a74a4e25176a246c77
+hermes/heat_capacity.py  541d7a3483bf84adc8949d6a492450e954284d4ff050bf7b6730e11838552b80
+hermes/quantum_correction.py  8d968a9b7c40ef36cbed0a64b6fe25339abb39de40d9b8deeb9db510928bbdf8
+Potential, MACE MPA-0 medium:
+macempa0mediummodel  75428afe3a1d7d8062e19bcaabd5c433623cabf308242ec9fb493e38604fb638
+Run and analysis:
+validation/oxide_vibration/run_oxides.py  8874d9a258624d6d4dbd044763bcbcf904e31528226780c3f75c9ada56b6ce25
+validation/oxide_heldout/analyze_heldout.py  e5cf7e4314f41c8aeacb82980c81993314762ca58090f4432eeeeee45313e030
+Structures:
+validation/oxide_heldout/fetch_structures.py  1986935eed29e5bef936b9c22683d8cd2375e859758c23266254f33979a46e67
+validation/oxide_heldout/structures.json  a5dda904da30deb35d91cc9f523f9afc1b8706345fd589a8f7a526422b7c2f5a
+validation/oxide_vibration/structures/beo.cif  eb5d13810adf99d95dbbf825a150f18f6665ed36311ef0ed68dd5a240fd515d9
+validation/oxide_vibration/structures/cao.cif  e183b3fc919daeb89f9ae4df90d117c7fb56a8269e9e0529d9ab81b4401a0702
+validation/oxide_vibration/structures/sro.cif  dafd0184e59064268f950385ca6949a4893eab372d1fde08c199722947f616b3
+validation/oxide_vibration/structures/bao.cif  f42e225e59e0b5e1946cad241a0f4b096fae3b692f42552d2e84b198daaca666
+validation/oxide_vibration/structures/li2o.cif  621f5888c0ffeedcb799aaa1fde45ee8a8faf13897f0e717342d5d53fae7f9a9
+validation/oxide_vibration/structures/zro2.cif  d43084cb708b48fb386ec89aa3971d48e1cf9190c495bd5938b06135c88ab269
+validation/oxide_vibration/structures/mg2sio4.cif  3e829dbe7a8d2750b7bba6c2414118a9206d4fae9df14529c60d11ff75108e7d
+validation/oxide_vibration/structures/zrsio4.cif  3fc2daa628f8b4e86003c46566eea57e704559f81473f6f8b9002b563243a233
+validation/oxide_vibration/structures/andalusite.cif  a72beba9d3a077908459c6182a91b1769b1c660faafaddefe3aee882b32c7c80
+validation/oxide_vibration/structures/kyanite.cif  9c821b270f270f90866323db4866e57cc8cea925ccc7966078e0ce9d14e252a9
+validation/oxide_vibration/structures/sillimanite.cif  616e5311ea4667866e679924c7f24592a38039bc550668f0e95e21c33625eac4
+Measured values: the 22 records meas:nist_janaf:heldout_* in juno assessments/Refractory-Oxides/manifest.json,
+ingested unseen in juno 21bbc60; SHA-256 of the records alone (sorted by id, JSON with sorted keys), which
+analyze_heldout.py checks before scoring:  7261461de99ee6c244acf7ff395cec75760123cf685c869a2c41ed21bee3adc5
+
+Setup files written later are appended below with their date, before any production MD starts.
+
+Setup, 2026-10-28T08:34-0700, before any production MD (the CaO smoke of the local rehearsal and the parity gate only):
+Sol package validation/sol_heldout/, built by build_package.py to Downloads/hermes-heldout-sol: run_oxides.py byte-identical
+(8874d9a2...), MPA-0 weights 75428afe..., 11 cases, results to the sibling folder hermes-heldout-sol-results. Gate before
+any case runs: the cuEquivariance parity of the rule on Sol and the forces of the CaO frame against the local GPU's
+(reference_forces_mpa-0.npz) within 1 meV/A and 0.1 meV/atom. Rehearsed in WSL: check PASS (1.8e-6 eV/A), CaO smoke
+through every stage, submission of the check and the 11-case array waiting on it.
+validation/sol_heldout/sol_config.sh  c65ebf4a1fb7f67860c73722054ff44f47b054d41ea8bde3e572614209038c9b
+validation/sol_heldout/env.yml  6a18a6a76bba9af7ac20bbbd8a5653476a9e8cd7894e522775cf3b61353fd2e8
+validation/sol_heldout/cases.txt  53400314a0c078295650a51f5f34374a5e4aedc52e671669bdbb94e1cf638c5c
+validation/sol_heldout/setup_env.sh  8e6e05b0e421bb5bc747609e6b9c2b3d7bda18b88e54573e364949cc8f6eaeb1
+validation/sol_heldout/submit.sh  adfeeca2e4d9a06a55d84828c9c89be0ec0f762326ac2017d445ba8b344c9d2f
+validation/sol_heldout/run_check.slurm  7e65e5cd6b0a67cb5e0533761f6152ba9d0c2b0eaa21df9bc6cfc278a27e20ed
+validation/sol_heldout/run_case.slurm  9314321b128143c3ccfd05ef01cca74dcd3267b7c32c32db277b4cee3cf33c80
+validation/sol_heldout/sol_run.py  76146094eb6f2a6a827084ac2cace2cdb3ae6cd3c645189d85dd1e2b297bb846
+validation/sol_heldout/build_package.py  8e620873cea0bb3785d42dc7b31914f9f2923355762222a68bf71934eee47a2c
+validation/sol_heldout/reference_forces_mpa-0.npz  002e9e10517c1f69e670430e25747d62c7d388684acc97d83c86ce6ff4b773b3
+
+Addendum 2026-10-28T17:41-0700 (execution only, no setting changed; nothing scored, no measured value read):
+Sol check job 66799738 PASS (cuEquivariance parity 2.0e-6 eV/A; forces against the local GPU 2.4e-6 eV/A, energy 0),
+array 66799739 [1-11] all COMPLETED with CASE_DONE, one A100 per case. Downloaded and unpacked into juno
+assets/local-archive/hermes-validation/data/heldout-sol-2026-10-28/results; each box has the atom count of the rule's
+table and finite trajectories. Next: analyze_heldout.py on that folder.

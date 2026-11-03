@@ -35,7 +35,8 @@ TESTS = {LIQ: ["tests/test_liquid_entropy.py"], QC: ["tests/test_quantum_correct
          CF: ["tests/test_concentration_fluctuations.py"], EM: ["tests/test_excess_model.py"],
          MD: ["tests/test_compression_entropy.py"], HC: ["tests/test_heat_capacity.py"], FO: ["tests/test_formation.py"],
          CE: ["tests/test_compression_entropy.py", "tests/test_crystal_correlation.py"],
-         CFL: ["tests/test_crystal_field.py"], MAG: ["tests/test_magnetic.py"], EL: ["tests/test_electronic.py"]}
+         CFL: ["tests/test_crystal_field.py"], MAG: ["tests/test_magnetic.py"],
+         EL: ["tests/test_electronic.py", "tests/test_electronic_gap.py"]}
 NL = chr(10)
 MUTANTS = [
     (LIQ, "ideal 5/2 -> 3/2", "(2.5 - np.sum", "(1.5 - np.sum"),
@@ -85,7 +86,7 @@ MUTANTS = [
     (CE, "NPT reference read in target cell", "    ref_cell = cell if reference_cell is None else np.asarray(reference_cell, dtype=float)" + NL, "    ref_cell = cell" + NL),
     (CE, "infinite loop guard off", "    if n_frames - 1 < min_separation:", "    if False:"),
     (CE, "complex blocks get real Wishart bias", "complex_valued=not np.allclose(chi.imag, 0.0))", "complex_valued=False)"),
-    (CE, "centre-of-mass modes dropped", "            log_det += 3 * np.log(independent)  # the three centre-of-mass modes, see above" + NL, ""),
+    (CE, "centre-of-mass modes dropped", "        log_det += 3 * np.log(independent)" + NL, ""),
     (CE, "characters not conjugated (expected equivalent)", 'np.einsum("kt,ftd->fkd", characters.conj(), ub)', 'np.einsum("kt,ftd->fkd", characters, ub)'),
     (CE, "Fourier norm sqrt(n) -> n", "/ np.sqrt(n_cells)", "/ n_cells"),
     (CE, "marginal bias dropped", " - n_atoms * _log_det_bias(3, nu)", ""),
@@ -152,6 +153,21 @@ MUTANTS = [
     (EL, "Gauss nodes not shifted onto the piece", "(_GAUSS_X + 1.0)", "(_GAUSS_X + 0.0)"),
     (EL, "pieces kT/2 -> 2 kT", "np.ceil(2 * np.diff(edges) / kt)", "np.ceil(0.5 * np.diff(edges) / kt)"),
     (EL, "band cut by the window accepted", "if (g[0] > 0 and mu - e[0] < WINDOW_KT * kt) or", "if False and (g[0] > 0 and mu - e[0] < WINDOW_KT * kt) or"),
+    (CE, "bulk keeps the centre of mass", "        centre_of_mass = 0.0",
+     "        centre_of_mass = GAS_CONSTANT / n_atoms * np.log(volume * (n_atoms / (2 * np.pi * np.e * independent)) ** 1.5)"),
+    (CE, "bulk sphere mean without the 2/3", "- 2 * np.log(q_cell) + 2 / 3)", "- 2 * np.log(q_cell))"),
+    (CE, "acoustic variance not scaled by q^2", "acoustic.append(np.log(w[-3:]) + 2 * np.log(q))", "acoustic.append(np.log(w[-3:]))"),
+    (CE, "smallest variances taken as acoustic", "acoustic.append(np.log(w[-3:])", "acoustic.append(np.log(w[:3])"),
+    (CE, "q_c without 2 pi", "q_cell = 2 * np.pi * (3 / (4 * np.pi * volume))", "q_cell = (3 / (4 * np.pi * volume))"),
+    (CE, "wavevectors without 2 pi", "reciprocal = 2 * np.pi * np.linalg.inv(", "reciprocal = np.linalg.inv("),
+    (CE, "shortest wavevector not over images (expected equivalent)", "np.linalg.norm((h + images) @ reciprocal, axis=1).min()",
+     "np.linalg.norm(h @ reciprocal)"),
+    (EL, "scissor ignores the gap already there", "shift = band_gap - (e_c - e_v)", "shift = band_gap"),
+    (EL, "scissor leaves the empty states in place", "e[high] + shift])", "e[high]])"),
+    (EL, "scissor shrinks a larger gap", "    if shift <= 0:" + NL + "        return e, g" + NL, ""),
+    (EL, "negative band gap accepted", "if band_gap < 0:", "if False:"),
+    (EL, "band gap not passed to the free energy", "fermi_energy=fermi_energy, band_gap=band_gap)",
+     "fermi_energy=fermi_energy)"),
 ]
 check = subprocess.run([PY, "-c", "import hermes, sys; print(hermes.__file__)"], cwd=WORK, capture_output=True, text=True)
 assert WORK in check.stdout, check.stdout

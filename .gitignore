@@ -43,3 +43,18 @@ pyzentropy.egg-info/
 
 # pip editable-install metadata
 *.egg-info/
+
+# oxide vibration test: trajectories stay local
+validation/oxide_vibration/runs/*/*.npz
+validation/oxide_vibration/runs/*/*.traj
+validation/oxide_vibration/smoke/
+validation/oxide_vibration/campaign_*.out
+validation/oxide_vibration/smoke_run.log
+
+# returned Sol results, staged then moved into oxide_vibration/runs; partial local runs kept aside
+validation/sol_returned/
+validation/oxide_vibration/runs_local_partial/
+
+# exploration outputs
+validation/explore/phonons_run.log
+validation/sol_bench/predictions/

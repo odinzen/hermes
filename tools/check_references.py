@@ -8,6 +8,7 @@ access; run it before a release.
 """
 
 import json
+import re
 import sys
 import time
 import unicodedata
@@ -54,11 +55,20 @@ REFERENCES = [
      "Crystal-melt interfacial free energies in hcp metals: A molecular dynamics study of Mg", 2006, "73", "024116"),
     ("10.1080/09500830701191393", ["Mendelev", "Ackland"],
      "Development of an interatomic potential for the simulation of phase transformations in zirconium", 2007, "87", "349"),
+    # USGS's Crossref record carries no authors; Robie and Hemingway are checked against the bulletin's title page
+    ("10.3133/b2131", [],
+     "Thermodynamic properties of minerals and related substances at 298.15 K and 1 bar (10^5 pascals) pressure and at "
+     "higher temperatures", 1995, None, None),
+    ("10.1063/1.4825256", ["Konings", "Beneš", "Kovács", "Manara", "Sedmidubský", "Gorokhov", "Iorish", "Yungman",
+                           "Shenyavskaya", "Osina"],
+     "The Thermodynamic Properties of the f-Elements and their Compounds. Part 2. The Lanthanide and Actinide Oxides",
+     2014, "43", "013101"),
 ]
 
 
 def plain(s: str) -> str:
     """Lower-case ASCII without spaces or punctuation, so typography (dashes, quotes, case) does not count."""
+    s = re.sub(r"<[^>]+>", "", s)  # Crossref marks italics in some titles
     s = unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode().lower()
     return "".join(c for c in s if c.isalnum())
 

@@ -1,0 +1,242 @@
+{
+ "B1": false,
+ "cases": {
+  "NdPO4": {
+   "status": "scored",
+   "why": "Popa 2006b: S298 'includes the Rln(2) contribution from the low temperature anomaly'. S(1000) none: its Cp equation states no valid range.",
+   "S_meas": [
+    122.9,
+    null
+   ],
+   "S_meas_spread_298": 0.0,
+   "S_lat": [
+    108.47,
+    263.9
+   ],
+   "S_cf_pred": [
+    17.1492806813191,
+    18.92039820981738
+   ],
+   "sources": {
+    "meas:popa_2006b:standard_entropy_NdPO4": 122.9
+   },
+   "error": [
+    2.719280681319095,
+    null
+   ],
+   "B1_pass": false,
+   "other_convention_error": [
+    -3.0438656403248814,
+    null
+   ]
+  },
+  "EuPO4": {
+   "status": "scored",
+   "why": "Ground 7F0 is a singlet, so the flag changes nothing.",
+   "S_meas": [
+    117.06,
+    283.7
+   ],
+   "S_meas_spread_298": 0.0,
+   "S_lat": [
+    108.47,
+    263.9
+   ],
+   "S_cf_pred": [
+    9.272962453623567,
+    16.837005267171048
+   ],
+   "sources": {
+    "meas:gavrichev_2009:standard_entropy_EuPO4": 117.06,
+    "meas:gavrichev_2009:entropy_1000K_EuPO4": 283.7
+   },
+   "error": [
+    0.6829624536235634,
+    -2.962994732828964
+   ],
+   "B1_pass": false,
+   "other_convention_error": [
+    0.6829624536235634,
+    -2.962994732828964
+   ]
+  },
+  "GdPO4": {
+   "status": "scored",
+   "why": "Thiriet 2005 / Gurevich 2012: the antiferromagnetic transition entropy below 12 K is included in S298.",
+   "S_meas": [
+    123.93,
+    277.9
+   ],
+   "S_meas_spread_298": 0.22000000000001307,
+   "S_lat": [
+    108.47,
+    263.9
+   ],
+   "S_cf_pred": [
+    17.289438964931936,
+    17.289438964931936
+   ],
+   "sources": {
+    "meas:popa_2006a:standard_entropy_GdPO4": 124.04,
+    "meas:gurevich_2012:standard_entropy_GdPO4": 123.82,
+    "meas:gurevich_2012:entropy_1000K_GdPO4": 277.9
+   },
+   "error": [
+    1.8294389649319278,
+    3.2894389649319358
+   ],
+   "B1_pass": false,
+   "other_convention_error": [
+    -15.460000000000008,
+    -14.0
+   ]
+  },
+  "TbPO4": {
+   "status": "phase mismatch, not scored",
+   "why": "Only monoclinic (metastable) TbPO4 was measured (Gavrichev 2016); the frozen Tb levels are for tetragonal TbPO4."
+  },
+  "DyPO4": {
+   "status": "no data",
+   "why": "No low-temperature calorimetry; Gysi 2016 is DSC above 348 K and its S298 is interpolated."
+  },
+  "HoPO4": {
+   "status": "scored",
+   "why": "Tyurin 2020 includes the magnetic and Schottky entropy from 0.6 K (Cooke et al. below 9 K). S(T) above 298 K only in the supplement, not in hand.",
+   "S_meas": [
+    127.4,
+    null
+   ],
+   "S_meas_spread_298": 0.0,
+   "S_lat": [
+    99.74,
+    253.61
+   ],
+   "S_cf_pred": [
+    22.676961206057406,
+    23.477404704574948
+   ],
+   "sources": {
+    "meas:tyurin_2020:standard_entropy_HoPO4": 127.4
+   },
+   "error": [
+    -4.983038793942605,
+    null
+   ],
+   "B1_pass": false,
+   "error_YPO4_lattice": [
+    -10.8630387939426,
+    null
+   ],
+   "other_convention_error": [
+    -10.746185115586584,
+    null
+   ]
+  },
+  "ErPO4": {
+   "status": "scored",
+   "why": "Gavrichev 2012: functions are S(T) - S(2 K); the transition entropy below T_N about 0.4 K is 'unknown' and left out.",
+   "S_meas": [
+    116.63,
+    273.5
+   ],
+   "S_meas_spread_298": 0.0,
+   "S_lat": [
+    99.74,
+    253.61
+   ],
+   "S_cf_pred": [
+    16.3304803980671,
+    17.193881449360898
+   ],
+   "sources": {
+    "meas:gavrichev_2012:standard_entropy_ErPO4": 116.63,
+    "meas:gavrichev_2012:entropy_1000K_ErPO4": 273.5
+   },
+   "error": [
+    -0.5595196019329016,
+    -2.6961185506390883
+   ],
+   "B1_pass": false,
+   "error_YPO4_lattice": [
+    -6.439519601932897,
+    -7.706118550639108
+   ],
+   "other_convention_error": [
+    5.203626719711078,
+    3.0670277710048914
+   ]
+  },
+  "TmPO4": {
+   "status": "scored",
+   "why": "Ryumin 2017: S298 includes an assumed R ln 2 = 5.76 that its 1000 K table (S - S(10 K)) leaves out; added back so both points share the published convention. Ground level is a singlet, so the flag changes nothing. Also reported without the assumed 5.76 (variant), outside the verdict.",
+   "S_meas": [
+    127.94,
+    286.86
+   ],
+   "S_meas_spread_298": 0.0,
+   "S_lat": [
+    99.74,
+    253.61
+   ],
+   "S_cf_pred": [
+    20.06842828734984,
+    21.207550882616964
+   ],
+   "sources": {
+    "meas:ryumin_2017:standard_entropy_TmPO4": 127.94,
+    "meas:ryumin_2017:entropy_1000K_TmPO4": 281.1
+   },
+   "error": [
+    -8.131571712650164,
+    -12.042449117383036
+   ],
+   "B1_pass": false,
+   "error_YPO4_lattice": [
+    -14.01157171265016,
+    -17.052449117383055
+   ],
+   "other_convention_error": [
+    -8.131571712650164,
+    -12.042449117383036
+   ],
+   "variant_without_assumed_Rln2": [
+    -2.371571712650164,
+    -6.282449117383036
+   ]
+  },
+  "YbPO4": {
+   "status": "scored",
+   "why": "Gavrichev 2013: functions are S(T) - S(6.03 K); nothing stated below 6.03 K. Per the pre-registered handling a silent source is scored both ways and B1 uses the convention of the source measured furthest down, its own (from 6.03 K, so excluded).",
+   "S_meas": [
+    109.7,
+    268.1
+   ],
+   "S_meas_spread_298": 0.0,
+   "S_lat": [
+    99.74,
+    253.61
+   ],
+   "S_cf_pred": [
+    9.99476782505278,
+    11.370627594850475
+   ],
+   "sources": {
+    "meas:gavrichev_2013:standard_entropy_YbPO4": 109.7,
+    "meas:gavrichev_2013:entropy_1000K_YbPO4": 268.1
+   },
+   "error": [
+    0.03476782505277143,
+    -3.1193724051495337
+   ],
+   "B1_pass": false,
+   "error_YPO4_lattice": [
+    -5.845232174947224,
+    -8.129372405149553
+   ],
+   "other_convention_error": [
+    5.797914146696749,
+    2.643773916494446
+   ]
+  }
+ }
+}

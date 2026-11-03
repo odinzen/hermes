@@ -1,0 +1,20 @@
+average:
+  density: 0.06214271018498604
+  spring_constant: '6.2044799487445275'
+  vol_atom: 16.091851330711986
+input:
+  concentration: '1.0'
+  element: W
+  lattice: start_w_1200.data
+  pressure: 0.0
+  temperature: 1200
+results:
+  com_correction: -0.002372294877020876
+  dissipation: -0.00028890905418244017
+  einstein_crystal: -0.6713331406368599
+  error: 0.0
+  free_energy: -9.291151063390187
+  pv: 0.0
+  reference_system: -0.6737054355138807
+  unit: eV/atom
+  work: -8.617445627876306

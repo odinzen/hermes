@@ -1,0 +1,5 @@
+analyze_fresh.py frozen 2026-10-15T11:07:12-07:00, before any of the twelve fresh runs existed
+sha256 (line endings normalized) 8cd3066fc96bdca4e1b514dcdfd97e5a42c9808e13fb4fa4bf0b8bec9823f9d4
+hermes/compression_entropy.py 6857d825f8ff848a4d74a1f9da0872960e0e410befe3b4782804eebb82cda229
+hermes/md_configuration.py b7ee8dde8fb0ce6b732256b5ceda139403b806ee7fda0360e6646a5d1493e26e
+Dry run on the Cu 1300 K development case only (73.32 vs 72.76).

@@ -2,18 +2,21 @@
 
 How each part of Hermes is checked, against what, and how close it comes. Entropies are in J/(K mol of atoms). Exact
 references for MD are thermodynamic integration with calphy [1] on the same interatomic potential, so a comparison
-tests Hermes and nothing else. The validation scripts and run outputs are available from the authors on request.
+tests Hermes and nothing else. The rule, scripts, fingerprints and output of every test are in `validation/` (see
+its README); the MD trajectories are not kept in the repository.
 
 Four kinds of check stand behind this page:
 
-- **Exact cases** in the test suite (`python -m pytest -o addopts="" -q`, 231 tests, six of which need pycalphad and
+- **Exact cases** in the test suite (`python -m pytest -o addopts="" -q`, 242 tests, six of which need pycalphad and
   four of those ESPEI too), each named below.
 - **Held-out tests**: the pass rule, the cases and a fingerprint of the code were written down before any of the test
   runs existed, and nothing was changed after the results were read. All of them are listed, failures included.
-- **Planted bugs**: 114 deliberate errors (wrong factors, signs, units, dropped terms) were put into the modules one at a
-  time, and the test suite catches 112. The other two change no result: leaving the wavevector phases unconjugated only
-  swaps each wavevector with its mirror image, and dividing the covariances by n instead of n - 1 rescales both sides
-  of the shared-entropy difference alike.
+- **Planted bugs**: 126 deliberate errors (wrong factors, signs, units, dropped terms) were put into the modules one at a
+  time, and the test suite catches 123. The other three change no result: leaving the wavevector phases unconjugated only
+  swaps each wavevector with its mirror image, dividing the covariances by n instead of n - 1 rescales both sides
+  of the shared-entropy difference alike, and taking each wavevector's length without its periodic images only
+  leaves out mirror copies of the shortest ones in every box tested (cubic, hexagonal and triclinic); it guards
+  boxes whose shortest wavevector mixes signs.
 - **References**: `tools/check_references.py` compares every cited work with its Crossref, DataCite or arXiv record,
   full author list in order, title, year, volume and first page.
 
@@ -49,6 +52,13 @@ What each failure taught, and what changed:
 - **MD holds the centre of mass still; Frenkel-Ladd integration does not.** Hermes adds the centre-of-mass entropy
   (R/N) ln[V (N / 2 pi e sigma^2)^(3/2)], which agrees within 0.015 with calphy's correction on 12 crystals. Without it
   the error depended on the box, 0.6 at 256 atoms against 0.1 at 2048.
+- **A box is not a bulk crystal.** Fed exact Gaussian samples of harmonic MgO (MACE-MP-0 force constants, 298 K),
+  the box value lies 1.75, 0.55 and 0.24 above the bulk entropy (a dense phonon mesh) at 64, 216 and 512 atoms: the
+  centre-of-mass entropy belongs to the box, and the box lacks the vibrations longer than itself. The bulk value
+  (`limit="bulk"`) is within 0.04 of exact at all three sizes and within 0.08 on six more oxides of 216 to 270 atoms
+  (corundum, ilmenite, La2O3, rock salt). The exact references of the tests above, thermodynamic integration on the
+  same box, are box values, so those tests compare like with like; a comparison with calorimetry needs the bulk value.
+  This came out of the closed-shell oxide test (below) and was settled against exact references, not measurements.
 - **Near melting the motion is not Gaussian.** Each atom's own motion and every neighbour pair are Gaussian to within
   0.05 (Kraskov and Kozachenko-Leonenko estimators against covariance-matched Gaussian surrogates), but the error of a
   Gaussian description grows with temperature in all six metals tested, from -0.6 to +0.3 at a fifth to two-fifths of
@@ -64,6 +74,8 @@ What each failure taught, and what changed:
 | Shared entropy against the exact total correlation of harmonic fcc, bcc and hcp crystals | 0.05 | `tests/test_crystal_correlation.py::test_recovers_the_exact_total_correlation` |
 | Small-sample (Wishart) corrections unbiased, real and complex | within noise | `tests/test_crystal_correlation.py::test_log_det_corrections_are_unbiased_for_tiny_samples` |
 | Centre-of-mass entropy of independent atoms against its formula | 0.005 | `tests/test_crystal_correlation.py::test_centre_of_mass_entropy_of_independent_atoms` |
+| Bulk limit against the infinite harmonic fcc crystal (Brillouin-zone mean of ln det C) | 0.15 at 108 atoms, 0.05 at 256 | `tests/test_crystal_correlation.py::test_bulk_limit_recovers_the_infinite_crystal` |
+| The box value exceeds the bulk value by its centre-of-mass entropy | sign and size | `tests/test_crystal_correlation.py::test_box_and_bulk_differ_by_the_finite_box` |
 | Compression offset the same at 343 and 1728 atoms | 0.6 | `tests/test_compression_entropy.py::test_offset_does_not_depend_on_the_box` |
 | Doubling the amplitude adds 3 R ln 2 | 6 % | `tests/test_compression_entropy.py::test_doubling_the_amplitude_adds_three_bits_per_atom` |
 | Heat-capacity integration against a classical harmonic solid and direct numerical integration | 1e-8 | `tests/test_heat_capacity.py::test_anharmonic_enthalpy_against_direct_integration` |
@@ -112,9 +124,9 @@ while building the export and has been reported to ESPEI.
 
 ## Crystal-field, magnetic and electronic terms
 
-These terms come from measured or DFT inputs, not from MD, and are added to the vibrational entropy. So far they are
-checked only against exact results; a test against measured entropies is written down but has not been run (see
-below). Use them with that in mind.
+These terms come from measured or DFT inputs, not from MD, and are added to the vibrational entropy. They pass their
+exact cases; their test against measured entropies failed (below), largely because the vibrational entropy they are
+added to was itself too high. Use them with that in mind.
 
 | Check | Agreement | Test |
 |---|---|---|
@@ -132,25 +144,114 @@ below). Use them with that in mind.
 | gamma = 2.357 mJ/(K^2 mol) per state/eV/atom from k_B, N_A and e written out | 1e-6 | `tests/test_electronic.py::test_sommerfeld_coefficient_from_first_principles_constants` |
 | Wide-gap insulator (5 eV) at 1500 K: no electronic entropy | below 1e-5 | `tests/test_electronic.py::test_wide_gap_insulator_has_no_electronic_entropy` |
 | Two levels across a gap, against the closed form | 1e-4 | `tests/test_electronic.py::test_two_levels_across_a_gap` |
+| A gapless density of states opened to a measured 3 eV gap: no electronic entropy at 1000 K | below 1e-4 | `tests/test_electronic_gap.py::test_a_gapless_density_of_states_opened_to_a_wide_gap_has_no_electronic_entropy` |
+| A 0.4 eV gap opened to 1.2 eV equals a density of states built with 1.2 eV | 1 % | `tests/test_electronic_gap.py::test_opening_a_gap_matches_a_density_of_states_built_with_that_gap` |
+| A gap already larger than the measured one is left alone | 1e-12 | `tests/test_electronic_gap.py::test_a_larger_gap_is_left_alone` |
 
 The pycalphad comparison found that pycalphad 0.11.1 returns no magnetic energy at exactly T = T_C, because its
 piecewise conditions are strict on both sides; one degree either side it agrees.
 
-**Test against measurement, written down before any data are scored, not yet run.** Lanthanide orthophosphates
-LnPO4: the crystal-field term against the excess entropy left when the lattice part, taken from LaPO4, LuPO4 and
-YPO4, is removed from the measured entropy. Magnetic oxides NiO, CoO, MnO, Fe2O3 and Cr2O3: vibrational plus magnetic
-entropy against the measured S(298.15 K) and S(T) up to 1000 K, with CoO predicted in advance to fall short because
-Co2+ carries an orbital moment. The rule, cases, pass criteria and code fingerprint were fixed on 2026-10-22, before
-any data were scored; like the other validation scripts, they are available on request.
+**Test against measurement.** The rule, cases, pass criteria and code fingerprint were fixed on 2026-10-22, before any
+data were scored (`validation/extra_terms`). It passes only if both arms pass; both failed.
+
+*Lanthanide orthophosphates LnPO4: failed.* The crystal-field term against the excess entropy left when the lattice
+part (LaPO4 for the monazites, LuPO4 for the xenotimes) is removed from the measured entropy, in J/(K mol of Ln), pass
+within 1.0 at 298.15 K and at 1000 K. The levels (one neutron or optical source per ion) were fixed before any
+phosphate heat capacity was read; the measured entropies come from 14 calorimetric papers. None of the seven scored
+compounds passes:
+
+| Compound | Error at 298.15 K | Error at 1000 K |
+|---|---|---|
+| NdPO4 | +2.72 | no data |
+| EuPO4 | +0.68 | -2.96 |
+| GdPO4 | +1.83 | +3.29 |
+| HoPO4 | -4.98 | no data |
+| ErPO4 | -0.56 | -2.70 |
+| TmPO4 | -8.13 | -12.04 |
+| YbPO4 | +0.03 | -3.12 |
+
+GdPO4 shows where most of this comes from. Its crystal-field entropy is R ln 8 = 17.29 with no levels involved, yet the
+measured GdPO4 less LaPO4 leaves 15.46 at 298.15 K and 14.00 at 1000 K: subtracting a neighbour's lattice entropy is
+itself uncertain by 2 to 3, more than the tolerance, and YPO4 in place of LuPO4 makes the xenotimes worse. Most of the
+TmPO4 error is a magnetic term R ln 2 the calorimetry paper assumed rather than measured, in a crystal whose lowest
+level is a singlet; without it the errors are -2.4 and -6.3 (reported, outside the verdict). TbPO4 was not scored (its
+only calorimetry is of the monoclinic form, its levels of the tetragonal one), nor DyPO4 (no low-temperature data), nor
+Ce, Pr and Sm (no measured levels in a phosphate). A better test needs a lattice reference good to a fraction of a
+J/(K mol), such as the vibrational entropy of both crystals from the same route.
+
+*Magnetic oxides NiO, CoO, MnO, Fe2O3 and Cr2O3: failed.* Vibrational (MACE-MP-0, the route of the closed-shell oxide
+test below) plus magnetic plus electronic entropy against the measured S(298.15 K) and S(1000 K), in J/(K mol of atoms).
+Every prediction is high, by +4.9 to +9.9 at 298.15 K and +6.0 to +9.4 at 1000 K, and CoO, predicted in advance to
+fall short because Co2+ carries an orbital moment, came out high as well. The vibrational part alone is already 1.9 to
+4.7 high on the closed-shell oxides, so this arm says little about the magnetic term itself. Recorded before scoring:
+the Materials Project densities of states used for CoO, Fe2O3 and Cr2O3 are nearly gapless, which gives them a spurious
+electronic entropy of up to 4 at 1000 K; `band_gap` (0.3) now opens them to the measured gap.
+
+| Compound | Error at 298.15 K | Error at 1000 K |
+|---|---|---|
+| NiO | +7.79 | no data |
+| MnO | +6.72 | +6.49 |
+| CoO | +9.94 | +9.43 |
+| Fe2O3 | +4.86 | +5.95 |
+| Cr2O3 | +6.08 | +8.12 |
+
+The full prediction for the seven phosphates (vibrational from MD plus crystal field plus electronic) was reported
+outside the verdict: within 1.6 for Ho, Er and Tm, +2.6 for Nd and Gd, +5.8 for Eu and +10.5 for Yb, whose crystal lost
+its symmetry at 1000 K.
+
+## Vibrational entropy of oxides against calorimetry
+
+Three held-out tests put the vibrational route, run on universal machine-learned potentials (MACE foundation models,
+MIT licence), against measured entropies of closed-shell oxides, in J/(K mol of atoms). All three failed. Each
+prediction is the Gaussian anchor at 298.15 K plus the quantum correction, carried to 1000 K by the enthalpy of an NPT
+ladder; the measured values come from JANAF [9], Robie and Hemingway [10] and Konings et al. [11].
+
+| Test | Potential, cases | Verdict |
+|---|---|---|
+| `oxide_vibration` (frozen 2026-10-23) | MACE-MP-0, box value (Hermes 0.2); MgO, Al2O3, TiO2, Y2O3, Lu2O3, La2O3, MgTiO3 | FAIL: all high, +1.9 to +4.7 at 298.15 K (mean +3.3) |
+| `oxide_heldout` (frozen 2026-10-28) | MACE MPA-0, bulk value; 11 oxides none of the earlier work had seen | FAIL on absolute entropy, +1.05 to +2.94 at 298.15 K (mean +1.84) and +0.37 to +3.20 at 1000 K, all high; polymorph differences of Al2SiO5 HOLD, within 0.41 of JANAF |
+| `polymorph_heldout` (frozen 2026-11-02) | MACE MPA-0, bulk value less an offset fixed from the 19 earlier oxides (+1.87 at 298.15 K, +2.20 at 1000 K); 13 new compounds in four polymorph families | VOID (FAIL): four crystals changed structure in the MD, which left one family to compare |
+
+What each taught:
+
+- **The box is not the bulk crystal.** The first test compared box values with calorimetry. That is wrong by 0.4 to 0.6
+  at these sizes, and Hermes 0.3 makes the choice explicit (`limit="box"` or `"bulk"`, above).
+- **The excess belongs to the potential.** Between the first two tests, eight development oxides were run with three
+  MIT potentials (`validation/sol_bench`, outside every verdict). Mean bulk error at 298.15 K: MACE-MP-0 +2.83 (7
+  oxides), MP-0b3 +2.22, MPA-0 +1.90 (8 each), so MPA-0 was taken for the held-out tests. All three over-expand the
+  crystals, by 4.7 to 5.9 % in volume on average, and the volume error does not rank their entropy errors.
+- **A fixed offset works at 1000 K, not at 298.15 K.** After subtracting the offset, the third test's residuals have an
+  RMS of 0.41 over the five compounds scored at 1000 K (rule 1.0) but 1.04 over the nine at 298.15 K, where aragonite
+  reads 1.90 high. In the classical limit a softened spectrum shifts a compound's entropy by an amount that no longer
+  changes with temperature; at room temperature the quantum part makes the error depend on the spectrum.
+- **Polymorph differences do not carry over in general.** The Al2SiO5 differences held, but aragonite less calcite
+  came out +1.85 against a measured -0.74, the wrong sign. The SiO2, CaSiO3 and MgSiO3 families could not be judged:
+  MPA-0 turned alpha-quartz into the beta structure at 298.15 K (9 % too large in volume) and changed the symmetry of
+  pseudowollastonite, clinoenstatite and CaTiO3 perovskite at 1000 K.
+
+**Where the error is.** The harmonic entropy of each potential's own vibrational spectrum, read from the same MD, is
+already above the measured value in 23 of the 24 compounds of the two MPA-0 tests. Finite-displacement phonons of
+MPA-0, which use no Hermes code, give the same high values (calcite 18.85 against 18.77 from the MD spectrum; CaO,
+at the potential's relaxed volume, 21.34 against 21.12; `validation/polymorph_heldout/post_scoring`). Holding the crystal at its measured volume brings
+calcite within 0.2 of the measurement but leaves CaO 1.75 and aragonite 1.5 high. The potentials' force constants are
+too soft, and Hermes reports them as they are. Hermes's Gaussian route adds 0.1 to 1.4 above that harmonic value, the
+anharmonic part; on exact Gaussian samples the route is within 0.08 of the exact bulk entropy, but this anharmonic
+part has not been checked against an exact reference on these oxides.
 
 ## Limits
 
 - **Solids near melting:** use the heat-capacity route; the direct route reads up to 1.4 high there.
 - **Random alloys:** the shared entropy needs the crystal's translations, which random species break; they are refused.
 - **Excess mixing entropy:** underestimated by 7 to 25 % on Cu-Zr; untested on other systems.
-- **Crystal-field, magnetic and electronic terms:** exact cases only, no test against measured entropies yet. The
-  levels and the density of states are held fixed in temperature and volume; the magnetic model knows spins only and
-  takes the 0 K cell's magnetic order to be the ground state.
+- **Crystal-field term:** failed its test against measured phosphate entropies, where subtracting a neighbour's
+  lattice entropy is itself uncertain by 2 to 3 J/(K mol). Magnetic and electronic terms: exact cases pass; their test
+  against measurement failed with a vibrational part that was itself too high. The levels and the density of states
+  are held fixed in temperature and volume; the magnetic model knows spins only and takes the 0 K cell's magnetic
+  order to be the ground state.
+- **Universal machine-learned potentials:** the MACE foundation models tested give oxide vibrational entropies 1 to 3
+  J/(K mol of atoms) too high at 298.15 K, from force constants that are too soft, and can move a crystal into another
+  structure (alpha- to beta-quartz at 298.15 K). Hermes measures the entropy of the potential it is given; for
+  comparison with calorimetry, use a potential whose phonons have been checked against measurement.
 - **Classical MD below about 0.8 thermal wavelengths of vibration:** the compression cannot resolve the positions; use
   the Gaussian route or phonons, and `hermes.quantum_correction` for the quantum part.
 
@@ -159,7 +260,10 @@ any data were scored; like the other validation scripts, they are available on r
 Ni, Pd, Ag, Pt, Au, Cu: Foiles, Baskes and Daw [3] (`*_u3.eam`); Cu: Mishin et al. [4] (`Cu_mishin1.eam.alloy`); W: Zhou
 et al. [5] (`W_zhou.eam.alloy`); Fe: Mendelev et al. [6] (`Fe_mm.eam.fs`); Mg: Sun et al. [7] (`Mg_mm.eam.fs`); Zr:
 Mendelev and Ackland [8] (`Zr_mm.eam.fs`); Cu-Zr: Mendelev et al. [2] (`CuZr_mm.eam.fs`); Al and V: the LAMMPS files
-`Al_mm.eam.fs` and `VFe_mm.eam.fs` (M. I. Mendelev, 2007), whose headers give no publication.
+`Al_mm.eam.fs` and `VFe_mm.eam.fs` (M. I. Mendelev, 2007), whose headers give no publication. Oxides: the MACE
+foundation models MACE-MP-0 medium, MACE-MP-0b3 medium and MACE MPA-0 medium, MIT licence
+(https://github.com/ACEsuit/mace-foundations), with the SHA-256 of each weights file recorded in the tests'
+`PREREGISTERED.txt`.
 
 ## References
 
@@ -184,3 +288,10 @@ Mendelev and Ackland [8] (`Zr_mm.eam.fs`); Cu-Zr: Mendelev et al. [2] (`CuZr_mm.
    (2006). https://doi.org/10.1103/PhysRevB.73.024116
 8. M. I. Mendelev and G. J. Ackland, "Development of an interatomic potential for the simulation of phase
    transformations in zirconium", Philos. Mag. Lett. 87, 349 (2007). https://doi.org/10.1080/09500830701191393
+9. M. W. Chase, Jr., NIST-JANAF Thermochemical Tables, fourth edition, J. Phys. Chem. Ref. Data Monograph 9 (1998).
+10. R. A. Robie and B. S. Hemingway, "Thermodynamic properties of minerals and related substances at 298.15 K and 1 bar
+   (10^5 pascals) pressure and at higher temperatures", U.S. Geological Survey Bulletin 2131 (1995).
+   https://doi.org/10.3133/b2131
+11. R. J. M. Konings, O. Benes, A. Kovacs, D. Manara, D. Sedmidubsky, L. Gorokhov, V. S. Iorish, V. Yungman,
+   E. Shenyavskaya and E. Osina, "The Thermodynamic Properties of the f-Elements and their Compounds. Part 2. The
+   Lanthanide and Actinide Oxides", J. Phys. Chem. Ref. Data 43, 013101 (2014). https://doi.org/10.1063/1.4825256

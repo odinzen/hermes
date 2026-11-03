@@ -1,0 +1,8 @@
+calcite    relaxed   V  37.99 cm3/mol  S_harm(298)  18.75 J/(K mol atoms)  imaginary 16
+calcite    md        V  38.37 cm3/mol  S_harm(298)  18.85 J/(K mol atoms)  imaginary 16
+calcite    measured  V  36.93 cm3/mol  S_harm(298)  18.52 J/(K mol atoms)  imaginary 16
+aragonite  relaxed   V  35.42 cm3/mol  S_harm(298)  20.34 J/(K mol atoms)  imaginary 442
+aragonite  md        V  36.42 cm3/mol  S_harm(298)  21.43 J/(K mol atoms)  imaginary 736
+aragonite  measured  V  34.15 cm3/mol  S_harm(298)  19.10 J/(K mol atoms)  imaginary 268
+cao        relaxed   V  16.99 cm3/mol  S_harm(298)  21.34 J/(K mol atoms)  imaginary 0
+cao        measured  V  16.76 cm3/mol  S_harm(298)  20.86 J/(K mol atoms)  imaginary 0

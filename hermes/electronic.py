@@ -13,7 +13,10 @@ The density of states is that of one fixed structure, usually the DFT ground sta
 one per material: ``dos.energies``, ``dos.get_densities()`` summed over spins, ``dos.efermi``, per cell of
 ``len(dos.structure)`` atoms). Thermal expansion, phonons and magnetic disorder that broaden or shift it are left
 out, and a band gap that semilocal DFT closes, as in many transition-metal oxides without +U, gives a spurious metallic
-entropy. Where the window of the density of states cuts through a band it must reach well beyond mu; it is
+entropy: for NiO, CoO, Fe2O3 and Cr2O3, insulators with gaps of 2 eV or more, the Materials Project densities of states
+give up to 4 J/(K mol of atoms) at 1000 K where the real crystal has almost none. ``band_gap`` takes the measured gap
+and opens the density of states to it at the 0 K Fermi level (a scissor: the states above move up, the count is kept),
+which removes that entropy and leaves a correct gap alone. Where the window of the density of states cuts through a band it must reach well beyond mu; it is
 refused otherwise.
 """
 
@@ -74,6 +77,32 @@ def _occupied(e: np.ndarray, g: np.ndarray, mu: float, kt: float) -> float:
     return _states_below(e, g, max(mu - WINDOW_KT * kt, e[0])) + float(np.sum(w * gx * expit(-(x - mu) / kt)))
 
 
+def _scissor(e: np.ndarray, g: np.ndarray, n_electrons: float, band_gap: float) -> tuple:
+    # the occupied states end at e_v and the empty ones begin at e_c (the same energy where there is no gap); the
+    # empty states move up until e_c - e_v is band_gap, with no states in between
+    if band_gap < 0:
+        raise ValueError("band_gap must not be negative")
+    tol = 1e-9 * max(1.0, n_electrons)
+
+    def edge(reached):  # bisection for the boundary of {x: reached(x)}, which is an interval [edge, e[-1]]
+        lo, hi = e[0], e[-1]
+        for _ in range(200):
+            mid = 0.5 * (lo + hi)
+            lo, hi = (lo, mid) if reached(mid) else (mid, hi)
+        return hi
+
+    e_v = edge(lambda x: _states_below(e, g, x) >= n_electrons - tol)
+    e_c = edge(lambda x: _states_below(e, g, x) > n_electrons + tol)
+    shift = band_gap - (e_c - e_v)
+    if shift <= 0:
+        return e, g
+    tiny = 1e-9 * max(1.0, band_gap)
+    low, high = e < e_v, e > e_c
+    e_new = np.concatenate([e[low], [e_v, e_v + tiny, e_c + shift - tiny, e_c + shift], e[high] + shift])
+    g_new = np.concatenate([g[low], [np.interp(e_v, e, g), 0.0, 0.0, np.interp(e_c, e, g)], g[high]])
+    return e_new, g_new
+
+
 def electron_count(energies, dos, fermi_energy: float) -> float:
     """States below ``fermi_energy`` at 0 K, the integral of the (linearly interpolated) density of states."""
     e, g = _clean(energies, dos)
@@ -118,6 +147,7 @@ def electronic_entropy(
     atoms: int,
     n_electrons: float = None,
     fermi_energy: float = None,
+    band_gap: float = None,
     per_cell: bool = False,
 ):
     """
@@ -131,6 +161,9 @@ def electronic_entropy(
         atoms: Atoms in the cell the density of states is for.
         n_electrons: Electrons in the window. Give this or ``fermi_energy``.
         fermi_energy: Fermi energy in eV at 0 K; the electron count is the states below it.
+        band_gap: Measured band gap in eV. Where the density of states has a smaller gap or none at the Fermi level,
+            the states above it are moved up to open the gap to this value; a larger gap is left alone. Give it for
+            any insulator whose density of states comes from semilocal DFT.
         per_cell: If True, return eV/K per cell (the unit of ``configuration_from_md``'s ``electronic_entropies``)
             instead of J/(K mol of atoms).
 
@@ -142,6 +175,8 @@ def electronic_entropy(
         raise ValueError("give either n_electrons or fermi_energy")
     if n_electrons is None:
         n_electrons = electron_count(e, g, fermi_energy)
+    if band_gap is not None:
+        e, g = _scissor(e, g, n_electrons, band_gap)
     t = np.asarray(temperatures, dtype=float)
     if np.any(t < 0):
         raise ValueError("temperatures must not be negative")
@@ -151,7 +186,7 @@ def electronic_entropy(
 
 
 def electronic_free_energy(energies, dos, temperatures, *, atoms: int, n_electrons: float = None,
-                           fermi_energy: float = None, points: int = 24):
+                           fermi_energy: float = None, band_gap: float = None, points: int = 24):
     """
     F_el(T) - F_el(0) = -int_0^T S_el dT' at fixed volume, in J/(mol of atoms), by Gauss-Legendre quadrature.
 
@@ -165,7 +200,7 @@ def electronic_free_energy(energies, dos, temperatures, *, atoms: int, n_electro
             out.append(0.0)
             continue
         s = electronic_entropy(energies, dos, 0.5 * ti * (nodes + 1.0), atoms=atoms, n_electrons=n_electrons,
-                               fermi_energy=fermi_energy)
+                               fermi_energy=fermi_energy, band_gap=band_gap)
         out.append(-0.5 * ti * float(np.dot(weights, s)))
     out = np.array(out)
     return float(out[0]) if t.ndim == 0 else out.reshape(t.shape)

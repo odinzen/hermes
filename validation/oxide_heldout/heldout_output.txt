@@ -1,0 +1,19 @@
+Held-out closed-shell oxide test, MACE MPA-0, Hermes 0.3 (limit='bulk'). Verdict: FAIL
+C1 fails; C2 holds; scored 11, excluded 0. J/(K mol of atoms), err = predicted - measured.
+case         status     S 298    meas    err box err  S 1000    meas    err box err  QC298 QC1000 harmQ298 H resid
+beo          scored      8.25    6.88   1.36    1.67   33.24   30.80   2.44    2.75   6.85   0.75     8.13   15.74
+cao          scored     21.46   19.11   2.35    2.95   50.98   48.85   2.13    2.73   1.94   0.18    21.12   26.70
+sro          scored     28.96   27.76   1.20    1.80   59.04   58.67   0.37    0.97   1.23   0.12    28.49   13.27
+bao          scored     38.93   36.03   2.89    3.46   68.96   67.72   1.23    1.80   0.70   0.07    38.07   13.97
+li2o         scored     15.57   12.63   2.94    3.32   43.65   41.36   2.30    2.67   3.41   0.38    14.86    5.49
+zro2         scored     19.33   16.79   2.54    2.94   47.43   44.23   3.20    3.60   3.06   0.32    18.89   14.87
+mg2sio4      scored     14.99   13.59   1.40    1.66   41.86   39.63   2.23    2.50   4.66   0.51    14.73   20.94
+zrsio4       scored     15.77   14.00   1.76    2.23   41.95   39.69   2.27    2.74   4.96   0.56    15.40   12.47
+andalusite   scored     13.11   11.65   1.46    1.80   39.11   36.73   2.38    2.72   5.67   0.63    12.64   19.86
+kyanite      scored     11.78   10.48   1.30    1.66   37.76   35.64   2.11    2.47   5.66   0.62    11.43   10.91
+sillimanite  scored     13.07   12.02   1.05    1.38   38.93   36.88   2.05    2.38   5.75   0.65    12.82   23.73
+C2 kyanite - andalusite       predicted -1.33 / -1.35, JANAF -1.18 / -1.08, error -0.16 / -0.27  (298.15 / 1000 K)
+C2 sillimanite - andalusite   predicted -0.04 / -0.18, JANAF +0.37 / +0.15, error -0.41 / -0.33  (298.15 / 1000 K)
+C2 sillimanite - kyanite      predicted +1.29 / +1.17, JANAF +1.55 / +1.23, error -0.25 / -0.06  (298.15 / 1000 K)
+298.15 K errors: mean +1.84, range +1.05 to +2.94, 11 of 11 positive
+1000 K errors: mean +2.06, range +0.37 to +3.20, 11 of 11 positive

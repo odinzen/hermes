@@ -1,0 +1,22 @@
+# Enthalpy ladder for the heat-capacity route: crystal at T and P = 0, each axis free; 20 ps to settle, 50 ps averaged.
+# lmp -var tag <name> -var lat <fcc|bcc|hcp> -var a <A> -var nx <n> -var ny <n> -var nz <n> -var T <K>
+#     -var pstyle <pair style> -var pcoeff "<pair_coeff args>" -in npt.lmp
+units metal
+atom_style atomic
+boundary p p p
+lattice ${lat} ${a}
+region box block 0 ${nx} 0 ${ny} 0 ${nz}
+create_box 1 box
+create_atoms 1 box
+pair_style ${pstyle}
+pair_coeff ${pcoeff}
+timestep 0.001
+velocity all create ${T} 4928 mom yes dist gaussian
+fix 1 all npt temp ${T} ${T} 0.1 aniso 0 0 1.0
+run 20000
+reset_timestep 0
+variable pe equal pe/atoms
+variable pv equal press*vol/atoms
+fix av all ave/time 10 5000 50000 v_pe v_pv file ${tag}_npt.dat
+thermo 10000
+run 50000

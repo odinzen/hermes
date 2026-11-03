@@ -1,0 +1,20 @@
+calculations:
+- mode: fe
+  lattice: start_al_t.data
+  reference_phase: solid
+  element: [Al]
+  mass: [26.98154]
+  temperature: 780
+  pressure: 0
+  npt: true
+  pair_style: [eam/fs]
+  pair_coeff: ["* * /home/busta/opt/lammps-mace/potentials/Al_mm.eam.fs Al"]
+  n_equilibration_steps: 25000
+  n_switching_steps: 50000
+  n_iterations: 1
+  lammps_executable: /home/busta/miniforge3/envs/lammps-full/bin/lmp_mpi
+  mpi_executable: /home/busta/miniforge3/envs/lammps-full/bin/mpirun
+  folder_prefix: al_t
+  queue:
+    scheduler: local
+    cores: 4

@@ -1,0 +1,19 @@
+average:
+  density: 0.06534926190161368
+  vol_atom: 15.301587438317457
+input:
+  concentration: 0.9004629629629629 0.09953703703703703
+  element: Cu Zr
+  lattice: liq_x010.data
+  pressure: 0.0
+  temperature: 2300
+results:
+  com_correction: 0.0
+  dissipation: 0.0010295350517313118
+  einstein_crystal: 0.0
+  error: 0.0
+  free_energy: -5.245496211732117
+  pv: 0.0
+  reference_system: 2.8649660731634286
+  unit: eV/atom
+  work: 5.461484212019453

@@ -29,6 +29,7 @@ has to be added separately.
 
 # Standard Library Imports
 from fractions import Fraction
+from typing import Literal
 
 import scipy.constants
 
@@ -43,6 +44,8 @@ ANGSTROM = 1e-10
 # Atoms coded together. The code's fixed cost per atom depends on how many atoms it sees (its first
 # step is set by the largest residual), so groups of one size keep the offset the same for any box.
 GROUP_SIZE = 256
+# Which crystal an entropy describes: the finite periodic box the MD ran, or the macroscopic crystal it stands for
+Limit = Literal["box", "bulk"]
 
 
 def thermal_de_broglie_wavelength(mass_amu: np.ndarray, temperature: float) -> np.ndarray:
@@ -375,25 +378,40 @@ def _nearest_neighbour_distance(sites: np.ndarray, cell: np.ndarray) -> float:
     return float(cKDTree(images).query(sites, k=2)[0][:, 1].min())
 
 
-def _characters(vectors: np.ndarray) -> np.ndarray:
-    """The distinct characters exp(2 pi i H.f) of a translation group given by its fractional vectors."""
+def _characters(vectors: np.ndarray, cell: np.ndarray = None) -> np.ndarray:
+    """
+    The distinct characters exp(2 pi i H.f) of a translation group given by its fractional vectors. With the cell,
+    also the length in 1/Å of the shortest wavevector q = 2 pi H (cell^-1)^T of each, over every H that gives it.
+    """
     steps = []
     for column in vectors.T:
         denominators = [Fraction(x).limit_denominator(len(vectors)).denominator for x in column]
         steps.append(int(np.lcm.reduce(denominators)))
-    found = {}
+    found, shortest = {}, {}
     grid = np.array(np.meshgrid(*[np.arange(s) for s in steps], indexing="ij")).reshape(3, -1).T
+    if cell is not None:
+        # an H and its images H + k * steps give the same character; the shortest q is among them
+        images = np.array(np.meshgrid(*[(-s, 0, s) for s in steps], indexing="ij")).reshape(3, -1).T
+        reciprocal = 2 * np.pi * np.linalg.inv(np.asarray(cell, dtype=float)).T
     for start in range(0, len(grid), 256):
-        phases = np.exp(2j * np.pi * grid[start:start + 256] @ vectors.T)
-        for row in phases:
-            found.setdefault((np.round(row, 6) + 0.0).tobytes(), row)  # + 0.0 turns -0.0 into 0.0
-        if len(found) == len(vectors):
+        chunk = grid[start:start + 256]
+        phases = np.exp(2j * np.pi * chunk @ vectors.T)
+        for h, row in zip(chunk, phases):
+            key = (np.round(row, 6) + 0.0).tobytes()  # + 0.0 turns -0.0 into 0.0
+            found.setdefault(key, row)
+            if cell is not None:
+                q = np.linalg.norm((h + images) @ reciprocal, axis=1).min()
+                shortest[key] = min(shortest.get(key, np.inf), q)
+        if cell is None and len(found) == len(vectors):
             break
-    return np.array(list(found.values()))
+    if cell is None:
+        return np.array(list(found.values()))
+    return np.array(list(found.values())), np.array([shortest[k] for k in found])
 
 
 def crystal_correlation_entropy(
-    positions: np.ndarray, cell: np.ndarray, species: np.ndarray = None, max_rms_fraction: float = 0.25
+    positions: np.ndarray, cell: np.ndarray, species: np.ndarray = None, max_rms_fraction: float = 0.25, *,
+    limit: Limit,
 ) -> dict:
     r"""
     Entropy shared among the atoms of a crystal, which per-atom coding counts more than once.
@@ -428,6 +446,21 @@ def crystal_correlation_entropy(
     J/(K mol) at 256 atoms and 0.1 at 2048, and agrees within 0.015 with the centre-of-mass correction
     calphy applies (12 EAM crystals). Leaving it out made the error depend on the box.
 
+    That is the entropy of the box itself, ``limit="box"``, the quantity thermodynamic integration on the
+    same box gives. A macroscopic crystal has no such term: its centre of mass carries a vanishing share
+    of the entropy. What the box lacks instead are the vibrations longer than itself. ``limit="bulk"``
+    leaves the centre-of-mass term out and gives the three modes at q = 0 the mean of the long-wavelength
+    acoustic modes over the wavevector cell around q = 0, a sphere of radius
+    :math:`q_c = 2\pi (3 / 4\pi V)^{1/3}`: an acoustic mode's variance falls as 1/q^2, and over the sphere
+    the mean of ln(1/q^2) is :math:`-2 \ln q_c + 2/3`. Its size is read from the three largest variances
+    at the shortest wavevectors the box holds. On exact Gaussian samples of harmonic MgO (MACE-MP-0 force
+    constants, 298 K) the box value lies 1.75, 0.55 and 0.24 J/(K mol) above the bulk entropy at 64, 216
+    and 512 atoms, the bulk value within 0.04 at each; on six more oxides of 216 to 270 atoms (corundum,
+    ilmenite, La2O3 and rock-salt structures) within 0.08. What it leaves is the coarse sampling of the
+    wavevectors next to q = 0, which falls with the box: on an fcc spring lattice -0.11 at 108 atoms and
+    -0.04 at 256. Use 200 atoms or more. Which to use is the caller's choice, as there is no right default: ``"box"`` to compare
+    with simulation of the same box, ``"bulk"`` to compare with experiment or to build a database.
+
     Args:
         positions: Cartesian positions, shape ``(n_frames, N, 3)``, in Å, of a crystal in which no
             atom leaves its site. The cell must be periodic in the crystal's own translations.
@@ -436,17 +469,22 @@ def crystal_correlation_entropy(
             translations that carry its species onto themselves and is refused.
         max_rms_fraction: Largest rms displacement, as a fraction of the nearest-neighbour distance,
             accepted as a solid.
+        limit: ``"box"`` for the entropy of the periodic box as simulated, ``"bulk"`` for the
+            macroscopic crystal; see above. Required.
 
     Returns:
         Dictionary with ``entropy``, the shared entropy less the centre-of-mass entropy, which is what
-        to subtract from the compression entropy; its parts ``shared`` and ``centre_of_mass``; all in
+        to subtract from the compression entropy; its parts ``shared`` and ``centre_of_mass`` (0 for
+        the bulk); all in
         J/(K mol of atoms); ``cells`` (primitive cells in the box), ``basis`` (atoms per primitive
         cell) and ``rms_displacement`` (Å).
 
     Raises:
         ValueError: If the system is not a solid, has fewer than 8 frames, or its translations do
-            not give one wavevector per primitive cell.
+            not give one wavevector per primitive cell; for the bulk, if the box is one primitive cell.
     """
+    if limit not in ("box", "bulk"):
+        raise ValueError('limit must be "box" (the simulated box) or "bulk" (the macroscopic crystal)')
     positions = np.asarray(positions, dtype=float)
     cell = np.asarray(cell, dtype=float)
     n_frames, n_atoms = positions.shape[:2]
@@ -479,7 +517,7 @@ def crystal_correlation_entropy(
     if 3 * m >= n_frames - 1:
         raise ValueError(f"{n_frames} frames cannot resolve a primitive cell of {m} atoms; a random alloy, whose "
                          "species break the translations, has the whole box as its cell")
-    characters = _characters(vectors)
+    characters, q_length = _characters(vectors, cell)
     if len(characters) != n_cells:
         raise ValueError(f"found {len(characters)} wavevectors for {n_cells} primitive cells")
 
@@ -489,24 +527,35 @@ def crystal_correlation_entropy(
     cq = np.einsum("fka,fkb->kab", uq, uq.conj()) / nu
     marginals = np.einsum("fia,fib->iab", u, u) / nu
     independent = float(np.trace(marginals, axis1=1, axis2=2).mean() / 3)
-    log_det = 0.0
-    for chi, block in zip(characters, cq):
+    volume = abs(np.linalg.det(cell))
+    shortest = q_length[q_length > 1e-12].min() if n_cells > 1 else None
+    log_det, acoustic = 0.0, []
+    for chi, q, block in zip(characters, q_length, cq):
         w = np.linalg.eigvalsh(block)
         if np.allclose(chi, 1.0):
-            log_det += 3 * np.log(independent)  # the three centre-of-mass modes, see above
-            w = w[3:]
+            w = w[3:]  # the three centre-of-mass modes, see above
+        elif shortest is not None and q < 1.2 * shortest:
+            acoustic.append(np.log(w[-3:]) + 2 * np.log(q))  # variance x q^2 of the acoustic modes
         if len(w):
             log_det += np.sum(np.log(w)) - _log_det_bias(len(w), nu, complex_valued=not np.allclose(chi.imag, 0.0))
+    if limit == "box":
+        log_det += 3 * np.log(independent)
+        centre_of_mass = GAS_CONSTANT / n_atoms * np.log(volume * (n_atoms / (2 * np.pi * np.e * independent)) ** 1.5)
+    else:
+        if not acoustic:
+            raise ValueError("the bulk limit needs a box of more than one primitive cell")
+        q_cell = 2 * np.pi * (3 / (4 * np.pi * volume)) ** (1 / 3)
+        log_det += 3 * (np.mean(acoustic) - 2 * np.log(q_cell) + 2 / 3)
+        centre_of_mass = 0.0
     marginal = np.sum(np.linalg.slogdet(marginals)[1]) - n_atoms * _log_det_bias(3, nu)
     shared = GAS_CONSTANT * 0.5 * (marginal - log_det) / n_atoms
-    volume = abs(np.linalg.det(cell))
-    centre_of_mass = GAS_CONSTANT / n_atoms * np.log(volume * (n_atoms / (2 * np.pi * np.e * independent)) ** 1.5)
     return {"entropy": float(shared - centre_of_mass), "shared": float(shared), "centre_of_mass": float(centre_of_mass),
             "cells": n_cells, "basis": m, "rms_displacement": rms}
 
 
 def gaussian_entropy(
-    positions: np.ndarray, cell: np.ndarray, masses_amu, temperature: float, species: np.ndarray = None
+    positions: np.ndarray, cell: np.ndarray, masses_amu, temperature: float, species: np.ndarray = None, *,
+    limit: Limit,
 ) -> dict:
     r"""
     Total classical entropy of a crystal in the Gaussian (quasi-harmonic) approximation, J/(K mol of atoms).
@@ -528,6 +577,7 @@ def gaussian_entropy(
         masses_amu: Atomic masses, shape ``(N,)``, in atomic mass units.
         temperature: Temperature in K.
         species: Species label of each atom; all alike if omitted.
+        limit: ``"box"`` or ``"bulk"``, as for :func:`crystal_correlation_entropy`. Required.
 
     Returns:
         Dictionary with ``entropy`` and its parts ``marginal`` (sum of the atoms' own entropies per atom) and
@@ -536,7 +586,7 @@ def gaussian_entropy(
     positions = np.asarray(positions, dtype=float)
     cell = np.asarray(cell, dtype=float)
     n_frames = len(positions)
-    corr = crystal_correlation_entropy(positions, cell, species)
+    corr = crystal_correlation_entropy(positions, cell, species, limit=limit)
     frac = np.linalg.solve(cell.T, positions.reshape(-1, 3).T).T.reshape(positions.shape)
     step = frac - frac[0]
     step -= np.round(step)

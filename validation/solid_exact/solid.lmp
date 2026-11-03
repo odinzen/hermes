@@ -1,0 +1,48 @@
+# Crystal at T for the solid-entropy test: box relaxed anisotropically at P = 0, then NVT frames and mean energy.
+# lmp -var tag <name> -var lat <fcc|bcc|hcp> -var a <A> -var nx <n> -var ny <n> -var nz <n> -var T <K>
+#     -var pstyle <pair style> -var pcoeff "<pair_coeff args>" -in solid.lmp
+units metal
+atom_style atomic
+boundary p p p
+lattice ${lat} ${a}
+region box block 0 ${nx} 0 ${ny} 0 ${nz}
+create_box 1 box
+create_atoms 1 box
+pair_style ${pstyle}
+pair_coeff ${pcoeff}
+timestep 0.001
+velocity all create ${T} 4928 mom yes dist gaussian
+
+# zero-pressure box at T, each axis free so hcp finds its own c/a
+fix 1 all npt temp ${T} ${T} 0.1 aniso 0 0 1.0
+run 20000
+variable lx equal lx
+variable ly equal ly
+variable lz equal lz
+fix av all ave/time 10 1000 20000 v_lx v_ly v_lz
+run 20000
+variable Lx equal f_av[1]
+variable Ly equal f_av[2]
+variable Lz equal f_av[3]
+variable Lxf equal ${Lx}
+variable Lyf equal ${Ly}
+variable Lzf equal ${Lz}
+print "mean_box ${Lxf} ${Lyf} ${Lzf}"
+unfix av
+unfix 1
+change_box all x final 0 ${Lxf} y final 0 ${Lyf} z final 0 ${Lzf} remap units box
+write_data start_${tag}.data
+
+# production NVT at the mean box: frames every 0.5 ps for 60 ps
+fix 2 all nvt temp ${T} ${T} 0.1
+run 10000
+reset_timestep 0  # aligns the production averaging window with step 0
+compute msd all msd
+thermo_style custom step temp pe press vol c_msd[4]
+thermo 5000
+variable pe equal pe/atoms
+variable p equal press
+fix th all ave/time 10 6000 60000 v_pe v_p file ${tag}_thermo.dat
+dump d all custom 500 ${tag}.dump id type x y z
+dump_modify d sort id
+run 60000

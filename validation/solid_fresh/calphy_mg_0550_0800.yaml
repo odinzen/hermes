@@ -1,0 +1,20 @@
+calculations:
+- mode: fe
+  lattice: start_mg_0550_0800.data
+  reference_phase: solid
+  element: [Mg]
+  mass: [24.305]
+  temperature: 550
+  pressure: 0
+  npt: true
+  pair_style: [eam/fs]
+  pair_coeff: ["* * /home/busta/opt/lammps-mace/potentials/Mg_mm.eam.fs Mg"]
+  n_equilibration_steps: 25000
+  n_switching_steps: 50000
+  n_iterations: 1
+  lammps_executable: /home/busta/miniforge3/envs/lammps-full/bin/lmp_mpi
+  mpi_executable: /home/busta/miniforge3/envs/lammps-full/bin/mpirun
+  folder_prefix: mg_0550_0800
+  queue:
+    scheduler: local
+    cores: 4

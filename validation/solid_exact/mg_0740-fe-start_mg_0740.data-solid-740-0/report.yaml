@@ -1,0 +1,20 @@
+average:
+  density: 0.04187919420645445
+  spring_constant: '0.7652191936784918'
+  vol_atom: 23.879258587324642
+input:
+  concentration: '1.0'
+  element: Mg
+  lattice: start_mg_0740.data
+  pressure: 0.0
+  temperature: 740
+results:
+  com_correction: -0.0016623621626318979
+  dissipation: -0.0006186656861917328
+  einstein_crystal: -0.32815294120415317
+  error: 0.0
+  free_energy: -1.7359056105293562
+  pv: 0.0
+  reference_system: -0.32981530336678505
+  unit: eV/atom
+  work: -1.4060903071625712

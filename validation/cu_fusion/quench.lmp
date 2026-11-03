@@ -1,0 +1,19 @@
+# Quench every MD frame to its inherent structure (local minimum at fixed box).
+units metal
+atom_style atomic
+boundary p p p
+read_data ${data}
+pair_style eam/fs
+pair_coeff * * ${pot} Cu Zr
+thermo 0
+variable i loop 121
+label lp
+variable ts equal (${i}-1)*500
+read_dump ${dump} ${ts} x y z box yes
+min_style fire
+minimize 0 1.0e-8 20000 200000
+variable e equal pe/atoms
+print "IS ${ts} ${e}" append ${tag}_is_energy.txt screen no
+write_dump all custom ${tag}_is.dump id type x y z modify sort id append yes
+next i
+jump SELF lp

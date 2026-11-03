@@ -1,0 +1,3084 @@
+{
+ "mgo": {
+  "group": "oxide",
+  "composition": "MgO",
+  "measured": [
+   13.462499999999999,
+   41.131
+  ],
+  "extra": [
+   0.0,
+   0.0
+  ],
+  "S_el_MP": [
+   0.0,
+   0.0
+  ],
+  "space_group_ref": "Fm-3m",
+  "models": {
+   "mp-0": {
+    "space_group_T0": [
+     225,
+     "Fm-3m"
+    ],
+    "space_group_T1": [
+     225,
+     "Fm-3m"
+    ],
+    "QC": [
+     2.8562323054136396,
+     0.2892250272569545
+    ],
+    "bulk": [
+     16.41416078845812,
+     44.58993617784089
+    ],
+    "box": [
+     17.00469285052519,
+     45.18046823990799
+    ],
+    "folder": "C:\\Users\\busta\\Code\\hermes-private\\validation\\oxide_vibration\\runs\\mgo",
+    "status": "valid",
+    "volume_deviation": 0.04428142157877235,
+    "total_bulk": [
+     16.41416078845812,
+     44.58993617784089
+    ],
+    "error_bulk": [
+     2.9516607884581205,
+     3.45893617784089
+    ],
+    "total_box": [
+     17.00469285052519,
+     45.18046823990799
+    ],
+    "error_box": [
+     3.54219285052519,
+     4.049468239907988
+    ]
+   },
+   "mpa-0": {
+    "space_group_T0": [
+     225,
+     "Fm-3m"
+    ],
+    "space_group_T1": [
+     225,
+     "Fm-3m"
+    ],
+    "QC": [
+     3.2454011816489983,
+     0.3182246942670232
+    ],
+    "bulk": [
+     15.257789252433401,
+     43.51730903066058
+    ],
+    "box": [
+     15.872301442205032,
+     44.13182122043221
+    ],
+    "folder": "C:\\Users\\busta\\Code\\juno\\assets\\local-archive\\hermes-validation\\data\\bench-sol-2026-10-27\\results\\mpa-0\\runs\\mgo",
+    "status": "valid",
+    "volume_deviation": 0.046651063069705456,
+    "total_bulk": [
+     15.257789252433401,
+     43.51730903066058
+    ],
+    "error_bulk": [
+     1.7952892524334025,
+     2.386309030660577
+    ],
+    "total_box": [
+     15.872301442205032,
+     44.13182122043221
+    ],
+    "error_box": [
+     2.4098014422050333,
+     3.000821220432208
+    ]
+   },
+   "mp-0b3": {
+    "space_group_T0": [
+     225,
+     "Fm-3m"
+    ],
+    "space_group_T1": [
+     225,
+     "Fm-3m"
+    ],
+    "QC": [
+     3.0781148610724895,
+     0.30201071853381983
+    ],
+    "bulk": [
+     15.749572011924919,
+     44.037224786993605
+    ],
+    "box": [
+     16.354876813288644,
+     44.642529588357334
+    ],
+    "folder": "C:\\Users\\busta\\Code\\juno\\assets\\local-archive\\hermes-validation\\data\\bench-sol-2026-10-27\\results\\mp-0b3\\runs\\mgo",
+    "status": "valid",
+    "volume_deviation": 0.046371553503562035,
+    "total_bulk": [
+     15.749572011924919,
+     44.037224786993605
+    ],
+    "error_bulk": [
+     2.28707201192492,
+     2.9062247869936044
+    ],
+    "total_box": [
+     16.354876813288644,
+     44.642529588357334
+    ],
+    "error_box": [
+     2.892376813288646,
+     3.511529588357334
+    ]
+   }
+  }
+ },
+ "al2o3": {
+  "group": "oxide",
+  "composition": "Al2O3",
+  "measured": [
+   10.183633333333335,
+   36.042
+  ],
+  "extra": [
+   0.0,
+   0.0
+  ],
+  "S_el_MP": [
+   0.0,
+   0.0
+  ],
+  "space_group_ref": "R-3c",
+  "models": {
+   "mp-0": {
+    "space_group_T0": [
+     167,
+     "R-3c"
+    ],
+    "space_group_T1": [
+     167,
+     "R-3c"
+    ],
+    "QC": [
+     4.854434583598452,
+     0.5014455971461677
+    ],
+    "bulk": [
+     12.041400514088554,
+     38.85269829108572
+    ],
+    "box": [
+     12.53524642441613,
+     39.34654420141329
+    ],
+    "folder": "C:\\Users\\busta\\Code\\hermes-private\\validation\\oxide_vibration\\runs\\al2o3",
+    "status": "valid",
+    "volume_deviation": 0.03875083424607273,
+    "total_bulk": [
+     12.041400514088554,
+     38.85269829108572
+    ],
+    "error_bulk": [
+     1.8577671807552196,
+     2.8106982910857212
+    ],
+    "total_box": [
+     12.53524642441613,
+     39.34654420141329
+    ],
+    "error_box": [
+     2.351613091082795,
+     3.304544201413286
+    ]
+   },
+   "mpa-0": {
+    "space_group_T0": [
+     167,
+     "R-3c"
+    ],
+    "space_group_T1": [
+     167,
+     "R-3c"
+    ],
+    "QC": [
+     5.0773362206676165,
+     0.5207934413117413
+    ],
+    "bulk": [
+     11.573039382033292,
+     38.21834783275311
+    ],
+    "box": [
+     12.066569937418656,
+     38.71187838813849
+    ],
+    "folder": "C:\\Users\\busta\\Code\\juno\\assets\\local-archive\\hermes-validation\\data\\bench-sol-2026-10-27\\results\\mpa-0\\runs\\al2o3",
+    "status": "valid",
+    "volume_deviation": 0.03781187967851274,
+    "total_bulk": [
+     11.573039382033292,
+     38.21834783275311
+    ],
+    "error_bulk": [
+     1.389406048699957,
+     2.176347832753109
+    ],
+    "total_box": [
+     12.066569937418656,
+     38.71187838813849
+    ],
+    "error_box": [
+     1.8829366040853213,
+     2.6698783881384855
+    ]
+   },
+   "mp-0b3": {
+    "space_group_T0": [
+     167,
+     "R-3c"
+    ],
+    "space_group_T1": [
+     167,
+     "R-3c"
+    ],
+    "QC": [
+     4.84876808194372,
+     0.5034913809424448
+    ],
+    "bulk": [
+     11.997612233951308,
+     38.79526385455781
+    ],
+    "box": [
+     12.486596596362707,
+     39.28424821696921
+    ],
+    "folder": "C:\\Users\\busta\\Code\\juno\\assets\\local-archive\\hermes-validation\\data\\bench-sol-2026-10-27\\results\\mp-0b3\\runs\\al2o3",
+    "status": "valid",
+    "volume_deviation": 0.039367824804418694,
+    "total_bulk": [
+     11.997612233951308,
+     38.79526385455781
+    ],
+    "error_bulk": [
+     1.8139789006179736,
+     2.753263854557808
+    ],
+    "total_box": [
+     12.486596596362707,
+     39.28424821696921
+    ],
+    "error_box": [
+     2.3029632630293726,
+     3.242248216969209
+    ]
+   }
+  }
+ },
+ "tio2": {
+  "group": "oxide",
+  "composition": "TiO2",
+  "measured": [
+   16.81875,
+   43.940666666666665
+  ],
+  "extra": [
+   0.0,
+   0.0
+  ],
+  "S_el_MP": [
+   0.0,
+   0.0
+  ],
+  "space_group_ref": "P4_2/mnm",
+  "models": {
+   "mp-0": {
+    "space_group_T0": [
+     136,
+     "P4_2/mnm"
+    ],
+    "space_group_T1": [
+     136,
+     "P4_2/mnm"
+    ],
+    "QC": [
+     2.924873380717561,
+     0.3188015975389894
+    ],
+    "bulk": [
+     21.045267509100782,
+     48.21003863142584
+    ],
+    "box": [
+     21.511749176222594,
+     48.676520298547636
+    ],
+    "folder": "C:\\Users\\busta\\Code\\hermes-private\\validation\\oxide_vibration\\runs\\tio2",
+    "status": "valid",
+    "volume_deviation": 0.03714957240524619,
+    "total_bulk": [
+     21.045267509100782,
+     48.21003863142584
+    ],
+    "error_bulk": [
+     4.2265175091007805,
+     4.2693719647591735
+    ],
+    "total_box": [
+     21.511749176222594,
+     48.676520298547636
+    ],
+    "error_box": [
+     4.692999176222592,
+     4.735853631880971
+    ]
+   },
+   "mpa-0": {
+    "space_group_T0": [
+     136,
+     "P4_2/mnm"
+    ],
+    "space_group_T1": [
+     136,
+     "P4_2/mnm"
+    ],
+    "QC": [
+     3.3428006911463397,
+     0.35521200856832363
+    ],
+    "bulk": [
+     20.056232768841905,
+     47.236444807683974
+    ],
+    "box": [
+     20.52847269934406,
+     47.70868473818613
+    ],
+    "folder": "C:\\Users\\busta\\Code\\juno\\assets\\local-archive\\hermes-validation\\data\\bench-sol-2026-10-27\\results\\mpa-0\\runs\\tio2",
+    "status": "valid",
+    "volume_deviation": 0.04028805942276792,
+    "total_bulk": [
+     20.056232768841905,
+     47.236444807683974
+    ],
+    "error_bulk": [
+     3.237482768841904,
+     3.2957781410173084
+    ],
+    "total_box": [
+     20.52847269934406,
+     47.70868473818613
+    ],
+    "error_box": [
+     3.7097226993440593,
+     3.7680180715194638
+    ]
+   },
+   "mp-0b3": {
+    "space_group_T0": [
+     136,
+     "P4_2/mnm"
+    ],
+    "space_group_T1": [
+     136,
+     "P4_2/mnm"
+    ],
+    "QC": [
+     3.214728264287845,
+     0.34436376932434926
+    ],
+    "bulk": [
+     20.159477718384263,
+     47.52493653640495
+    ],
+    "box": [
+     20.631432303017327,
+     47.99689112103802
+    ],
+    "folder": "C:\\Users\\busta\\Code\\juno\\assets\\local-archive\\hermes-validation\\data\\bench-sol-2026-10-27\\results\\mp-0b3\\runs\\tio2",
+    "status": "valid",
+    "volume_deviation": 0.03980783993574022,
+    "total_bulk": [
+     20.159477718384263,
+     47.52493653640495
+    ],
+    "error_bulk": [
+     3.3407277183842616,
+     3.5842698697382858
+    ],
+    "total_box": [
+     20.631432303017327,
+     47.99689112103802
+    ],
+    "error_box": [
+     3.8126823030173256,
+     4.056224454371353
+    ]
+   }
+  }
+ },
+ "y2o3": {
+  "group": "oxide",
+  "composition": "Y2O3",
+  "measured": [
+   19.826,
+   null
+  ],
+  "extra": [
+   0.0,
+   0.0
+  ],
+  "S_el_MP": [
+   0.0,
+   0.0
+  ],
+  "space_group_ref": "Ia-3",
+  "models": {
+   "mp-0": {
+    "space_group_T0": [
+     206,
+     "Ia-3"
+    ],
+    "space_group_T1": [
+     206,
+     "Ia-3"
+    ],
+    "QC": [
+     2.316699861335143,
+     0.22852121749190324
+    ],
+    "bulk": [
+     22.037438302829177,
+     50.929995818717714
+    ],
+    "box": [
+     22.255954192262582,
+     51.14851170815112
+    ],
+    "folder": "C:\\Users\\busta\\Code\\hermes-private\\validation\\oxide_vibration\\runs\\y2o3",
+    "status": "valid",
+    "total_bulk": [
+     22.037438302829177,
+     50.929995818717714
+    ],
+    "error_bulk": [
+     2.211438302829176,
+     null
+    ],
+    "total_box": [
+     22.255954192262582,
+     51.14851170815112
+    ],
+    "error_box": [
+     2.4299541922625814,
+     null
+    ]
+   },
+   "mpa-0": {
+    "space_group_T0": [
+     206,
+     "Ia-3"
+    ],
+    "space_group_T1": [
+     206,
+     "Ia-3"
+    ],
+    "QC": [
+     2.454271954873326,
+     0.23835826155217182
+    ],
+    "bulk": [
+     21.082500028031152,
+     50.10627012014694
+    ],
+    "box": [
+     21.306279516764832,
+     50.33004960888061
+    ],
+    "folder": "C:\\Users\\busta\\Code\\juno\\assets\\local-archive\\hermes-validation\\data\\bench-sol-2026-10-27\\results\\mpa-0\\runs\\y2o3",
+    "status": "valid",
+    "total_bulk": [
+     21.082500028031152,
+     50.10627012014694
+    ],
+    "error_bulk": [
+     1.2565000280311516,
+     null
+    ],
+    "total_box": [
+     21.306279516764832,
+     50.33004960888061
+    ],
+    "error_box": [
+     1.4802795167648313,
+     null
+    ]
+   },
+   "mp-0b3": {
+    "space_group_T0": [
+     206,
+     "Ia-3"
+    ],
+    "space_group_T1": [
+     206,
+     "Ia-3"
+    ],
+    "QC": [
+     2.388697967955146,
+     0.23174508702529018
+    ],
+    "bulk": [
+     21.399591485893787,
+     50.59534669994419
+    ],
+    "box": [
+     21.62219942734984,
+     50.81795464140025
+    ],
+    "folder": "C:\\Users\\busta\\Code\\juno\\assets\\local-archive\\hermes-validation\\data\\bench-sol-2026-10-27\\results\\mp-0b3\\runs\\y2o3",
+    "status": "valid",
+    "total_bulk": [
+     21.399591485893787,
+     50.59534669994419
+    ],
+    "error_bulk": [
+     1.573591485893786,
+     null
+    ],
+    "total_box": [
+     21.62219942734984,
+     50.81795464140025
+    ],
+    "error_box": [
+     1.7961994273498405,
+     null
+    ]
+   }
+  }
+ },
+ "sc2o3": {
+  "group": "oxide",
+  "composition": "Sc2O3",
+  "measured": [
+   null,
+   null
+  ],
+  "extra": [
+   0.0,
+   0.0
+  ],
+  "S_el_MP": [
+   0.0,
+   0.0
+  ],
+  "space_group_ref": "Ia-3",
+  "models": {
+   "mp-0": {
+    "space_group_T0": [
+     206,
+     "Ia-3"
+    ],
+    "space_group_T1": [
+     206,
+     "Ia-3"
+    ],
+    "QC": [
+     3.082876320122154,
+     0.3052406466561068
+    ],
+    "bulk": [
+     17.577702092023603,
+     45.90123235127741
+    ],
+    "box": [
+     17.80139006352647,
+     46.12492032278028
+    ],
+    "folder": "C:\\Users\\busta\\Code\\hermes-private\\validation\\oxide_vibration\\runs\\sc2o3",
+    "status": "valid",
+    "total_bulk": [
+     17.577702092023603,
+     45.90123235127741
+    ],
+    "error_bulk": [
+     null,
+     null
+    ],
+    "total_box": [
+     17.80139006352647,
+     46.12492032278028
+    ],
+    "error_box": [
+     null,
+     null
+    ]
+   },
+   "mpa-0": {
+    "space_group_T0": [
+     206,
+     "Ia-3"
+    ],
+    "space_group_T1": [
+     206,
+     "Ia-3"
+    ],
+    "QC": [
+     3.0919602208497343,
+     0.31206400702610615
+    ],
+    "bulk": [
+     17.119383983099258,
+     45.300035573949756
+    ],
+    "box": [
+     17.34318923742475,
+     45.523840828275254
+    ],
+    "folder": "C:\\Users\\busta\\Code\\juno\\assets\\local-archive\\hermes-validation\\data\\bench-sol-2026-10-27\\results\\mpa-0\\runs\\sc2o3",
+    "status": "valid",
+    "total_bulk": [
+     17.119383983099258,
+     45.300035573949756
+    ],
+    "error_bulk": [
+     null,
+     null
+    ],
+    "total_box": [
+     17.34318923742475,
+     45.523840828275254
+    ],
+    "error_box": [
+     null,
+     null
+    ]
+   },
+   "mp-0b3": {
+    "space_group_T0": [
+     206,
+     "Ia-3"
+    ],
+    "space_group_T1": [
+     206,
+     "Ia-3"
+    ],
+    "QC": [
+     3.1470006880605403,
+     0.3084910408165734
+    ],
+    "bulk": [
+     17.12820782128216,
+     45.63217781708916
+    ],
+    "box": [
+     17.35271023830709,
+     45.85668023411408
+    ],
+    "folder": "C:\\Users\\busta\\Code\\juno\\assets\\local-archive\\hermes-validation\\data\\bench-sol-2026-10-27\\results\\mp-0b3\\runs\\sc2o3",
+    "status": "valid",
+    "total_bulk": [
+     17.12820782128216,
+     45.63217781708916
+    ],
+    "error_bulk": [
+     null,
+     null
+    ],
+    "total_box": [
+     17.35271023830709,
+     45.85668023411408
+    ],
+    "error_box": [
+     null,
+     null
+    ]
+   }
+  }
+ },
+ "lu2o3": {
+  "group": "oxide",
+  "composition": "Lu2O3",
+  "measured": [
+   21.991999999999997,
+   null
+  ],
+  "extra": [
+   0.0,
+   0.0
+  ],
+  "S_el_MP": [
+   0.0,
+   0.0
+  ],
+  "space_group_ref": "Ia-3",
+  "models": {
+   "mp-0": {
+    "space_group_T0": [
+     206,
+     "Ia-3"
+    ],
+    "space_group_T1": [
+     206,
+     "Ia-3"
+    ],
+    "QC": [
+     2.4574727912002543,
+     0.24308169093699108
+    ],
+    "bulk": [
+     23.655888499168498,
+     52.423638127988156
+    ],
+    "box": [
+     23.876754202158033,
+     52.64450383097768
+    ],
+    "folder": "C:\\Users\\busta\\Code\\hermes-private\\validation\\oxide_vibration\\runs\\lu2o3",
+    "status": "valid",
+    "total_bulk": [
+     23.655888499168498,
+     52.423638127988156
+    ],
+    "error_bulk": [
+     1.6638884991685003,
+     null
+    ],
+    "total_box": [
+     23.876754202158033,
+     52.64450383097768
+    ],
+    "error_box": [
+     1.8847542021580352,
+     null
+    ]
+   },
+   "mpa-0": {
+    "space_group_T0": [
+     206,
+     "Ia-3"
+    ],
+    "space_group_T1": [
+     206,
+     "Ia-3"
+    ],
+    "QC": [
+     2.48449264204208,
+     0.24235341310199943
+    ],
+    "bulk": [
+     22.934673586229355,
+     51.77117258026036
+    ],
+    "box": [
+     23.15829106801092,
+     51.99479006204192
+    ],
+    "folder": "C:\\Users\\busta\\Code\\juno\\assets\\local-archive\\hermes-validation\\data\\bench-sol-2026-10-27\\results\\mpa-0\\runs\\lu2o3",
+    "status": "valid",
+    "total_bulk": [
+     22.934673586229355,
+     51.77117258026036
+    ],
+    "error_bulk": [
+     0.9426735862293576,
+     null
+    ],
+    "total_box": [
+     23.15829106801092,
+     51.99479006204192
+    ],
+    "error_box": [
+     1.1662910680109242,
+     null
+    ]
+   },
+   "mp-0b3": {
+    "space_group_T0": [
+     206,
+     "Ia-3"
+    ],
+    "space_group_T1": [
+     206,
+     "Ia-3"
+    ],
+    "QC": [
+     2.540827636669273,
+     0.24680670007535682
+    ],
+    "bulk": [
+     22.88339414156061,
+     51.8668144780213
+    ],
+    "box": [
+     23.10780963031769,
+     52.0912299667784
+    ],
+    "folder": "C:\\Users\\busta\\Code\\juno\\assets\\local-archive\\hermes-validation\\data\\bench-sol-2026-10-27\\results\\mp-0b3\\runs\\lu2o3",
+    "status": "valid",
+    "total_bulk": [
+     22.88339414156061,
+     51.8668144780213
+    ],
+    "error_bulk": [
+     0.8913941415606139,
+     null
+    ],
+    "total_box": [
+     23.10780963031769,
+     52.0912299667784
+    ],
+    "error_box": [
+     1.1158096303176919,
+     null
+    ]
+   }
+  }
+ },
+ "la2o3": {
+  "group": "oxide",
+  "composition": "La2O3",
+  "measured": [
+   25.4626,
+   null
+  ],
+  "extra": [
+   0.0,
+   0.0
+  ],
+  "S_el_MP": [
+   0.0,
+   0.0
+  ],
+  "space_group_ref": "P-3m1",
+  "models": {
+   "mp-0": {
+    "space_group_T0": [
+     164,
+     "P-3m1"
+    ],
+    "space_group_T1": [
+     164,
+     "P-3m1"
+    ],
+    "QC": [
+     1.601980059723937,
+     0.15207346791223947
+    ],
+    "bulk": [
+     29.43778531501173,
+     59.556423869097394
+    ],
+    "box": [
+     29.963627731454608,
+     60.08226628554028
+    ],
+    "folder": "C:\\Users\\busta\\Code\\hermes-private\\validation\\oxide_vibration\\runs\\la2o3",
+    "status": "valid",
+    "total_bulk": [
+     29.43778531501173,
+     59.556423869097394
+    ],
+    "error_bulk": [
+     3.975185315011732,
+     null
+    ],
+    "total_box": [
+     29.963627731454608,
+     60.08226628554028
+    ],
+    "error_box": [
+     4.501027731454609,
+     null
+    ]
+   },
+   "mpa-0": {
+    "space_group_T0": [
+     164,
+     "P-3m1"
+    ],
+    "space_group_T1": [
+     164,
+     "P-3m1"
+    ],
+    "QC": [
+     1.6235762700449305,
+     0.15923143111127333
+    ],
+    "bulk": [
+     28.710413018125948,
+     58.43832393071617
+    ],
+    "box": [
+     29.2434985685991,
+     58.97140948118932
+    ],
+    "folder": "C:\\Users\\busta\\Code\\juno\\assets\\local-archive\\hermes-validation\\data\\bench-sol-2026-10-27\\results\\mpa-0\\runs\\la2o3",
+    "status": "valid",
+    "total_bulk": [
+     28.710413018125948,
+     58.43832393071617
+    ],
+    "error_bulk": [
+     3.2478130181259495,
+     null
+    ],
+    "total_box": [
+     29.2434985685991,
+     58.97140948118932
+    ],
+    "error_box": [
+     3.7808985685991026,
+     null
+    ]
+   },
+   "mp-0b3": {
+    "space_group_T0": [
+     164,
+     "P-3m1"
+    ],
+    "space_group_T1": [
+     164,
+     "P-3m1"
+    ],
+    "QC": [
+     1.5938330359418789,
+     0.14907112304885453
+    ],
+    "bulk": [
+     29.360297613773355,
+     59.68680942982766
+    ],
+    "box": [
+     29.884638003238884,
+     60.21114981929318
+    ],
+    "folder": "C:\\Users\\busta\\Code\\juno\\assets\\local-archive\\hermes-validation\\data\\bench-sol-2026-10-27\\results\\mp-0b3\\runs\\la2o3",
+    "status": "valid",
+    "total_bulk": [
+     29.360297613773355,
+     59.68680942982766
+    ],
+    "error_bulk": [
+     3.8976976137733566,
+     null
+    ],
+    "total_box": [
+     29.884638003238884,
+     60.21114981929318
+    ],
+    "error_box": [
+     4.422038003238885,
+     null
+    ]
+   }
+  }
+ },
+ "srtio3": {
+  "group": "oxide",
+  "composition": "SrTiO3",
+  "measured": [
+   null,
+   null
+  ],
+  "extra": [
+   0.0,
+   0.0
+  ],
+  "S_el_MP": [
+   0.0,
+   0.0
+  ],
+  "space_group_ref": "Pm-3m",
+  "models": {
+   "mp-0": {
+    "space_group_T0": [
+     221,
+     "Pm-3m"
+    ],
+    "space_group_T1": [
+     221,
+     "Pm-3m"
+    ],
+    "QC": [
+     2.5163659403868883,
+     0.2612910689272276
+    ],
+    "bulk": [
+     24.553041461128398,
+     52.26249040836354
+    ],
+    "box": [
+     24.963820986812568,
+     52.67326993404772
+    ],
+    "folder": "C:\\Users\\busta\\Code\\hermes-private\\validation\\oxide_vibration\\runs\\srtio3",
+    "status": "valid",
+    "total_bulk": [
+     24.553041461128398,
+     52.26249040836354
+    ],
+    "error_bulk": [
+     null,
+     null
+    ],
+    "total_box": [
+     24.963820986812568,
+     52.67326993404772
+    ],
+    "error_box": [
+     null,
+     null
+    ]
+   },
+   "mpa-0": {
+    "space_group_T0": [
+     221,
+     "Pm-3m"
+    ],
+    "space_group_T1": [
+     221,
+     "Pm-3m"
+    ],
+    "QC": [
+     2.652641552519162,
+     0.27643585631846873
+    ],
+    "bulk": [
+     23.875695021060082,
+     51.455102046970524
+    ],
+    "box": [
+     24.287326161549977,
+     51.866733187460426
+    ],
+    "folder": "C:\\Users\\busta\\Code\\juno\\assets\\local-archive\\hermes-validation\\data\\bench-sol-2026-10-27\\results\\mpa-0\\runs\\srtio3",
+    "status": "valid",
+    "total_bulk": [
+     23.875695021060082,
+     51.455102046970524
+    ],
+    "error_bulk": [
+     null,
+     null
+    ],
+    "total_box": [
+     24.287326161549977,
+     51.866733187460426
+    ],
+    "error_box": [
+     null,
+     null
+    ]
+   },
+   "mp-0b3": {
+    "space_group_T0": [
+     221,
+     "Pm-3m"
+    ],
+    "space_group_T1": [
+     221,
+     "Pm-3m"
+    ],
+    "QC": [
+     2.5976330166301618,
+     0.2709319607551207
+    ],
+    "bulk": [
+     24.33219285457755,
+     52.16508859373252
+    ],
+    "box": [
+     24.738585956001256,
+     52.57148169515622
+    ],
+    "folder": "C:\\Users\\busta\\Code\\juno\\assets\\local-archive\\hermes-validation\\data\\bench-sol-2026-10-27\\results\\mp-0b3\\runs\\srtio3",
+    "status": "valid",
+    "total_bulk": [
+     24.33219285457755,
+     52.16508859373252
+    ],
+    "error_bulk": [
+     null,
+     null
+    ],
+    "total_box": [
+     24.738585956001256,
+     52.57148169515622
+    ],
+    "error_box": [
+     null,
+     null
+    ]
+   }
+  }
+ },
+ "mgtio3": {
+  "group": "oxide",
+  "composition": "MgTiO3",
+  "measured": [
+   14.915899999999999,
+   42.5456
+  ],
+  "extra": [
+   0.0,
+   0.0
+  ],
+  "S_el_MP": [
+   0.0,
+   0.0
+  ],
+  "space_group_ref": "R-3",
+  "models": {
+   "mp-0": {
+    "space_group_T0": [
+     148,
+     "R-3"
+    ],
+    "space_group_T1": [
+     148,
+     "R-3"
+    ],
+    "QC": [
+     3.3132154058784726,
+     0.33950948304139206
+    ],
+    "bulk": [
+     17.860914052731452,
+     45.788036276839314
+    ],
+    "box": [
+     18.33270710466376,
+     46.25982932877162
+    ],
+    "folder": "C:\\Users\\busta\\Code\\hermes-private\\validation\\oxide_vibration\\runs\\mgtio3",
+    "status": "valid",
+    "total_bulk": [
+     17.860914052731452,
+     45.788036276839314
+    ],
+    "error_bulk": [
+     2.9450140527314534,
+     3.242436276839314
+    ],
+    "total_box": [
+     18.33270710466376,
+     46.25982932877162
+    ],
+    "error_box": [
+     3.4168071046637625,
+     3.714229328771623
+    ]
+   },
+   "mpa-0": {
+    "space_group_T0": [
+     148,
+     "R-3"
+    ],
+    "space_group_T1": [
+     148,
+     "R-3"
+    ],
+    "QC": [
+     3.5480043591176136,
+     0.36612330079596594
+    ],
+    "bulk": [
+     16.764939683068892,
+     44.671157000624355
+    ],
+    "box": [
+     17.242902494474958,
+     45.14911981203041
+    ],
+    "folder": "C:\\Users\\busta\\Code\\juno\\assets\\local-archive\\hermes-validation\\data\\bench-sol-2026-10-27\\results\\mpa-0\\runs\\mgtio3",
+    "status": "valid",
+    "total_bulk": [
+     16.764939683068892,
+     44.671157000624355
+    ],
+    "error_bulk": [
+     1.8490396830688933,
+     2.1255570006243545
+    ],
+    "total_box": [
+     17.242902494474958,
+     45.14911981203041
+    ],
+    "error_box": [
+     2.327002494474959,
+     2.603519812030413
+    ]
+   },
+   "mp-0b3": {
+    "space_group_T0": [
+     148,
+     "R-3"
+    ],
+    "space_group_T1": [
+     148,
+     "R-3"
+    ],
+    "QC": [
+     3.526668782953975,
+     0.3605204465677304
+    ],
+    "bulk": [
+     16.95014886699831,
+     45.13450075779389
+    ],
+    "box": [
+     17.42212216201588,
+     45.60647405281145
+    ],
+    "folder": "C:\\Users\\busta\\Code\\juno\\assets\\local-archive\\hermes-validation\\data\\bench-sol-2026-10-27\\results\\mp-0b3\\runs\\mgtio3",
+    "status": "valid",
+    "total_bulk": [
+     16.95014886699831,
+     45.13450075779389
+    ],
+    "error_bulk": [
+     2.0342488669983094,
+     2.588900757793887
+    ],
+    "total_box": [
+     17.42212216201588,
+     45.60647405281145
+    ],
+    "error_box": [
+     2.5062221620158827,
+     3.0608740528114495
+    ]
+   }
+  }
+ },
+ "mg3po42": {
+  "group": "oxide",
+  "composition": "Mg3(PO4)2",
+  "measured": [
+   14.483076923076924,
+   40.13492307692308
+  ],
+  "extra": [
+   0.0,
+   0.0
+  ],
+  "S_el_MP": [
+   0.0,
+   0.0
+  ],
+  "space_group_ref": "P2_1/c",
+  "models": {
+   "mp-0": {
+    "space_group_T0": [
+     14,
+     "P2_1/c"
+    ],
+    "space_group_T1": [
+     2,
+     "P-1"
+    ],
+    "QC": [
+     5.2533660487373846,
+     0.6310756985825456
+    ],
+    "bulk": [
+     16.67223299973017,
+     43.37710283917181
+    ],
+    "box": [
+     17.052820515519002,
+     43.75769035496063
+    ],
+    "folder": "C:\\Users\\busta\\Code\\hermes-private\\validation\\oxide_vibration\\runs\\mg3po42",
+    "status": "symmetry lost",
+    "total_bulk": [
+     16.67223299973017,
+     43.37710283917181
+    ],
+    "error_bulk": [
+     2.189156076653246,
+     3.242179762248732
+    ],
+    "total_box": [
+     17.052820515519002,
+     43.75769035496063
+    ],
+    "error_box": [
+     2.5697435924420784,
+     3.62276727803755
+    ]
+   },
+   "mpa-0": {
+    "space_group_T0": [
+     14,
+     "P2_1/c"
+    ],
+    "space_group_T1": [
+     14,
+     "P2_1/c"
+    ],
+    "QC": [
+     5.479380455542304,
+     0.6492813789251523
+    ],
+    "bulk": [
+     16.000260946461044,
+     42.602056907072054
+    ],
+    "box": [
+     16.390044589504967,
+     42.99184055011598
+    ],
+    "folder": "C:\\Users\\busta\\Code\\juno\\assets\\local-archive\\hermes-validation\\data\\bench-sol-2026-10-27\\results\\mpa-0\\runs\\mg3po42",
+    "status": "valid",
+    "total_bulk": [
+     16.000260946461044,
+     42.602056907072054
+    ],
+    "error_bulk": [
+     1.5171840233841198,
+     2.467133830148974
+    ],
+    "total_box": [
+     16.390044589504967,
+     42.99184055011598
+    ],
+    "error_box": [
+     1.9069676664280433,
+     2.856917473192901
+    ]
+   },
+   "mp-0b3": {
+    "space_group_T0": [
+     14,
+     "P2_1/c"
+    ],
+    "space_group_T1": [
+     14,
+     "P2_1/c"
+    ],
+    "QC": [
+     5.434549509102494,
+     0.63343870820151
+    ],
+    "bulk": [
+     16.391212874090307,
+     42.99167357954573
+    ],
+    "box": [
+     16.772678598217787,
+     43.37313930367321
+    ],
+    "folder": "C:\\Users\\busta\\Code\\juno\\assets\\local-archive\\hermes-validation\\data\\bench-sol-2026-10-27\\results\\mp-0b3\\runs\\mg3po42",
+    "status": "valid",
+    "total_bulk": [
+     16.391212874090307,
+     42.99167357954573
+    ],
+    "error_bulk": [
+     1.9081359510133833,
+     2.8567505026226527
+    ],
+    "total_box": [
+     16.772678598217787,
+     43.37313930367321
+    ],
+    "error_box": [
+     2.2896016751408634,
+     3.238216226750133
+    ]
+   }
+  }
+ },
+ "nio": {
+  "group": "arm A",
+  "composition": "NiO",
+  "measured": [
+   19.0975,
+   null
+  ],
+  "extra": [
+   0.5928641384791815,
+   4.536662948159236
+  ],
+  "S_el_MP": [
+   0.0,
+   6.641251793344573e-07
+  ],
+  "space_group_ref": "Fm-3m",
+  "models": {
+   "mp-0": {
+    "space_group_T0": [
+     225,
+     "Fm-3m"
+    ],
+    "space_group_T1": [
+     225,
+     "Fm-3m"
+    ],
+    "QC": [
+     1.358557151797658,
+     0.15716106477426994
+    ],
+    "bulk": [
+     25.716728168736523,
+     53.441957664722736
+    ],
+    "box": [
+     26.297304126718107,
+     54.022533622704344
+    ],
+    "folder": "C:\\Users\\busta\\Code\\hermes-private\\validation\\oxide_vibration\\runs\\nio",
+    "status": "valid",
+    "volume_deviation": 0.03644958011413424,
+    "total_bulk": [
+     26.309592307215706,
+     57.97862061288197
+    ],
+    "error_bulk": [
+     7.2120923072157055,
+     null
+    ],
+    "total_box": [
+     26.89016826519729,
+     58.55919657086358
+    ],
+    "error_box": [
+     7.792668265197289,
+     null
+    ]
+   },
+   "mpa-0": {
+    "space_group_T0": [
+     225,
+     "Fm-3m"
+    ],
+    "space_group_T1": [
+     225,
+     "Fm-3m"
+    ],
+    "QC": [
+     2.1110402866390414,
+     0.2423475824274494
+    ],
+    "bulk": [
+     20.92852222690075,
+     47.73483567159125
+    ],
+    "box": [
+     21.533801733141132,
+     48.34011517783163
+    ],
+    "folder": "C:\\Users\\busta\\Code\\juno\\assets\\local-archive\\hermes-validation\\data\\bench-sol-2026-10-27\\results\\mpa-0\\runs\\nio",
+    "status": "valid",
+    "volume_deviation": 0.05952259235131563,
+    "total_bulk": [
+     21.521386365379932,
+     52.27149861975049
+    ],
+    "error_bulk": [
+     2.423886365379932,
+     null
+    ],
+    "total_box": [
+     22.126665871620315,
+     52.87677812599087
+    ],
+    "error_box": [
+     3.0291658716203145,
+     null
+    ]
+   },
+   "mp-0b3": {
+    "space_group_T0": [
+     225,
+     "Fm-3m"
+    ],
+    "space_group_T1": [
+     1,
+     "P1"
+    ],
+    "QC": [
+     1.2516480674096926,
+     0.13932559552820234
+    ],
+    "bulk": [
+     27.7338912364165,
+     56.72696009720674
+    ],
+    "box": [
+     28.301437291644586,
+     57.294506152434835
+    ],
+    "folder": "C:\\Users\\busta\\Code\\juno\\assets\\local-archive\\hermes-validation\\data\\bench-sol-2026-10-27\\results\\mp-0b3\\runs\\nio",
+    "status": "symmetry lost",
+    "volume_deviation": 0.053193278571791236,
+    "total_bulk": [
+     28.326755374895683,
+     61.263623045365975
+    ],
+    "error_bulk": [
+     9.229255374895683,
+     null
+    ],
+    "total_box": [
+     28.894301430123768,
+     61.83116910059407
+    ],
+    "error_box": [
+     9.796801430123768,
+     null
+    ]
+   }
+  }
+ },
+ "mno": {
+  "group": "arm A",
+  "composition": "MnO",
+  "measured": [
+   30.301000000000002,
+   60.18532533542492
+  ],
+  "extra": [
+   7.43587493984219,
+   7.448728210422437
+  ],
+  "S_el_MP": [
+   0.0002075630509962292,
+   0.01762082646157724
+  ],
+  "space_group_ref": "Fm-3m",
+  "models": {
+   "mp-0": {
+    "space_group_T0": [
+     225,
+     "Fm-3m"
+    ],
+    "space_group_T1": [
+     1,
+     "P1"
+    ],
+    "QC": [
+     1.1387879492371606,
+     0.11888872904310697
+    ],
+    "bulk": [
+     29.02573180428385,
+     58.64686515378588
+    ],
+    "box": [
+     29.58991481785796,
+     59.21104816735999
+    ],
+    "folder": "C:\\Users\\busta\\Code\\hermes-private\\validation\\oxide_vibration\\runs\\mno",
+    "status": "symmetry lost",
+    "volume_deviation": 0.0675509274309467,
+    "total_bulk": [
+     36.461606744126044,
+     66.09559336420831
+    ],
+    "error_bulk": [
+     6.160606744126042,
+     5.910268028783392
+    ],
+    "total_box": [
+     37.02578975770015,
+     66.65977637778242
+    ],
+    "error_box": [
+     6.724789757700151,
+     6.474451042357501
+    ]
+   },
+   "mpa-0": {
+    "space_group_T0": [
+     225,
+     "Fm-3m"
+    ],
+    "space_group_T1": [
+     225,
+     "Fm-3m"
+    ],
+    "QC": [
+     1.5958737577678583,
+     0.16496181090478867
+    ],
+    "bulk": [
+     24.878256742529437,
+     54.113190841081085
+    ],
+    "box": [
+     25.47203570601797,
+     54.70696980456963
+    ],
+    "folder": "C:\\Users\\busta\\Code\\juno\\assets\\local-archive\\hermes-validation\\data\\bench-sol-2026-10-27\\results\\mpa-0\\runs\\mno",
+    "status": "valid",
+    "volume_deviation": 0.0693241450633224,
+    "total_bulk": [
+     32.314131682371624,
+     61.56191905150352
+    ],
+    "error_bulk": [
+     2.013131682371622,
+     1.3765937160786024
+    ],
+    "total_box": [
+     32.907910645860156,
+     62.15569801499207
+    ],
+    "error_box": [
+     2.606910645860154,
+     1.9703726795671486
+    ]
+   },
+   "mp-0b3": {
+    "space_group_T0": [
+     225,
+     "Fm-3m"
+    ],
+    "space_group_T1": [
+     225,
+     "Fm-3m"
+    ],
+    "QC": [
+     1.180659872016973,
+     0.11974793540945747
+    ],
+    "bulk": [
+     28.81694897994247,
+     59.31383886967259
+    ],
+    "box": [
+     29.380510746365896,
+     59.877400636096006
+    ],
+    "folder": "C:\\Users\\busta\\Code\\juno\\assets\\local-archive\\hermes-validation\\data\\bench-sol-2026-10-27\\results\\mp-0b3\\runs\\mno",
+    "status": "valid",
+    "volume_deviation": 0.060613230725857115,
+    "total_bulk": [
+     36.25282391978466,
+     66.76256708009502
+    ],
+    "error_bulk": [
+     5.951823919784658,
+     6.577241744670104
+    ],
+    "total_box": [
+     36.816385686208086,
+     67.32612884651844
+    ],
+    "error_box": [
+     6.515385686208084,
+     7.140803511093523
+    ]
+   }
+  }
+ },
+ "coo": {
+  "group": "arm A",
+  "composition": "CoO",
+  "measured": [
+   26.451833333333337,
+   59.263
+  ],
+  "extra": [
+   4.834479015396217,
+   5.76116234064031
+  ],
+  "S_el_MP": [
+   1.738684695803427,
+   4.209494611906954
+  ],
+  "space_group_ref": "Fm-3m",
+  "models": {
+   "mp-0": {
+    "space_group_T0": [
+     225,
+     "Fm-3m"
+    ],
+    "space_group_T1": [
+     225,
+     "Fm-3m"
+    ],
+    "QC": [
+     1.0391934682796842,
+     0.11767451333195549
+    ],
+    "bulk": [
+     29.40398081323515,
+     58.30583600476776
+    ],
+    "box": [
+     29.82113945854655,
+     58.72299465007918
+    ],
+    "folder": "C:\\Users\\busta\\Code\\hermes-private\\validation\\oxide_vibration\\runs\\coo",
+    "status": "valid",
+    "volume_deviation": 0.02153502545941799,
+    "total_bulk": [
+     34.23845982863137,
+     64.06699834540807
+    ],
+    "error_bulk": [
+     7.786626495298034,
+     4.803998345408068
+    ],
+    "total_box": [
+     34.655618473942766,
+     64.48415699071948
+    ],
+    "error_box": [
+     8.20378514060943,
+     5.221156990719486
+    ]
+   },
+   "mpa-0": {
+    "space_group_T0": [
+     225,
+     "Fm-3m"
+    ],
+    "space_group_T1": [
+     225,
+     "Fm-3m"
+    ],
+    "QC": [
+     1.4328177513481473,
+     0.14713845519239044
+    ],
+    "bulk": [
+     26.17521996118893,
+     55.73745377835937
+    ],
+    "box": [
+     26.608056034597904,
+     56.17028985176836
+    ],
+    "folder": "C:\\Users\\busta\\Code\\juno\\assets\\local-archive\\hermes-validation\\data\\bench-sol-2026-10-27\\results\\mpa-0\\runs\\coo",
+    "status": "valid",
+    "volume_deviation": 0.061625178923274904,
+    "total_bulk": [
+     31.009698976585145,
+     61.49861611899968
+    ],
+    "error_bulk": [
+     4.557865643251809,
+     2.2356161189996797
+    ],
+    "total_box": [
+     31.44253504999412,
+     61.93145219240867
+    ],
+    "error_box": [
+     4.990701716660784,
+     2.6684521924086724
+    ]
+   },
+   "mp-0b3": {
+    "space_group_T0": [
+     225,
+     "Fm-3m"
+    ],
+    "space_group_T1": [
+     225,
+     "Fm-3m"
+    ],
+    "QC": [
+     0.7762108675519847,
+     0.10311600608161499
+    ],
+    "bulk": [
+     35.39352974452029,
+     64.47011941907854
+    ],
+    "box": [
+     35.79339854122123,
+     64.86998821577947
+    ],
+    "folder": "C:\\Users\\busta\\Code\\juno\\assets\\local-archive\\hermes-validation\\data\\bench-sol-2026-10-27\\results\\mp-0b3\\runs\\coo",
+    "status": "valid",
+    "volume_deviation": 0.019696864285417837,
+    "total_bulk": [
+     40.22800875991651,
+     70.23128175971885
+    ],
+    "error_bulk": [
+     13.776175426583176,
+     10.968281759718856
+    ],
+    "total_box": [
+     40.62787755661745,
+     70.63115055641978
+    ],
+    "error_box": [
+     14.176044223284112,
+     11.368150556419785
+    ]
+   }
+  }
+ },
+ "fe2o3": {
+  "group": "arm A",
+  "composition": "Fe2O3",
+  "measured": [
+   17.48225,
+   50.5764
+  ],
+  "extra": [
+   0.12858409600873985,
+   5.107962633088238
+  ],
+  "S_el_MP": [
+   0.2726451235463199,
+   0.8522496722407193
+  ],
+  "space_group_ref": "R-3c",
+  "models": {
+   "mp-0": {
+    "space_group_T0": [
+     167,
+     "R-3c"
+    ],
+    "space_group_T1": [
+     167,
+     "R-3c"
+    ],
+    "QC": [
+     2.2370824353763816,
+     0.2247085105272659
+    ],
+    "bulk": [
+     21.475400834318915,
+     50.09679271370176
+    ],
+    "box": [
+     21.945114014663023,
+     50.56650589404585
+    ],
+    "folder": "C:\\Users\\busta\\Code\\hermes-private\\validation\\oxide_vibration\\runs\\fe2o3",
+    "status": "valid",
+    "volume_deviation": 0.06196308489440572,
+    "total_bulk": [
+     21.603984930327655,
+     55.204755346789995
+    ],
+    "error_bulk": [
+     4.121734930327655,
+     4.628355346789995
+    ],
+    "total_box": [
+     22.073698110671764,
+     55.67446852713408
+    ],
+    "error_box": [
+     4.591448110671763,
+     5.098068527134082
+    ]
+   },
+   "mpa-0": {
+    "space_group_T0": [
+     167,
+     "R-3c"
+    ],
+    "space_group_T1": [
+     167,
+     "R-3c"
+    ],
+    "QC": [
+     2.163189736724194,
+     0.25025813575512823
+    ],
+    "bulk": [
+     21.87438618124781,
+     49.20707229198626
+    ],
+    "box": [
+     22.34835603036293,
+     49.68104214110138
+    ],
+    "folder": "C:\\Users\\busta\\Code\\juno\\assets\\local-archive\\hermes-validation\\data\\bench-sol-2026-10-27\\results\\mpa-0\\runs\\fe2o3",
+    "status": "valid",
+    "volume_deviation": 0.08265941429416857,
+    "total_bulk": [
+     22.00297027725655,
+     54.3150349250745
+    ],
+    "error_bulk": [
+     4.520720277256551,
+     3.7386349250745
+    ],
+    "total_box": [
+     22.47694012637167,
+     54.78900477418962
+    ],
+    "error_box": [
+     4.994690126371669,
+     4.2126047741896215
+    ]
+   },
+   "mp-0b3": {
+    "space_group_T0": [
+     167,
+     "R-3c"
+    ],
+    "space_group_T1": [
+     167,
+     "R-3c"
+    ],
+    "QC": [
+     2.1852233590027894,
+     0.22427513341843638
+    ],
+    "bulk": [
+     22.381415656730617,
+     51.22871271450844
+    ],
+    "box": [
+     22.84904009458814,
+     51.69633715236596
+    ],
+    "folder": "C:\\Users\\busta\\Code\\juno\\assets\\local-archive\\hermes-validation\\data\\bench-sol-2026-10-27\\results\\mp-0b3\\runs\\fe2o3",
+    "status": "valid",
+    "volume_deviation": 0.06421609954931817,
+    "total_bulk": [
+     22.509999752739358,
+     56.33667534759668
+    ],
+    "error_bulk": [
+     5.027749752739357,
+     5.760275347596682
+    ],
+    "total_box": [
+     22.97762419059688,
+     56.804299785454205
+    ],
+    "error_box": [
+     5.4953741905968805,
+     6.2278997854542055
+    ]
+   }
+  }
+ },
+ "cr2o3": {
+  "group": "arm A",
+  "composition": "Cr2O3",
+  "measured": [
+   16.234866666666665,
+   44.9002
+  ],
+  "extra": [
+   3.2449912728395236,
+   4.608317099742788
+  ],
+  "S_el_MP": [
+   0.4256221998896762,
+   2.5208110290551256
+  ],
+  "space_group_ref": "R-3c",
+  "models": {
+   "mp-0": {
+    "space_group_T0": [
+     167,
+     "R-3c"
+    ],
+    "space_group_T1": [
+     167,
+     "R-3c"
+    ],
+    "QC": [
+     2.6748290193716624,
+     0.28306942354064524
+    ],
+    "bulk": [
+     18.16831819946237,
+     45.41199447124627
+    ],
+    "box": [
+     18.64497057997631,
+     45.88864685176021
+    ],
+    "folder": "C:\\Users\\busta\\Code\\hermes-private\\validation\\oxide_vibration\\runs\\cr2o3",
+    "status": "valid",
+    "volume_deviation": 0.06859954128316281,
+    "total_bulk": [
+     21.413309472301894,
+     50.02031157098905
+    ],
+    "error_bulk": [
+     5.178442805635228,
+     5.120111570989053
+    ],
+    "total_box": [
+     21.889961852815834,
+     50.49696395150299
+    ],
+    "error_box": [
+     5.655095186149168,
+     5.596763951502993
+    ]
+   },
+   "mpa-0": {
+    "space_group_T0": [
+     167,
+     "R-3c"
+    ],
+    "space_group_T1": [
+     167,
+     "R-3c"
+    ],
+    "QC": [
+     3.2588914062919114,
+     0.3487475052786848
+    ],
+    "bulk": [
+     16.048987812621032,
+     42.943627225805905
+    ],
+    "box": [
+     16.532372246857335,
+     43.42701166004219
+    ],
+    "folder": "C:\\Users\\busta\\Code\\juno\\assets\\local-archive\\hermes-validation\\data\\bench-sol-2026-10-27\\results\\mpa-0\\runs\\cr2o3",
+    "status": "valid",
+    "volume_deviation": 0.07372975436002727,
+    "total_bulk": [
+     19.293979085460556,
+     47.55194432554869
+    ],
+    "error_bulk": [
+     3.059112418793891,
+     2.651744325548691
+    ],
+    "total_box": [
+     19.77736351969686,
+     48.035328759784974
+    ],
+    "error_box": [
+     3.542496853030194,
+     3.135128759784976
+    ]
+   },
+   "mp-0b3": {
+    "space_group_T0": [
+     167,
+     "R-3c"
+    ],
+    "space_group_T1": [
+     167,
+     "R-3c"
+    ],
+    "QC": [
+     2.0990870022570083,
+     0.22560334580033928
+    ],
+    "bulk": [
+     21.25186849725918,
+     49.25061680210037
+    ],
+    "box": [
+     21.718819346361556,
+     49.71756765120274
+    ],
+    "folder": "C:\\Users\\busta\\Code\\juno\\assets\\local-archive\\hermes-validation\\data\\bench-sol-2026-10-27\\results\\mp-0b3\\runs\\cr2o3",
+    "status": "valid",
+    "volume_deviation": 0.06946952485439617,
+    "total_bulk": [
+     24.496859770098705,
+     53.85893390184316
+    ],
+    "error_bulk": [
+     8.26199310343204,
+     8.95873390184316
+    ],
+    "total_box": [
+     24.96381061920108,
+     54.325884750945534
+    ],
+    "error_box": [
+     8.728943952534415,
+     9.425684750945535
+    ]
+   }
+  }
+ },
+ "ndpo4": {
+  "group": "B2",
+  "composition": "NdPO4",
+  "measured": [
+   20.483333333333334,
+   null
+  ],
+  "extra": [
+   2.858213446886517,
+   3.1533997016362303
+  ],
+  "S_el_MP": [
+   0.001283336220844625,
+   0.001551670551481436
+  ],
+  "space_group_ref": "P2_1/c",
+  "models": {
+   "mp-0": {
+    "space_group_T0": [
+     14,
+     "P2_1/c"
+    ],
+    "space_group_T1": [
+     14,
+     "P2_1/c"
+    ],
+    "QC": [
+     5.0523322411621985,
+     0.6037264442315382
+    ],
+    "bulk": [
+     19.815629307437533,
+     46.29245409910831
+    ],
+    "box": [
+     20.23134194263327,
+     46.70816673430406
+    ],
+    "folder": "C:\\Users\\busta\\Code\\hermes-private\\validation\\oxide_vibration\\runs\\ndpo4",
+    "status": "valid",
+    "total_bulk": [
+     22.67384275432405,
+     49.445853800744544
+    ],
+    "error_bulk": [
+     2.1905094209907148,
+     null
+    ],
+    "total_box": [
+     23.089555389519788,
+     49.86156643594029
+    ],
+    "error_box": [
+     2.6062220561864535,
+     null
+    ]
+   },
+   "mpa-0": {
+    "space_group_T0": [
+     14,
+     "P2_1/c"
+    ],
+    "space_group_T1": [
+     14,
+     "P2_1/c"
+    ],
+    "QC": [
+     5.39464900291252,
+     0.6033199839969392
+    ],
+    "bulk": [
+     19.422320131193175,
+     45.85652325946002
+    ],
+    "box": [
+     19.84285027440058,
+     46.27705340266745
+    ],
+    "folder": "C:\\Users\\busta\\Code\\juno\\assets\\local-archive\\hermes-validation\\data\\bench-sol-2026-10-27\\results\\mpa-0\\runs\\ndpo4",
+    "status": "valid",
+    "total_bulk": [
+     22.28053357807969,
+     49.00992296109625
+    ],
+    "error_bulk": [
+     1.7972002447463566,
+     null
+    ],
+    "total_box": [
+     22.701063721287095,
+     49.43045310430368
+    ],
+    "error_box": [
+     2.217730387953761,
+     null
+    ]
+   },
+   "mp-0b3": {
+    "space_group_T0": [
+     14,
+     "P2_1/c"
+    ],
+    "space_group_T1": [
+     14,
+     "P2_1/c"
+    ],
+    "QC": [
+     5.144970986851295,
+     0.6169647571915573
+    ],
+    "bulk": [
+     19.32295458000648,
+     46.207973104147264
+    ],
+    "box": [
+     19.739272593983483,
+     46.62429111812428
+    ],
+    "folder": "C:\\Users\\busta\\Code\\juno\\assets\\local-archive\\hermes-validation\\data\\bench-sol-2026-10-27\\results\\mp-0b3\\runs\\ndpo4",
+    "status": "valid",
+    "total_bulk": [
+     22.181168026892998,
+     49.361372805783496
+    ],
+    "error_bulk": [
+     1.6978346935596633,
+     null
+    ],
+    "total_box": [
+     22.59748604087,
+     49.777690819760515
+    ],
+    "error_box": [
+     2.1141527075366646,
+     null
+    ]
+   }
+  }
+ },
+ "eupo4": {
+  "group": "B2",
+  "composition": "EuPO4",
+  "measured": [
+   19.51,
+   47.28333333333333
+  ],
+  "extra": [
+   1.5454937422705946,
+   2.806167544528508
+  ],
+  "S_el_MP": [
+   0.7905726576318042,
+   2.516933036382673
+  ],
+  "space_group_ref": "P2_1/c",
+  "models": {
+   "mp-0": {
+    "space_group_T0": [
+     14,
+     "P2_1/c"
+    ],
+    "space_group_T1": [
+     14,
+     "P2_1/c"
+    ],
+    "QC": [
+     4.324937156560212,
+     0.5201559832562132
+    ],
+    "bulk": [
+     22.58209206534771,
+     50.13924708106992
+    ],
+    "box": [
+     22.98686254173475,
+     50.54401755745695
+    ],
+    "folder": "C:\\Users\\busta\\Code\\hermes-private\\validation\\oxide_vibration\\runs\\eupo4",
+    "status": "valid",
+    "total_bulk": [
+     24.127585807618303,
+     52.945414625598424
+    ],
+    "error_bulk": [
+     4.617585807618301,
+     5.662081292265093
+    ],
+    "total_box": [
+     24.532356284005346,
+     53.35018510198545
+    ],
+    "error_box": [
+     5.022356284005344,
+     6.066851768652121
+    ]
+   },
+   "mpa-0": {
+    "space_group_T0": [
+     14,
+     "P2_1/c"
+    ],
+    "space_group_T1": [
+     14,
+     "P2_1/c"
+    ],
+    "QC": [
+     4.537248136256631,
+     0.5431452685142681
+    ],
+    "bulk": [
+     22.351534934574197,
+     49.535352282559714
+    ],
+    "box": [
+     22.751745320343318,
+     49.93556266832884
+    ],
+    "folder": "C:\\Users\\busta\\Code\\juno\\assets\\local-archive\\hermes-validation\\data\\bench-sol-2026-10-27\\results\\mpa-0\\runs\\eupo4",
+    "status": "valid",
+    "total_bulk": [
+     23.89702867684479,
+     52.34151982708822
+    ],
+    "error_bulk": [
+     4.387028676844789,
+     5.058186493754889
+    ],
+    "total_box": [
+     24.29723906261391,
+     52.74173021285735
+    ],
+    "error_box": [
+     4.78723906261391,
+     5.458396879524017
+    ]
+   },
+   "mp-0b3": {
+    "space_group_T0": [
+     14,
+     "P2_1/c"
+    ],
+    "space_group_T1": [
+     2,
+     "P-1"
+    ],
+    "QC": [
+     4.4630246938169496,
+     0.5344829895307958
+    ],
+    "bulk": [
+     22.656023462109687,
+     50.45749227715768
+    ],
+    "box": [
+     23.056613792852325,
+     50.85808260790031
+    ],
+    "folder": "C:\\Users\\busta\\Code\\juno\\assets\\local-archive\\hermes-validation\\data\\bench-sol-2026-10-27\\results\\mp-0b3\\runs\\eupo4",
+    "status": "symmetry lost",
+    "total_bulk": [
+     24.20151720438028,
+     53.26365982168618
+    ],
+    "error_bulk": [
+     4.691517204380279,
+     5.980326488352851
+    ],
+    "total_box": [
+     24.60210753512292,
+     53.664250152428814
+    ],
+    "error_box": [
+     5.092107535122917,
+     6.380916819095482
+    ]
+   }
+  }
+ },
+ "gdpo4": {
+  "group": "B2",
+  "composition": "GdPO4",
+  "measured": [
+   20.655,
+   46.31666666666666
+  ],
+  "extra": [
+   2.8815731608219894,
+   2.8815731608219894
+  ],
+  "S_el_MP": [
+   0.0,
+   1.9525166900854336e-06
+  ],
+  "space_group_ref": "P2_1/c",
+  "models": {
+   "mp-0": {
+    "space_group_T0": [
+     14,
+     "P2_1/c"
+    ],
+    "space_group_T1": [
+     14,
+     "P2_1/c"
+    ],
+    "QC": [
+     5.298937571107112,
+     0.6088906369103838
+    ],
+    "bulk": [
+     19.935427334223355,
+     46.48088244426966
+    ],
+    "box": [
+     20.350696307285354,
+     46.89615141733167
+    ],
+    "folder": "C:\\Users\\busta\\Code\\hermes-private\\validation\\oxide_vibration\\runs\\gdpo4",
+    "status": "valid",
+    "total_bulk": [
+     22.817000495045345,
+     49.36245560509165
+    ],
+    "error_bulk": [
+     2.162000495045344,
+     3.045788938424984
+    ],
+    "total_box": [
+     23.232269468107344,
+     49.77772457815366
+    ],
+    "error_box": [
+     2.5772694681073425,
+     3.4610579114869964
+    ]
+   },
+   "mpa-0": {
+    "space_group_T0": [
+     14,
+     "P2_1/c"
+    ],
+    "space_group_T1": [
+     14,
+     "P2_1/c"
+    ],
+    "QC": [
+     5.171381877811956,
+     0.6070467933277194
+    ],
+    "bulk": [
+     19.72004786497224,
+     46.39754905948012
+    ],
+    "box": [
+     20.136042294601584,
+     46.813543489109456
+    ],
+    "folder": "C:\\Users\\busta\\Code\\juno\\assets\\local-archive\\hermes-validation\\data\\bench-sol-2026-10-27\\results\\mpa-0\\runs\\gdpo4",
+    "status": "valid",
+    "total_bulk": [
+     22.60162102579423,
+     49.279122220302106
+    ],
+    "error_bulk": [
+     1.9466210257942294,
+     2.9624555536354436
+    ],
+    "total_box": [
+     23.017615455423574,
+     49.69511664993144
+    ],
+    "error_box": [
+     2.3626154554235725,
+     3.3784499832647796
+    ]
+   },
+   "mp-0b3": {
+    "space_group_T0": [
+     14,
+     "P2_1/c"
+    ],
+    "space_group_T1": [
+     14,
+     "P2_1/c"
+    ],
+    "QC": [
+     5.330214162300231,
+     0.5904345784111443
+    ],
+    "bulk": [
+     19.7858281283478,
+     46.43196723256691
+    ],
+    "box": [
+     20.203436782467485,
+     46.84957588668659
+    ],
+    "folder": "C:\\Users\\busta\\Code\\juno\\assets\\local-archive\\hermes-validation\\data\\bench-sol-2026-10-27\\results\\mp-0b3\\runs\\gdpo4",
+    "status": "valid",
+    "total_bulk": [
+     22.66740128916979,
+     49.3135403933889
+    ],
+    "error_bulk": [
+     2.0124012891697873,
+     2.996873726722235
+    ],
+    "total_box": [
+     23.085009943289474,
+     49.73114904750857
+    ],
+    "error_box": [
+     2.4300099432894733,
+     3.4144823808419105
+    ]
+   }
+  }
+ },
+ "hopo4": {
+  "group": "B2",
+  "composition": "HoPO4",
+  "measured": [
+   21.233333333333334,
+   null
+  ],
+  "extra": [
+   3.779493534342901,
+   3.9129007840958248
+  ],
+  "S_el_MP": [
+   8.761126320285056e-15,
+   2.4759391564240828e-15
+  ],
+  "space_group_ref": "I4_1/amd",
+  "models": {
+   "mp-0": {
+    "space_group_T0": [
+     141,
+     "I4_1/amd"
+    ],
+    "space_group_T1": [
+     141,
+     "I4_1/amd"
+    ],
+    "QC": [
+     5.188509088825375,
+     0.6204458500814111
+    ],
+    "bulk": [
+     17.894225835462613,
+     44.1243874715847
+    ],
+    "box": [
+     18.34526118665264,
+     44.5754228227747
+    ],
+    "folder": "C:\\Users\\busta\\Code\\hermes-private\\validation\\oxide_vibration\\runs\\hopo4",
+    "status": "valid",
+    "total_bulk": [
+     21.673719369805514,
+     48.03728825568052
+    ],
+    "error_bulk": [
+     0.4403860364721801,
+     null
+    ],
+    "total_box": [
+     22.12475472099554,
+     48.48832360687052
+    ],
+    "error_box": [
+     0.8914213876622057,
+     null
+    ]
+   },
+   "mpa-0": {
+    "space_group_T0": [
+     141,
+     "I4_1/amd"
+    ],
+    "space_group_T1": [
+     141,
+     "I4_1/amd"
+    ],
+    "QC": [
+     5.335129490059758,
+     0.6241734400699811
+    ],
+    "bulk": [
+     17.63401320070938,
+     43.732941167401336
+    ],
+    "box": [
+     18.090674139607614,
+     44.189602106299574
+    ],
+    "folder": "C:\\Users\\busta\\Code\\juno\\assets\\local-archive\\hermes-validation\\data\\bench-sol-2026-10-27\\results\\mpa-0\\runs\\hopo4",
+    "status": "valid",
+    "total_bulk": [
+     21.41350673505228,
+     47.64584195149716
+    ],
+    "error_bulk": [
+     0.18017340171894602,
+     null
+    ],
+    "total_box": [
+     21.870167673950515,
+     48.1025028903954
+    ],
+    "error_box": [
+     0.636834340617181,
+     null
+    ]
+   },
+   "mp-0b3": {
+    "space_group_T0": [
+     141,
+     "I4_1/amd"
+    ],
+    "space_group_T1": [
+     141,
+     "I4_1/amd"
+    ],
+    "QC": [
+     5.467763539597046,
+     0.6139406349565888
+    ],
+    "bulk": [
+     18.042204486585426,
+     44.16523382704558
+    ],
+    "box": [
+     18.498949332422022,
+     44.62197867288218
+    ],
+    "folder": "C:\\Users\\busta\\Code\\juno\\assets\\local-archive\\hermes-validation\\data\\bench-sol-2026-10-27\\results\\mp-0b3\\runs\\hopo4",
+    "status": "valid",
+    "total_bulk": [
+     21.821698020928327,
+     48.07813461114141
+    ],
+    "error_bulk": [
+     0.5883646875949928,
+     null
+    ],
+    "total_box": [
+     22.278442866764923,
+     48.534879456978004
+    ],
+    "error_box": [
+     1.0451095334315887,
+     null
+    ]
+   }
+  }
+ },
+ "erpo4": {
+  "group": "B2",
+  "composition": "ErPO4",
+  "measured": [
+   19.438333333333333,
+   45.583333333333336
+  ],
+  "extra": [
+   2.7217467330111833,
+   2.8656469082268163
+  ],
+  "S_el_MP": [
+   0.000514006063106142,
+   0.0006657091893390361
+  ],
+  "space_group_ref": "I4_1/amd",
+  "models": {
+   "mp-0": {
+    "space_group_T0": [
+     141,
+     "I4_1/amd"
+    ],
+    "space_group_T1": [
+     141,
+     "I4_1/amd"
+    ],
+    "QC": [
+     5.282639045708086,
+     0.6212093909439661
+    ],
+    "bulk": [
+     17.841633463933775,
+     43.98778087010465
+    ],
+    "box": [
+     18.271134802998688,
+     44.41728220916955
+    ],
+    "folder": "C:\\Users\\busta\\Code\\hermes-private\\validation\\oxide_vibration\\runs\\erpo4",
+    "status": "valid",
+    "total_bulk": [
+     20.56338019694496,
+     46.853427778331465
+    ],
+    "error_bulk": [
+     1.125046863611626,
+     1.2700944449981293
+    ],
+    "total_box": [
+     20.99288153600987,
+     47.282929117396364
+    ],
+    "error_box": [
+     1.5545482026765391,
+     1.6995957840630282
+    ]
+   },
+   "mpa-0": {
+    "space_group_T0": [
+     141,
+     "I4_1/amd"
+    ],
+    "space_group_T1": [
+     141,
+     "I4_1/amd"
+    ],
+    "QC": [
+     5.2713477343978274,
+     0.6249141471005512
+    ],
+    "bulk": [
+     17.37656238457192,
+     43.45999698131328
+    ],
+    "box": [
+     17.827289748478766,
+     43.9107243452201
+    ],
+    "folder": "C:\\Users\\busta\\Code\\juno\\assets\\local-archive\\hermes-validation\\data\\bench-sol-2026-10-27\\results\\mpa-0\\runs\\erpo4",
+    "status": "valid",
+    "total_bulk": [
+     20.098309117583103,
+     46.325643889540096
+    ],
+    "error_bulk": [
+     0.6599757842497702,
+     0.7423105562067605
+    ],
+    "total_box": [
+     20.54903648148995,
+     46.77637125344692
+    ],
+    "error_box": [
+     1.1107031481566167,
+     1.1930379201135821
+    ]
+   },
+   "mp-0b3": {
+    "space_group_T0": [
+     141,
+     "I4_1/amd"
+    ],
+    "space_group_T1": [
+     141,
+     "I4_1/amd"
+    ],
+    "QC": [
+     5.425583522757836,
+     0.6270042365492602
+    ],
+    "bulk": [
+     17.632723804959834,
+     43.641298566326306
+    ],
+    "box": [
+     18.09509411424796,
+     44.10366887561444
+    ],
+    "folder": "C:\\Users\\busta\\Code\\juno\\assets\\local-archive\\hermes-validation\\data\\bench-sol-2026-10-27\\results\\mp-0b3\\runs\\erpo4",
+    "status": "valid",
+    "total_bulk": [
+     20.354470537971018,
+     46.50694547455312
+    ],
+    "error_bulk": [
+     0.9161372046376854,
+     0.9236121412197846
+    ],
+    "total_box": [
+     20.816840847259144,
+     46.96931578384125
+    ],
+    "error_box": [
+     1.3785075139258112,
+     1.3859824505079175
+    ]
+   }
+  }
+ },
+ "tmpo4": {
+  "group": "B2",
+  "composition": "TmPO4",
+  "measured": [
+   21.323333333333334,
+   47.81
+  ],
+  "extra": [
+   3.34473804789164,
+   3.534591813769494
+  ],
+  "S_el_MP": [
+   0.0,
+   0.0
+  ],
+  "space_group_ref": "I4_1/amd",
+  "models": {
+   "mp-0": {
+    "space_group_T0": [
+     141,
+     "I4_1/amd"
+    ],
+    "space_group_T1": [
+     141,
+     "I4_1/amd"
+    ],
+    "QC": [
+     5.337892948910213,
+     0.631039091071593
+    ],
+    "bulk": [
+     17.998767967832755,
+     44.15807602828736
+    ],
+    "box": [
+     18.44507742047955,
+     44.604385480934134
+    ],
+    "folder": "C:\\Users\\busta\\Code\\hermes-private\\validation\\oxide_vibration\\runs\\tmpo4",
+    "status": "valid",
+    "total_bulk": [
+     21.343506015724394,
+     47.692667842056856
+    ],
+    "error_bulk": [
+     0.020172682391059737,
+     -0.11733215794314589
+    ],
+    "total_box": [
+     21.789815468371188,
+     48.13897729470363
+    ],
+    "error_box": [
+     0.46648213503785385,
+     0.3289772947036269
+    ]
+   },
+   "mpa-0": {
+    "space_group_T0": [
+     141,
+     "I4_1/amd"
+    ],
+    "space_group_T1": [
+     141,
+     "I4_1/amd"
+    ],
+    "QC": [
+     5.428146437030077,
+     0.6364994943120906
+    ],
+    "bulk": [
+     17.586292448082055,
+     43.66597842921615
+    ],
+    "box": [
+     18.034137895295782,
+     44.113823876429876
+    ],
+    "folder": "C:\\Users\\busta\\Code\\juno\\assets\\local-archive\\hermes-validation\\data\\bench-sol-2026-10-27\\results\\mpa-0\\runs\\tmpo4",
+    "status": "valid",
+    "total_bulk": [
+     20.931030495973694,
+     47.20057024298565
+    ],
+    "error_bulk": [
+     -0.3923028373596402,
+     -0.6094297570143539
+    ],
+    "total_box": [
+     21.37887594318742,
+     47.64841569019937
+    ],
+    "error_box": [
+     0.05554260985408632,
+     -0.16158430980063088
+    ]
+   },
+   "mp-0b3": {
+    "space_group_T0": [
+     141,
+     "I4_1/amd"
+    ],
+    "space_group_T1": [
+     141,
+     "I4_1/amd"
+    ],
+    "QC": [
+     5.313370667020029,
+     0.6275646459434013
+    ],
+    "bulk": [
+     17.803773259863206,
+     43.93830448709033
+    ],
+    "box": [
+     18.253326905783005,
+     44.38785813301015
+    ],
+    "folder": "C:\\Users\\busta\\Code\\juno\\assets\\local-archive\\hermes-validation\\data\\bench-sol-2026-10-27\\results\\mp-0b3\\runs\\tmpo4",
+    "status": "valid",
+    "total_bulk": [
+     21.148511307754845,
+     47.47289630085982
+    ],
+    "error_bulk": [
+     -0.17482202557848936,
+     -0.33710369914017946
+    ],
+    "total_box": [
+     21.598064953674644,
+     47.92244994677964
+    ],
+    "error_box": [
+     0.27473162034130993,
+     0.11244994677964115
+    ]
+   }
+  }
+ },
+ "ybpo4": {
+  "group": "B2",
+  "composition": "YbPO4",
+  "measured": [
+   18.283333333333335,
+   44.68333333333334
+  ],
+  "extra": [
+   1.6657946375087966,
+   1.895104599141746
+  ],
+  "S_el_MP": [
+   0.45000390517473227,
+   1.4183553220140472
+  ],
+  "space_group_ref": "I4_1/amd",
+  "models": {
+   "mp-0": {
+    "space_group_T0": [
+     141,
+     "I4_1/amd"
+    ],
+    "space_group_T1": [
+     1,
+     "P1"
+    ],
+    "QC": [
+     3.934361167469611,
+     0.4840335254967863
+    ],
+    "bulk": [
+     26.247286067620635,
+     52.68312387192529
+    ],
+    "box": [
+     26.66381649259639,
+     53.099654296901036
+    ],
+    "folder": "C:\\Users\\busta\\Code\\hermes-private\\validation\\oxide_vibration\\runs\\ybpo4",
+    "status": "symmetry lost",
+    "total_bulk": [
+     27.91308070512943,
+     54.578228471067035
+    ],
+    "error_bulk": [
+     9.629747371796096,
+     9.894895137733698
+    ],
+    "total_box": [
+     28.329611130105185,
+     54.99475889604278
+    ],
+    "error_box": [
+     10.04627779677185,
+     10.311425562709445
+    ]
+   },
+   "mpa-0": {
+    "space_group_T0": [
+     141,
+     "I4_1/amd"
+    ],
+    "space_group_T1": [
+     4,
+     "P2_1"
+    ],
+    "QC": [
+     4.26300296303205,
+     0.5108459311646142
+    ],
+    "bulk": [
+     24.00490623682549,
+     51.043250455417386
+    ],
+    "box": [
+     24.42877797585691,
+     51.46712219444881
+    ],
+    "folder": "C:\\Users\\busta\\Code\\juno\\assets\\local-archive\\hermes-validation\\data\\bench-sol-2026-10-27\\results\\mpa-0\\runs\\ybpo4",
+    "status": "symmetry lost",
+    "total_bulk": [
+     25.670700874334287,
+     52.93835505455913
+    ],
+    "error_bulk": [
+     7.387367541000952,
+     8.255021721225795
+    ],
+    "total_box": [
+     26.094572613365706,
+     53.36222679359056
+    ],
+    "error_box": [
+     7.811239280032371,
+     8.678893460257221
+    ]
+   },
+   "mp-0b3": {
+    "space_group_T0": [
+     141,
+     "I4_1/amd"
+    ],
+    "space_group_T1": [
+     1,
+     "P1"
+    ],
+    "QC": [
+     4.276617838166438,
+     0.49755328131665566
+    ],
+    "bulk": [
+     23.566439279384284,
+     51.11457859915781
+    ],
+    "box": [
+     23.99139796110873,
+     51.53953728088227
+    ],
+    "folder": "C:\\Users\\busta\\Code\\juno\\assets\\local-archive\\hermes-validation\\data\\bench-sol-2026-10-27\\results\\mp-0b3\\runs\\ybpo4",
+    "status": "symmetry lost",
+    "total_bulk": [
+     25.23223391689308,
+     53.009683198299555
+    ],
+    "error_bulk": [
+     6.948900583559745,
+     8.326349864966218
+    ],
+    "total_box": [
+     25.657192598617527,
+     53.43464188002402
+    ],
+    "error_box": [
+     7.373859265284192,
+     8.75130854669068
+    ]
+   }
+  }
+ }
+}

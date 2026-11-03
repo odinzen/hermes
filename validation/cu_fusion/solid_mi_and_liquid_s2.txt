@@ -1,0 +1,5 @@
+pairs per atom 12.0
+NN displacement correlation: longitudinal 0.385, transverse 0.149
+MI per pair 0.1028 nats; pair-approx total correlation per atom = 5.13 J/(K mol)
+rho 0.0766 /A3, lambda 0.0607 A, first peak g=2.63 at 2.55 A
+S_ideal 112.01, S2 -31.00, S_id+S2 81.02 vs exact 82.5 J/(K mol)

@@ -1,0 +1,15 @@
+ni_1000_0256  Hermes error +0.47   non-Gaussian neighbour information -0.03 +- 0.05 J/(K mol)  (6 pairs/atom)
+ni_1000_0864  Hermes error +0.85   non-Gaussian neighbour information -0.04 +- 0.05 J/(K mol)  (6 pairs/atom)
+ni_1000_2048  Hermes error +0.70   non-Gaussian neighbour information -0.08 +- 0.05 J/(K mol)  (6 pairs/atom)
+mg_0550_0800  Hermes error +0.76   non-Gaussian neighbour information +0.08 +- 0.05 J/(K mol)  (6 pairs/atom)
+mg_0550_2352  Hermes error +0.74   non-Gaussian neighbour information +0.03 +- 0.05 J/(K mol)  (6 pairs/atom)
+fe_1000_1024  Hermes error +0.43   non-Gaussian neighbour information -0.17 +- 0.03 J/(K mol)  (4 pairs/atom)
+v_1200_1024   Hermes error +0.34   non-Gaussian neighbour information -0.36 +- 0.03 J/(K mol)  (4 pairs/atom)
+zr_0700_0800  Hermes error +0.10   non-Gaussian neighbour information -0.28 +- 0.05 J/(K mol)  (6 pairs/atom)
+al_0550_0864  Hermes error +0.42   non-Gaussian neighbour information -0.31 +- 0.05 J/(K mol)  (6 pairs/atom)
+pd_0900_0864  Hermes error +0.62   non-Gaussian neighbour information -0.03 +- 0.05 J/(K mol)  (6 pairs/atom)
+ag_0700_0864  Hermes error +0.77   non-Gaussian neighbour information -0.01 +- 0.05 J/(K mol)  (6 pairs/atom)
+pt_1200_0864  Hermes error +0.50   non-Gaussian neighbour information +0.04 +- 0.05 J/(K mol)  (6 pairs/atom)
+mean Hermes error +0.56; mean non-Gaussian information -0.10; correlation across crystals +0.74
+
+[exited with code 0]

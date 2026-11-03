@@ -1,0 +1,16 @@
+control Gaussian: +0.082 +- 0.019 J/(K mol)
+control uniform : -2.007 +- 0.024 J/(K mol), exact -4.402
+ni_1000_0256  marginal non-Gaussian entropy -0.007 +- 0.031 J/(K mol)
+ni_1000_0864  marginal non-Gaussian entropy +0.014 +- 0.020 J/(K mol)
+ni_1000_2048  marginal non-Gaussian entropy +0.051 +- 0.021 J/(K mol)
+mg_0550_0800  marginal non-Gaussian entropy +0.027 +- 0.020 J/(K mol)
+mg_0550_2352  marginal non-Gaussian entropy +0.034 +- 0.020 J/(K mol)
+fe_1000_1024  marginal non-Gaussian entropy +0.025 +- 0.022 J/(K mol)
+v_1200_1024   marginal non-Gaussian entropy +0.036 +- 0.020 J/(K mol)
+zr_0700_0800  marginal non-Gaussian entropy +0.024 +- 0.020 J/(K mol)
+al_0550_0864  marginal non-Gaussian entropy +0.058 +- 0.020 J/(K mol)
+pd_0900_0864  marginal non-Gaussian entropy +0.061 +- 0.020 J/(K mol)
+ag_0700_0864  marginal non-Gaussian entropy +0.019 +- 0.019 J/(K mol)
+pt_1200_0864  marginal non-Gaussian entropy +0.019 +- 0.021 J/(K mol)
+
+[exited with code 0]

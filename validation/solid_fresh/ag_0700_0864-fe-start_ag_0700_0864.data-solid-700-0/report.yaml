@@ -1,0 +1,20 @@
+average:
+  density: 0.055904265124087506
+  spring_constant: '1.2925999893217766'
+  vol_atom: 17.887032133383162
+input:
+  concentration: '1.0'
+  element: Ag
+  lattice: start_ag_0700_0864.data
+  pressure: 0.0
+  temperature: 700
+results:
+  com_correction: -0.0015100104253433656
+  dissipation: -0.0007861962598025851
+  einstein_crystal: -0.38776405704295197
+  error: 0.0
+  free_energy: -3.1291886878801467
+  pv: 0.0
+  reference_system: -0.38927406746829535
+  unit: eV/atom
+  work: -2.7399146204118514

@@ -1,0 +1,29 @@
+x010 s71031: 501 frames, 28 vectors, S_cc(0) 0.1305
+x010 s90217: 501 frames, 28 vectors, S_cc(0) 0.1311
+x028 s71031: 501 frames, 28 vectors, S_cc(0) 0.1713
+x028 s90217: 501 frames, 28 vectors, S_cc(0) 0.1595
+x043 s71031: 501 frames, 28 vectors, S_cc(0) 0.1581
+x043 s90217: 501 frames, 28 vectors, S_cc(0) 0.1423
+x060 s71031: 501 frames, 40 vectors, S_cc(0) 0.1323
+x060 s90217: 501 frames, 40 vectors, S_cc(0) 0.1295
+x080 s71031: 501 frames, 40 vectors, S_cc(0) 0.1308
+x080 s90217: 501 frames, 40 vectors, S_cc(0) 0.1177
+x090 s71031: 501 frames, 40 vectors, S_cc(0) 0.0681
+x090 s90217: 501 frames, 40 vectors, S_cc(0) 0.0835
+pooled run-level SD 0.0110 (14 dof)
+excess model: [(0, 'a'), (0, 'b'), (1, 'a'), (1, 'b'), (2, 'a'), (2, 'b')], chi2_red 4.02
+
+  x_Zr  held  S_cc(0)        implied range      B     S_ex model       exact    A
+ 0.100  new  0.1308+-0.0078  0.1276-0.1474  PASS   -0.53+-0.09   -0.71  PASS
+ 0.200  old  0.1621+-0.0063  0.1821-0.1863  FAIL   -1.01+-0.15   -1.27  PASS
+ 0.280  new  0.1654+-0.0078  0.1640-0.1781  PASS   -1.29+-0.19   -1.44  PASS
+ 0.360  old  0.1542+-0.0063  0.1505-0.1620  PASS   -1.46+-0.22   -1.72  PASS
+ 0.431  new  0.1502+-0.0078  0.1444-0.1504  PASS   -1.51+-0.25   -1.79  PASS
+ 0.500  old  0.1317+-0.0063  0.1423-0.1425  PASS   -1.46+-0.26   -1.71  PASS
+ 0.600  new  0.1309+-0.0078  0.1357-0.1433  PASS   -1.24+-0.28   -1.52  PASS
+ 0.700  old  0.1354+-0.0063  0.1319-0.1415  PASS   -0.88+-0.27   -1.01  PASS
+ 0.800  new  0.1242+-0.0078  0.1231-0.1249  PASS   -0.47+-0.24   -0.51  PASS
+ 0.900  new  0.0758+-0.0078  0.0794-0.0868  PASS   -0.13+-0.16   -0.20  PASS
+
+new compositions only: max |S_ex - exact| 0.28
+criterion A PASS, criterion B FAIL, verdict FAIL

@@ -1,0 +1,96 @@
+{
+ "nio": {
+  "formula": "NiO",
+  "polymorph": "bunsenite (rock salt)",
+  "space_group": "Fm-3m",
+  "material_id": "mp-19009",
+  "energy_above_hull_eV_atom": 0.0,
+  "lowest_entry_any_space_group": "mp-19009",
+  "summary_band_gap_eV": 2.387200000000001,
+  "dos_gap_eV": 2.476499999999999,
+  "dos_atoms": 2,
+  "dos_task": "aaaexvgr",
+  "dos_calc_type": "GGA+U NSCF Uniform",
+  "dos_magnetic_ordering": "Ordering.FM",
+  "dos_spin_gaps_eV": {
+   "1": 3.714757511462347,
+   "-1": 2.3175127421555777
+  },
+  "conventional_atoms": 8
+ },
+ "mno": {
+  "formula": "MnO",
+  "polymorph": "manganosite (rock salt)",
+  "space_group": "Fm-3m",
+  "material_id": "mp-19006",
+  "energy_above_hull_eV_atom": 0.053368562500001104,
+  "lowest_entry_any_space_group": "mp-1232659",
+  "summary_band_gap_eV": 0.18440000000000012,
+  "dos_gap_eV": 0.30319999999999947,
+  "dos_atoms": 2,
+  "dos_task": "aaafawob",
+  "dos_calc_type": "GGA+U NSCF Uniform",
+  "dos_magnetic_ordering": "Ordering.FM",
+  "dos_spin_gaps_eV": {
+   "1": 3.639202953605936,
+   "-1": 0.21729046611293512
+  },
+  "conventional_atoms": 8
+ },
+ "coo": {
+  "formula": "CoO",
+  "polymorph": "rock salt",
+  "space_group": "Fm-3m",
+  "material_id": "mp-19079",
+  "energy_above_hull_eV_atom": 0.09191717750000095,
+  "lowest_entry_any_space_group": "mp-22408",
+  "summary_band_gap_eV": 0.0,
+  "dos_gap_eV": 0.08640000000000025,
+  "dos_atoms": 2,
+  "dos_task": "aaadrgsj",
+  "dos_calc_type": "GGA+U NSCF Uniform",
+  "dos_magnetic_ordering": "Ordering.FM",
+  "dos_spin_gaps_eV": {
+   "1": 1.6431087647501172,
+   "-1": 0.0
+  },
+  "conventional_atoms": 6
+ },
+ "fe2o3": {
+  "formula": "Fe2O3",
+  "polymorph": "hematite (corundum)",
+  "space_group": "R-3c",
+  "material_id": "mp-19770",
+  "energy_above_hull_eV_atom": 0.0,
+  "lowest_entry_any_space_group": "mp-19770",
+  "summary_band_gap_eV": 0.0,
+  "dos_gap_eV": 0.06499999999999995,
+  "dos_atoms": 10,
+  "dos_task": "aaadrzln",
+  "dos_calc_type": "GGA+U NSCF Uniform",
+  "dos_magnetic_ordering": "Ordering.FM",
+  "dos_spin_gaps_eV": {
+   "1": 0.0,
+   "-1": 2.9224885035858237
+  },
+  "conventional_atoms": 30
+ },
+ "cr2o3": {
+  "formula": "Cr2O3",
+  "polymorph": "eskolaite (corundum)",
+  "space_group": "R-3c",
+  "material_id": "mp-19399",
+  "energy_above_hull_eV_atom": 0.0,
+  "lowest_entry_any_space_group": "mp-19399",
+  "summary_band_gap_eV": 0.0,
+  "dos_gap_eV": 0.04699999999999971,
+  "dos_atoms": 10,
+  "dos_task": "aaadrzlp",
+  "dos_calc_type": "GGA+U NSCF Uniform",
+  "dos_magnetic_ordering": "Ordering.NM",
+  "dos_spin_gaps_eV": {
+   "1": 0.0
+  },
+  "conventional_atoms": 30
+ }
+}

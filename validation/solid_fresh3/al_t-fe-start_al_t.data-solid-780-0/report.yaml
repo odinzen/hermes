@@ -1,0 +1,20 @@
+average:
+  density: 0.05719173300554244
+  spring_constant: '0.916570901519078'
+  vol_atom: 17.484849425587665
+input:
+  concentration: '1.0'
+  element: Al
+  lattice: start_al_t.data
+  pressure: 0.0
+  temperature: 780
+results:
+  com_correction: -0.001628068222501386
+  dissipation: -0.0005844593581567636
+  einstein_crystal: -0.3488431505676048
+  error: 0.0
+  free_energy: -3.6338241478834346
+  pv: 0.0
+  reference_system: -0.3504712187901062
+  unit: eV/atom
+  work: -3.2833529290933283

@@ -1,0 +1,67 @@
+{
+ "quartz": {
+  "V_cm3_mol": 22.69,
+  "summary_page": 18,
+  "formula": "SiO2"
+ },
+ "coesite": {
+  "V_cm3_mol": 20.64,
+  "summary_page": 19,
+  "formula": "SiO2"
+ },
+ "stishovite": {
+  "V_cm3_mol": 14.01,
+  "summary_page": 19,
+  "formula": "SiO2"
+ },
+ "calcite": {
+  "V_cm3_mol": 36.93,
+  "summary_page": 25,
+  "formula": "CaCO3"
+ },
+ "aragonite": {
+  "V_cm3_mol": 34.15,
+  "summary_page": 25,
+  "formula": "CaCO3"
+ },
+ "wollastonite": {
+  "V_cm3_mol": 39.9,
+  "summary_page": 34,
+  "formula": "CaSiO3"
+ },
+ "pseudowollastonite": {
+  "V_cm3_mol": 40.08,
+  "summary_page": 34,
+  "formula": "CaSiO3"
+ },
+ "enstatite": {
+  "V_cm3_mol": 31.31,
+  "summary_page": 34,
+  "formula": "MgSiO3"
+ },
+ "clinoenstatite": {
+  "V_cm3_mol": 31.28,
+  "summary_page": 34,
+  "formula": "MgSiO3"
+ },
+ "perovskite": {
+  "V_cm3_mol": 33.63,
+  "summary_page": 21,
+  "formula": "CaTiO3"
+ },
+ "chrysoberyl": {
+  "V_cm3_mol": 34.32,
+  "summary_page": 21,
+  "formula": "BeAl2O4"
+ },
+ "diopside": {
+  "V_cm3_mol": 66.09,
+  "summary_page": 34,
+  "formula": "CaMgSi2O6"
+ },
+ "jadeite": {
+  "V_cm3_mol": 60.4,
+  "summary_page": 35,
+  "formula": "NaAlSi2O6"
+ }
+}

@@ -1,0 +1,10 @@
+Extra-terms test, Arm A (magnetic oxides), rule frozen 2026-10-22. A1: FAIL
+Oxide vibration test verdict: FAIL; Arm A is limited by the vibrational route
+Overall verdict needs Arm B (B1); not run.
+case     S_vib  S_mag   S_el    pred    meas    err     S_vib  S_mag   S_el    pred    meas    err  A2   (298.15 K | 1000 K)
+nio      26.30   0.59   0.00   26.89   19.10   7.79     54.02   4.54   0.00   58.56       -      -  False
+mno      29.59   7.44   0.00   37.03   30.30   6.72     59.21   7.45   0.02   66.68   60.19   6.49  False
+coo      29.82   4.83   1.74   36.39   26.45   9.94     58.72   5.76   4.21   68.69   59.26   9.43  False
+fe2o3    21.95   0.13   0.27   22.35   17.48   4.86     50.57   5.11   0.85   56.53   50.58   5.95  False
+cr2o3    18.64   3.24   0.43   22.32   16.23   6.08     45.89   4.61   2.52   53.02   44.90   8.12  False
+A3 (CoO short by more than 1.0 at 1000 K, predicted in advance): prediction FAILED

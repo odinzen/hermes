@@ -1,0 +1,26 @@
+{
+ "_note": "Per-compound conventions for Arm B, from what each calorimetry source states (Juno Phosphate-minerals, commit 670af88). Written 2026-10-24 before any crystal-field entropy of a phosphate was computed.",
+ "lattice": {"monazite": "LaPO4", "xenotime": "LuPO4", "xenotime_second": "YPO4"},
+ "compounds": {
+  "NdPO4": {"ion": "Nd", "structure": "monazite", "status": "scored", "include_ground_degeneracy": true,
+            "why": "Popa 2006b: S298 'includes the Rln(2) contribution from the low temperature anomaly'. S(1000) none: its Cp equation states no valid range."},
+  "EuPO4": {"ion": "Eu", "structure": "monazite", "status": "scored", "include_ground_degeneracy": true,
+            "why": "Ground 7F0 is a singlet, so the flag changes nothing."},
+  "GdPO4": {"ion": "Gd", "structure": "monazite", "status": "scored", "include_ground_degeneracy": true,
+            "why": "Thiriet 2005 / Gurevich 2012: the antiferromagnetic transition entropy below 12 K is included in S298."},
+  "TbPO4": {"ion": "Tb", "structure": "xenotime", "status": "phase mismatch, not scored",
+            "why": "Only monoclinic (metastable) TbPO4 was measured (Gavrichev 2016); the frozen Tb levels are for tetragonal TbPO4."},
+  "DyPO4": {"ion": "Dy", "structure": "xenotime", "status": "no data",
+            "why": "No low-temperature calorimetry; Gysi 2016 is DSC above 348 K and its S298 is interpolated."},
+  "HoPO4": {"ion": "Ho", "structure": "xenotime", "status": "scored", "include_ground_degeneracy": true,
+            "why": "Tyurin 2020 includes the magnetic and Schottky entropy from 0.6 K (Cooke et al. below 9 K). S(T) above 298 K only in the supplement, not in hand."},
+  "ErPO4": {"ion": "Er", "structure": "xenotime", "status": "scored", "include_ground_degeneracy": false,
+            "why": "Gavrichev 2012: functions are S(T) - S(2 K); the transition entropy below T_N about 0.4 K is 'unknown' and left out."},
+  "TmPO4": {"ion": "Tm", "structure": "xenotime", "status": "scored", "include_ground_degeneracy": true,
+            "add_to_1000K": 5.76,
+            "why": "Ryumin 2017: S298 includes an assumed R ln 2 = 5.76 that its 1000 K table (S - S(10 K)) leaves out; added back so both points share the published convention. Ground level is a singlet, so the flag changes nothing. Also reported without the assumed 5.76 (variant), outside the verdict."},
+  "YbPO4": {"ion": "Yb", "structure": "xenotime", "status": "scored", "include_ground_degeneracy": false,
+            "why": "Gavrichev 2013: functions are S(T) - S(6.03 K); nothing stated below 6.03 K. Per the pre-registered handling a silent source is scored both ways and B1 uses the convention of the source measured furthest down, its own (from 6.03 K, so excluded)."}
+ },
+ "left_out_no_levels": ["CePO4", "PrPO4", "SmPO4"]
+}

@@ -1,0 +1,14 @@
+Extra-terms test, Arm B (LnPO4), rule frozen 2026-10-22. B1: FAIL (0/7 compounds)
+J/(K mol of Ln). excess = S_meas - S_lat; err = S_cf,pred - excess. Lattice: LaPO4 (monazite), LuPO4 (xenotime).
+compound     S_cf  excess     err      S_cf  excess     err  pass    err(YPO4 lat)  err(other conv)   (298.15 K | 1000 K)
+NdPO4       17.15   14.43    2.72     18.92       -       -  False       -/      -   -3.04/      -
+EuPO4        9.27    8.59    0.68     16.84   19.80   -2.96  False       -/      -    0.68/  -2.96
+GdPO4       17.29   15.46    1.83     17.29   14.00    3.29  False       -/      -  -15.46/ -14.00
+TbPO4     phase mismatch, not scored: Only monoclinic (metastable) TbPO4 was measured (Gavrichev 2016); the frozen Tb levels are for tetragonal TbPO4.
+DyPO4     no data: No low-temperature calorimetry; Gysi 2016 is DSC above 348 K and its S298 is interpolated.
+HoPO4       22.68   27.66   -4.98     23.48       -       -  False  -10.86/      -  -10.75/      -
+ErPO4       16.33   16.89   -0.56     17.19   19.89   -2.70  False   -6.44/  -7.71    5.20/   3.07
+TmPO4       20.07   28.20   -8.13     21.21   33.25  -12.04  False  -14.01/ -17.05   -8.13/ -12.04
+YbPO4        9.99    9.96    0.03     11.37   14.49   -3.12  False   -5.85/  -8.13    5.80/   2.64
+TmPO4 without the source's assumed R ln 2 (outside the verdict): err   -2.37 |   -6.28
+Left out, no measured levels in a phosphate: CePO4, PrPO4, SmPO4. B2 not run (needs MD of the phosphates).

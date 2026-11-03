@@ -1,0 +1,13 @@
+mpa-0 quartz
+mpa-0 coesite
+mpa-0 stishovite
+mpa-0 calcite
+mpa-0 aragonite
+mpa-0 wollastonite
+mpa-0 pseudowollastonite
+mpa-0 enstatite
+mpa-0 clinoenstatite
+mpa-0 perovskite
+mpa-0 chrysoberyl
+mpa-0 diopside
+mpa-0 jadeite

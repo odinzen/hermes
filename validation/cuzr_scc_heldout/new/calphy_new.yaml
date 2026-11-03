@@ -1,0 +1,121 @@
+calculations:
+- mode: fe
+  lattice: liq_x010.data
+  reference_phase: liquid
+  melting_cycle: false
+  element: [Cu, Zr]
+  mass: [63.546, 91.224]
+  temperature: 2300
+  pressure: 0
+  npt: true
+  pair_style: [eam/fs]
+  pair_coeff: ["* * /home/busta/opt/lammps-mace/potentials/CuZr_mm.eam.fs Cu Zr"]
+  n_equilibration_steps: 25000
+  n_switching_steps: 50000
+  n_iterations: 1
+  lammps_executable: /home/busta/miniforge3/envs/lammps-full/bin/lmp_mpi
+  mpi_executable: /home/busta/miniforge3/envs/lammps-full/bin/mpirun
+  folder_prefix: x010
+  queue:
+    scheduler: local
+    cores: 4
+- mode: fe
+  lattice: liq_x028.data
+  reference_phase: liquid
+  melting_cycle: false
+  element: [Cu, Zr]
+  mass: [63.546, 91.224]
+  temperature: 2300
+  pressure: 0
+  npt: true
+  pair_style: [eam/fs]
+  pair_coeff: ["* * /home/busta/opt/lammps-mace/potentials/CuZr_mm.eam.fs Cu Zr"]
+  n_equilibration_steps: 25000
+  n_switching_steps: 50000
+  n_iterations: 1
+  lammps_executable: /home/busta/miniforge3/envs/lammps-full/bin/lmp_mpi
+  mpi_executable: /home/busta/miniforge3/envs/lammps-full/bin/mpirun
+  folder_prefix: x028
+  queue:
+    scheduler: local
+    cores: 4
+- mode: fe
+  lattice: liq_x043.data
+  reference_phase: liquid
+  melting_cycle: false
+  element: [Cu, Zr]
+  mass: [63.546, 91.224]
+  temperature: 2300
+  pressure: 0
+  npt: true
+  pair_style: [eam/fs]
+  pair_coeff: ["* * /home/busta/opt/lammps-mace/potentials/CuZr_mm.eam.fs Cu Zr"]
+  n_equilibration_steps: 25000
+  n_switching_steps: 50000
+  n_iterations: 1
+  lammps_executable: /home/busta/miniforge3/envs/lammps-full/bin/lmp_mpi
+  mpi_executable: /home/busta/miniforge3/envs/lammps-full/bin/mpirun
+  folder_prefix: x043
+  queue:
+    scheduler: local
+    cores: 4
+- mode: fe
+  lattice: liq_x060.data
+  reference_phase: liquid
+  melting_cycle: false
+  element: [Cu, Zr]
+  mass: [63.546, 91.224]
+  temperature: 2300
+  pressure: 0
+  npt: true
+  pair_style: [eam/fs]
+  pair_coeff: ["* * /home/busta/opt/lammps-mace/potentials/CuZr_mm.eam.fs Cu Zr"]
+  n_equilibration_steps: 25000
+  n_switching_steps: 50000
+  n_iterations: 1
+  lammps_executable: /home/busta/miniforge3/envs/lammps-full/bin/lmp_mpi
+  mpi_executable: /home/busta/miniforge3/envs/lammps-full/bin/mpirun
+  folder_prefix: x060
+  queue:
+    scheduler: local
+    cores: 4
+- mode: fe
+  lattice: liq_x080.data
+  reference_phase: liquid
+  melting_cycle: false
+  element: [Cu, Zr]
+  mass: [63.546, 91.224]
+  temperature: 2300
+  pressure: 0
+  npt: true
+  pair_style: [eam/fs]
+  pair_coeff: ["* * /home/busta/opt/lammps-mace/potentials/CuZr_mm.eam.fs Cu Zr"]
+  n_equilibration_steps: 25000
+  n_switching_steps: 50000
+  n_iterations: 1
+  lammps_executable: /home/busta/miniforge3/envs/lammps-full/bin/lmp_mpi
+  mpi_executable: /home/busta/miniforge3/envs/lammps-full/bin/mpirun
+  folder_prefix: x080
+  queue:
+    scheduler: local
+    cores: 4
+- mode: fe
+  lattice: liq_x090.data
+  reference_phase: liquid
+  melting_cycle: false
+  element: [Cu, Zr]
+  mass: [63.546, 91.224]
+  temperature: 2300
+  pressure: 0
+  npt: true
+  pair_style: [eam/fs]
+  pair_coeff: ["* * /home/busta/opt/lammps-mace/potentials/CuZr_mm.eam.fs Cu Zr"]
+  n_equilibration_steps: 25000
+  n_switching_steps: 50000
+  n_iterations: 1
+  lammps_executable: /home/busta/miniforge3/envs/lammps-full/bin/lmp_mpi
+  mpi_executable: /home/busta/miniforge3/envs/lammps-full/bin/mpirun
+  folder_prefix: x090
+  queue:
+    scheduler: local
+    cores: 4

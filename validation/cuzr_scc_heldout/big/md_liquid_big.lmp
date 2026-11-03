@@ -1,0 +1,40 @@
+# Liquid Cu-Zr trajectory + enthalpy for the entropy estimators (Mendelev 2009 EAM).
+# lmp -var data <file> -var tag <name> -var T 2300 -var pot <path to CuZr_mm.eam.fs> -in md_liquid.lmp
+units metal
+atom_style atomic
+boundary p p p
+read_data ${data}
+replicate 2 2 2
+pair_style eam/fs
+pair_coeff * * ${pot} Cu Zr
+timestep 0.001
+velocity all create 3500 4928 mom yes dist gaussian
+
+# melt, then find the zero-pressure volume at T
+fix 1 all npt temp 3500 ${T} 0.1 iso 0 0 1.0
+run 10000
+fix 1 all npt temp ${T} ${T} 0.1 iso 0 0 1.0
+run 20000
+variable L equal lx
+fix av all ave/time 10 1000 20000 v_L
+run 20000
+variable Lm equal f_av
+variable Lfix equal ${Lm}
+print "mean_box_length ${Lfix}"
+unfix av
+unfix 1
+change_box all x final 0 ${Lfix} y final 0 ${Lfix} z final 0 ${Lfix} remap units box
+
+# production NVT at the mean volume: frames every 0.5 ps for 60 ps
+fix 2 all nvt temp ${T} ${T} 0.1
+run 10000
+reset_timestep 0  # aligns the production averaging window with step 0
+compute msd all msd
+thermo_style custom step temp pe press vol c_msd[4]
+thermo 50000
+variable pe equal pe/atoms
+variable p equal press
+fix th all ave/time 10 100000 1000000 v_pe v_p file ${tag}_thermo.dat
+dump d all custom 1000 ${tag}.dump id type x y z
+dump_modify d sort id
+run 1000000

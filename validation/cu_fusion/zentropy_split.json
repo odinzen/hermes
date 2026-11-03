@@ -1,0 +1,24 @@
+{
+ "solid": {
+  "S_within_basin_compression": 77.92924469673783,
+  "sem": 0.14234997878983183,
+  "neighbours_per_atom": 12.0,
+  "pair_MI_correction": 5.052243926981043,
+  "S_within_basin_corrected": 72.87700076975678,
+  "rms_u_A": 0.3458742492170158,
+  "E_IS_eV_atom": -3.2715109687835406,
+  "E_IS_spread_meV": 4.210554442205258e-11,
+  "basin_count_needed": -0.1170007697567712
+ },
+ "liquid": {
+  "S_within_basin_compression": 99.99136624104405,
+  "sem": 0.19059738794921838,
+  "neighbours_per_atom": 11.867716802168024,
+  "pair_MI_correction": 6.035037376810104,
+  "S_within_basin_corrected": 93.95632886423394,
+  "rms_u_A": 0.9185191554048496,
+  "E_IS_eV_atom": -3.168267356067177,
+  "E_IS_spread_meV": 1.8111339824064427,
+  "basin_count_needed": -11.456328864233939
+ }
+}

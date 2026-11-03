@@ -18,18 +18,23 @@ Hong, who treat entropy as a message: the number of bits needed to tell a receiv
 | Term | Measured from | Module | Held-out accuracy (see docs/validation.md) |
 |---|---|---|---|
 | Configurational: orderings, magnetic states, defects that can be listed | -k_B sum p_k ln p_k over configurations | `hermes.system`, `hermes.configuration` (zentropy core) | as pyzentropy |
-| Vibrational, classical, anharmonic included (crystals) | MD positions: compression [1] or Gaussian, less the shared entropy; near melting, carried up by the heat capacity | `hermes.compression_entropy`, `hermes.heat_capacity`, `hermes.md_configuration` | 9 metals near melting within 0.52 J/(K mol) |
+| Vibrational, classical, anharmonic included (crystals) | MD positions: compression [1] or Gaussian, less the shared entropy; near melting, carried up by the heat capacity | `hermes.compression_entropy`, `hermes.heat_capacity`, `hermes.md_configuration` | 9 metals near melting within 0.52 J/(K mol) of exact; against calorimetry, as good as the potential (MACE foundation models read oxides 1 to 3 high) |
 | Vibrational, quantum part | MD velocity spectrum | `hermes.quantum_correction` | Cu at 298 K within 0.04 J/(K mol) of CODATA |
 | Liquid | partial pair distribution functions [3, 4] | `hermes.liquid_entropy` | within 2 % for pure liquids |
 | Ideal mixing | composition | `hermes.liquid_entropy` | exact |
 | Excess mixing (chemical short-range order) | long-wavelength composition fluctuations [5] | `hermes.concentration_fluctuations`, `hermes.excess_model` | failed its held-out test; 7 to 25 % too small on Cu-Zr |
-| Electronic | DFT density of states, Fermi-Dirac occupation | `hermes.electronic` | exact cases only; no test against measurement yet |
-| Crystal field, open-4f lanthanide ions | measured crystal-field levels | `hermes.crystal_field` | exact cases only; test against measurement pre-registered, not run |
-| Magnetic, transition-metal ions | ordering temperature and moment, Inden / Hillert-Jarl [8, 9] | `hermes.magnetic` | exact cases only; test against measurement pre-registered, not run |
+| Electronic | DFT density of states, Fermi-Dirac occupation | `hermes.electronic` | exact cases pass; test against measured magnetic oxides failed with the vibrational part |
+| Crystal field, open-4f lanthanide ions | measured crystal-field levels | `hermes.crystal_field` | failed its test against measured LnPO4 entropies; 0 of 7 within 1.0 J/(K mol of Ln) |
+| Magnetic, transition-metal ions | ordering temperature and moment, Inden / Hillert-Jarl [8, 9] | `hermes.magnetic` | exact cases pass; test against measured magnetic oxides failed, +4.9 to +9.9 J/(K mol), mostly from the vibrational part |
 
 **Crystals.** Coding each atom on its own counts more than once the entropy the atoms share, so Hermes subtracts the
 total correlation of the displacements, taken exactly from the crystal's translations
-(`crystal_correlation_entropy`), and adds the entropy of the crystal's centre of mass, which MD holds still. The
+(`crystal_correlation_entropy`). Which crystal the result describes is a required choice, `limit="box"` or
+`"bulk"`. The box value adds the entropy of the crystal's centre of mass, which MD holds still, and is what
+thermodynamic integration on the same box gives. A macroscopic crystal has no such term; the bulk value leaves it out
+and fills in the vibrations longer than the box from its long-wavelength sound waves. Compare with calorimetry, or
+build a database, with the bulk value: on seven oxides of 216 to 270 atoms it is within 0.08 J/(K mol) of the exact
+bulk entropy, where the box value is 0.4 to 0.6 above it. The
 compression is a clean-room implementation of Fisher and Hong [1], written from the preprint alone, independent of the
 authors, whose code was not released; it codes atoms in groups of 256 so that its calibrated offset, 5.83 J/(K mol)
 from 60 exactly sampled Einstein solids, does not depend on the box. `gaussian_entropy` takes each atom's motion as
@@ -54,7 +59,10 @@ a density of states, such as the Materials Project's, with the chemical potentia
 gamma T for a metal and vanishes for a wide-gap insulator. Their limits: crystal-field levels and the density of states
 are held fixed in temperature and volume; the magnetic model knows spins only, so orbital moments (Co2+, high-spin
 Fe2+) carry entropy it misses, and it takes the 0 K cell's magnetic order to be the ground state; a band gap that DFT
-closes gives a spurious electronic entropy. None has yet been tested against measured entropies.
+closes gives a spurious electronic entropy (up to 4 J/(K mol) at 1000 K for the Materials Project's CoO), so give an
+insulator's measured `band_gap`, which opens the density of states to it at the Fermi level. The crystal-field term
+failed its test against measured phosphate entropies, and the magnetic and electronic terms theirs against magnetic
+oxides (see Validation).
 
 ## CALPHAD output
 
@@ -72,16 +80,25 @@ An ESPEI fit of each and a pycalphad read-back are in the test suite.
 
 Every route is checked against exact references, thermodynamic integration with calphy [7] on the same interatomic
 potential, in tests whose pass rule was written before the runs existed. All of them are reported in
-[docs/validation.md](docs/validation.md), including the five that failed and what each failure changed. In brief:
+[docs/validation.md](docs/validation.md), including the nine that failed and what each failure changed. The rule, scripts and output of each are in
+`validation/`. In brief:
 
 - **Crystals near melting** (9 metals, heat-capacity route): within 0.52 J/(K mol), mean +0.35. The direct route reads
   up to 1.4 high there.
 - **Box size:** Cu at 256, 864 and 2048 atoms agrees to 0.13.
 - **Excess mixing entropy** (liquid Cu-Zr): within 0.28 of exact at ten compositions but 7 to 25 % too small, and the
   test failed on its second criterion.
+- **Crystal-field term** (seven lanthanide orthophosphates, against calorimetry): failed, errors -8 to +3 J/(K mol of
+  Ln). The GdPO4 control, whose crystal-field entropy is exactly R ln 8, shows the lattice subtraction the test relies
+  on is itself off by 2 to 3.
+- **Oxides on universal machine-learned potentials** (three held-out tests against JANAF and Robie-Hemingway, MACE
+  foundation models): failed. Entropies at 298.15 K read 1 to 3 J/(K mol of atoms) high on every potential tried;
+  finite-displacement phonons of the same potential, without Hermes, give the same excess, so it lies in the potential's
+  force constants. A fixed offset brought five unseen oxides within an RMS of 0.41 at 1000 K but not at 298.15 K, and
+  polymorph differences held for Al2SiO5 and failed for calcite and aragonite.
 
-The test suite has 231 tests (six need pycalphad, four of them ESPEI too). Of 114 errors planted in the modules one at
-a time, it catches 112; the other two change no result. `tools/check_references.py` checks every reference against its
+The test suite has 242 tests (six need pycalphad, four of them ESPEI too). Of 126 errors planted in the modules one at
+a time, it catches 123; the other three change no result. `tools/check_references.py` checks every reference against its
 registry record.
 
 ## Notebook

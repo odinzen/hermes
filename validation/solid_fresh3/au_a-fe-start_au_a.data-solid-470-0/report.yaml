@@ -1,0 +1,20 @@
+average:
+  density: 0.057851528763287655
+  spring_constant: '1.21504398996247'
+  vol_atom: 17.285330302974295
+input:
+  concentration: '1.0'
+  element: Au
+  lattice: start_au_a.data
+  pressure: 0.0
+  temperature: 470
+results:
+  com_correction: -0.0010359181826720138
+  dissipation: -0.0009592138094398628
+  einstein_crystal: -0.2522943390286919
+  error: 0.0
+  free_energy: -4.116491891449886
+  pv: 0.0
+  reference_system: -0.25333025721136393
+  unit: eV/atom
+  work: -3.8631616342385224

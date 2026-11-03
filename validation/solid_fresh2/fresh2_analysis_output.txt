@@ -1,0 +1,16 @@
+cum_0900_0256 fcc   256 atoms  exact   61.59  Hermes   62.32 (+0.73)  uncorrected   65.58  correlation  3.26  PASS
+cum_0900_0864 fcc   864 atoms  exact   61.22  Hermes   62.09 (+0.87)  uncorrected   66.44  correlation  4.34  PASS
+cum_0900_2048 fcc  2048 atoms  exact   61.21  Hermes   62.07 (+0.87)  uncorrected   66.82  correlation  4.74  PASS
+zr_0600_0384  hcp   384 atoms  exact   57.46  Hermes   57.54 (+0.08)  uncorrected   60.08  correlation  2.54  PASS
+zr_0600_2352  hcp  2352 atoms  exact   57.24  Hermes   57.27 (+0.03)  uncorrected   60.73  correlation  3.47  PASS
+au_0800_0864  fcc   864 atoms  exact   78.39  Hermes   79.02 (+0.64)  uncorrected   83.76  correlation  4.74  PASS
+cuf_1200_0864 fcc   864 atoms  exact   70.55  Hermes   71.92 (+1.38)  uncorrected   76.88  correlation  4.96  FAIL
+fe_0500_1024  bcc  1024 atoms  exact   40.65  Hermes   40.79 (+0.14)  uncorrected   44.13  correlation  3.34  PASS
+v_0800_1024   bcc  1024 atoms  exact   52.66  Hermes   52.92 (+0.26)  uncorrected   55.50  correlation  2.58  PASS
+al_0800_0864  fcc   864 atoms  exact   55.34  Hermes   56.14 (+0.80)  uncorrected   59.70  correlation  3.56  PASS
+ni_1500_0864  fcc   864 atoms  exact   69.58  Hermes   70.87 (+1.29)  uncorrected   75.29  correlation  4.42  FAIL
+pd_1300_0864  fcc   864 atoms  exact   79.60  Hermes   80.75 (+1.15)  uncorrected   85.85  correlation  5.10  FAIL
+Cu size series errors [0.73, 0.87, 0.87]: spread 0.13 PASS
+Zr size series errors [0.08, 0.03]: spread 0.05 PASS
+mean error +0.69, max |error| 1.38; excluded []
+criterion A FAIL, criterion B PASS, verdict FAIL

@@ -1,0 +1,11 @@
+ag   fcc T0  430 -> T 1000  exact   75.11  Hermes   75.58 (+0.47)  anchor error +0.44  direct: compression +1.21, Gaussian +1.43  H fit rms 11.5 J/mol  PASS
+pt   fcc T0  710 -> T 1600  exact   92.66  Hermes   93.05 (+0.39)  anchor error +0.34  direct: compression +1.23, Gaussian +1.52  H fit rms 15.2 J/mol  PASS
+au   fcc T0  470 -> T 1080  exact   87.19  Hermes   87.53 (+0.34)  anchor error +0.38  direct: compression +1.26, Gaussian +1.41  H fit rms 2.5 J/mol  PASS
+cum  fcc T0  480 -> T 1150  exact   68.35  Hermes   68.71 (+0.36)  anchor error +0.46  direct: compression +1.13, Gaussian +1.35  H fit rms 8.4 J/mol  PASS
+mg   hcp T0  320 -> T  780  exact   55.57  Hermes   56.09 (+0.52)  anchor error +0.48  direct: compression +1.20, Gaussian +1.31  H fit rms 1.2 J/mol  PASS
+al   fcc T0  330 -> T  780  exact   54.57  Hermes   54.60 (+0.03)  anchor error +0.11  direct: compression +0.67, Gaussian +0.74  H fit rms 8.9 J/mol  PASS
+fe   bcc T0  630 -> T 1550  exact   71.96  Hermes   72.22 (+0.25)  anchor error +0.22  direct: compression +0.72, Gaussian +0.98  H fit rms 15.7 J/mol  PASS
+v    bcc T0  760 -> T 1850  exact   72.79  Hermes   73.15 (+0.36)  anchor error +0.33  direct: compression +0.40, Gaussian +0.52  H fit rms 14.4 J/mol  PASS
+ni   fcc T0  600 -> T 1450  exact   68.55  Hermes   68.96 (+0.41)  anchor error +0.36  direct: compression +1.27, Gaussian +1.34  H fit rms 21.9 J/mol  PASS
+heat-capacity route: mean +0.35, max |error| 0.52; direct compression route: mean +1.01, max |error| 1.27; excluded []
+verdict PASS

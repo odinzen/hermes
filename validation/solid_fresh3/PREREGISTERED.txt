@@ -1,0 +1,6 @@
+analyze_fresh3.py frozen 2026-10-16T06:51:20-07:00, before any of the nine third-fresh runs existed
+sha256 (line endings normalized) a08967442c4a8cafa8c391730785b087124ec3ec22a3a1fc6bce1a200f54ddc6
+hermes/compression_entropy.py ded8dc2ebc211c6faf5ddacaf1c0785cf1c43809cd3935d6379902f678ba388e
+hermes/heat_capacity.py 541d7a3483bf84adc8949d6a492450e954284d4ff050bf7b6730e11838552b80
+hermes/md_configuration.py b7ee8dde8fb0ce6b732256b5ceda139403b806ee7fda0360e6646a5d1493e26e
+Dry run on stand-in files only (plumbing).

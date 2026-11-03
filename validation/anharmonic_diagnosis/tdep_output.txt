@@ -1,0 +1,21 @@
+fe_0700     700 K  exact  49.48  Hermes error +0.18  Gaussian-QH error -0.11
+fe_1400    1400 K  exact  68.87  Hermes error +0.61  Gaussian-QH error +0.47
+w_1200     1200 K  exact  68.25  Hermes error -0.23  Gaussian-QH error -0.28
+w_2400     2400 K  exact  86.95  Hermes error +0.11  Gaussian-QH error +0.13
+mg_0370     370 K  exact  34.66  Hermes error +0.28  Gaussian-QH error +0.33
+mg_0740     740 K  exact  54.02  Hermes error +1.05  Gaussian-QH error +0.96
+zr_0450     450 K  exact  49.73  Hermes error -0.39  Gaussian-QH error -0.56
+zr_0900     900 K  exact  68.52  Hermes error +0.43  Gaussian-QH error +0.36
+al_0370     370 K  exact  33.47  Hermes error -0.05  Gaussian-QH error -0.14
+al_0740     740 K  exact  52.92  Hermes error +0.52  Gaussian-QH error +0.40
+ni_0700     700 K  exact  48.14  Hermes error +0.27  Gaussian-QH error +0.20
+ni_1400    1400 K  exact  67.52  Hermes error +1.08  Gaussian-QH error +1.04
+
+fe  QH error -0.11 at 700 K -> +0.47 at 1400 K   ratio -4.36
+w   QH error -0.28 at 1200 K -> +0.13 at 2400 K   ratio -0.47
+mg  QH error +0.33 at 370 K -> +0.96 at 740 K   ratio 2.90
+zr  QH error -0.56 at 450 K -> +0.36 at 900 K   ratio -0.65
+al  QH error -0.14 at 370 K -> +0.40 at 740 K   ratio -2.84
+ni  QH error +0.20 at 700 K -> +1.04 at 1400 K   ratio 5.10
+
+[exited with code 0]

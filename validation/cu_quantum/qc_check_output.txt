@@ -1,0 +1,3 @@
+solid 298: frames 5001, S_q 32.98, S_cl 32.30, correction 0.687, peak 6.80 THz, g(0) 0.0000
+solid 1300: frames 5001, S_q 72.28, S_cl 72.25, correction 0.030, peak 3.40 THz, g(0) 0.0002
+liquid 1300: frames 5001, S_q 76.95, S_cl 76.92, correction 0.027, peak 3.80 THz, g(0) 0.1600

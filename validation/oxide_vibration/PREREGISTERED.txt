@@ -1,0 +1,84 @@
+Frozen 2026-10-23T15:18-0700 on Michael Bustamante's approval ("I want you to do it"). Not run.
+SHA-256 with line endings normalised to LF (the potential is binary, hashed as is).
+
+validation/oxide_vibration/RULE.md  440185cb3f00b592e5f4358107de4f2e1565d6ea7ba897facdc5d24e03e993f7
+Code under test (hermes-private main bec78ee):
+hermes/compression_entropy.py  58e95b9206d6d287ce4ca1ad5faf18fd7d6a671d27f34a48edb1430643552fb6
+hermes/heat_capacity.py  541d7a3483bf84adc8949d6a492450e954284d4ff050bf7b6730e11838552b80
+hermes/quantum_correction.py  8d968a9b7c40ef36cbed0a64b6fe25339abb39de40d9b8deeb9db510928bbdf8
+Potential:
+20231203mace128L1_epoch199model  01bfe22100139f424713cf921144e5509cbe353d67aa9fa1be9c6e1e0ed35845
+
+Setup files written later are appended below with their date, before any production MD starts.
+
+Setup, 2026-10-23T18:39-0700, before any production MD (CaO smoke and the parity gate only):
+fetch_structures.py  acb8d612697c39db625de8a70751cf193047a570bb9edcefc530474d66e10f58
+structures.json  b143275f56a063583862e804beeb1bff8d2469ed9df090f0774efff1f9569237
+structures/al2o3.cif  9976034fca181c63603ca2a8b47c45b14b0d2d71d67428824b46e0a1abc49dbe
+structures/cao.cif  e183b3fc919daeb89f9ae4df90d117c7fb56a8269e9e0529d9ab81b4401a0702
+structures/la2o3.cif  7155d0ee7fae6cbd21e326256a1e1d6116a54edb00d2afd31113c4eb5bd0f8db
+structures/lu2o3.cif  19f44896f14f74406719ca59dab9a267302151442bbb474259a89b22b4d2ec78
+structures/mg3po42.cif  75d4a251c933416c7e6752bb76327ae5e87840cccccec7b620cba1ad706fd5fd
+structures/mgo.cif  8ef7e528d274483fbc9ab31d19268e33ff8e9f696d87420d5c214eeb2bf66dec
+structures/mgtio3.cif  2bf62eab0388fee5d5c97518e9e1ad476bf59a1f5578900adb0e1a8a4b85d653
+structures/sc2o3.cif  ffb035f5b82035df09d0bc7d246b0a32eaefecb7d854235e4ea5665e6be15207
+structures/srtio3.cif  67800d6d14a881f94f072133fa6e720f72e4de1d0a61af6fddeb2f591866ed16
+structures/tio2.cif  a9f00911727c1516782947c906014a3f6935b3e346067eb275620d5dc7308d43
+structures/y2o3.cif  e43180b242da3e48b5fb40c96bd240a45d60322c16e2174d1e0cd5409458a81c
+run_oxides.py  8874d9a258624d6d4dbd044763bcbcf904e31528226780c3f75c9ada56b6ce25
+run_campaign.sh  d7b6c41fcb79d7d966ff6e3fe410d8a5b500236b9a43e41ec9669be4483cbd72
+analyze_oxides.py  bce2f604f89b4c2554be957408667856746ac1d65188e231ebcff509b1a64d00
+parity.json  054ba1468539188433667fa55c7fddbb9f65a71ce68791b0976d4d3404b593b4
+Measured-data ingest: juno commits 2934eee (JANAF, Robie-Hemingway) and 941191f (Konings 2014),
+assessments/Refractory-Oxides/manifest.json at 941191f  59d8d5ef4e9fb10ccd29155be04def1974765c2055baaf07c1870ef0c7fa829e
+Parity gate: max force difference 1.4e-6 eV/A (tolerance 1e-3), cuEquivariance used.
+Sc2O3 and SrTiO3: no data in the three named compilations, reported not scored.
+
+Addendum 2026-10-24T07:09-0700 (execution only, no setting changed): MgO failed on the first pass with a transient CUDA error
+(CUDA_ERROR_UNKNOWN, 18:49 2026-10-23); retry_campaign.sh reruns the unchanged run_campaign.sh until all cases finish.
+retry_campaign.sh  48c5e864a019efb3ae502ceb01fd8ef3e244eeb6cee911a653d88c137548b8d4
+
+Addendum 2026-10-24T16:20-0700 (execution only, no test setting changed; no case has been scored):
+On Michael Bustamante's decision ("We simply cannot run 11 days this computer is not made for it") the remaining MD
+moves from the local RTX A500 laptop GPU to ASU Sol A100 GPUs, one case per GPU. run_oxides.py runs byte-identical
+(8874d9a2...) through validation/sol/sol_run.py, which only points it at the same weights (01bfe221...) inside the package
+and writes outputs to a results folder. Same Python 3.11, ASE 3.29.0, mace-torch 0.3.16, torch 2.14.1, cuEquivariance
+0.12.0, float32, cuEquivariance on; torch and the cuEquivariance kernels are their CUDA 12 builds instead of CUDA 13.
+Gate before any Sol case runs (added, stricter than the rule): the cuEquivariance parity of the rule on Sol, and the
+forces of the same CaO frame against the local GPU's (reference_forces.npz) within 1 meV/A and 0.1 meV/atom. Rehearsed
+in WSL with the new environment: parity 1.3e-6 eV/A, vs local 1.2e-6 eV/A and 0 eV/atom, PASS.
+Cases: Al2O3 keeps its finished local run. MgO, TiO2 and MgTiO3, cut off part-way locally, are rerun from the start on
+Sol and their partial local runs are not used. The other oxides, Arm A (NiO MnO CoO Fe2O3 Cr2O3) and B2 (seven LnPO4)
+run on Sol, 21 cases in all. Scoring stays local with the frozen analysis scripts.
+validation/sol/sol_config.sh  2e5283cd5a85966e725174b898bdff1073cd07e1ee4b2764ae4f28ae57788da3
+validation/sol/env.yml  6a18a6a76bba9af7ac20bbbd8a5653476a9e8cd7894e522775cf3b61353fd2e8
+validation/sol/cases.txt  684fc39c5ddb4cea78146518cc077585f209ba8cee3493ef587a375241240d89
+validation/sol/setup_env.sh  ed27c48ba2b06d594eceee70a8040c8db2432e05ca5957e653355a16757a44aa
+validation/sol/submit.sh  8df3cb01565f8a3a210e3cfac832caeaf20bb6ff07e2761abc5bd6970f4c8718
+validation/sol/run_check.slurm  47ddcc51d8b02837654155646011092bd421ed2adb623cb06338b3ca97e8ff47
+validation/sol/run_case.slurm  badf2c493ef997b4ba77dc407982d1c5cad8eebdc652a392ea07ac99c4c18c6c
+validation/sol/sol_run.py  ec8b7c0538ab0b16f5f2c6862dbb47ae87876c867a099b4520760a705a0dd92b
+validation/sol/make_reference.py  a385595c21f4e72baf429ba7f284ee52c05220bb471d7dcf6c19a77dcef78963
+validation/sol/build_package.py  8208db9ba0923c098c1dc4694d612078f1138af5a0a9d883be09fff75cd4b921
+validation/sol/test_local.sh  08d7376cf48e5f74cee67493394d0f662ba5b5681986d308314148b23e9c2a32
+validation/sol/reference_forces.npz  2008665e30062809c028ea8ef05049c65ded00ccc59a09c4cd067dc6d816511f
+
+Addendum 2026-10-24T17:05-0700 (execution only, before any Sol case ran): on Sol the env's numpy failed to import
+because /lib64/libstdc++.so.6 (too old, no GLIBCXX_3.4.29) was found first. The setup and job scripts now put the env's
+own lib/ first on LD_LIBRARY_PATH. Re-rehearsed in WSL with a system library path set first: check PASS (parity
+1.5e-6 eV/A), smoke case done. No other file changed.
+validation/sol/setup_env.sh  1aaab2b46578226403baabb858a6dff4822cac01cb95a079dfc0ba0a8dba4035
+validation/sol/run_check.slurm  7e65e5cd6b0a67cb5e0533761f6152ba9d0c2b0eaa21df9bc6cfc278a27e20ed
+validation/sol/run_case.slurm  23a3e2686e5012598c5e9221d838be3b48ac3bd91498c3b33f9e6d710c609611
+
+Addendum 2026-10-24T17:50-0700 (execution only, before any Sol case ran): with the library fix, importing the GPU
+libraries on the Sol login node was killed by the login node's memory limit. setup_env.sh now makes only light imports
+there; the check job loads everything on a GPU node before any case starts, as before. Re-rehearsed: check PASS
+(parity 1.3e-6 eV/A), smoke case done.
+validation/sol/setup_env.sh  8e6e05b0e421bb5bc747609e6b9c2b3d7bda18b88e54573e364949cc8f6eaeb1
+
+Addendum 2026-10-25T07:55-0700, after the oxide test was scored (FAIL, 0 of 7) and BEFORE any Arm A value was seen:
+analyze_arm_a.py stopped with a TypeError inside analyze_oxides.measured(): the Robie-Hemingway Cp model of MnO stores
+its two absent terms (c, e) as null, as R&H leave them blank. measured() now reads a null coefficient as 0. No oxide
+case uses this path (their 1000 K values come from JANAF); the oxide output is byte-identical before and after.
+validation/oxide_vibration/analyze_oxides.py  bdaf0f1be2cfc3e39f0c71d382bbae97656bb14786136d73b87e2dede1794e3e

@@ -1,0 +1,20 @@
+calculations:
+- mode: fe
+  lattice: start_pt_t.data
+  reference_phase: solid
+  element: [Pt]
+  mass: [195.09]
+  temperature: 1600
+  pressure: 0
+  npt: true
+  pair_style: [eam]
+  pair_coeff: ["* * /home/busta/opt/lammps-mace/potentials/Pt_u3.eam"]
+  n_equilibration_steps: 25000
+  n_switching_steps: 50000
+  n_iterations: 1
+  lammps_executable: /home/busta/miniforge3/envs/lammps-full/bin/lmp_mpi
+  mpi_executable: /home/busta/miniforge3/envs/lammps-full/bin/mpirun
+  folder_prefix: pt_t
+  queue:
+    scheduler: local
+    cores: 4

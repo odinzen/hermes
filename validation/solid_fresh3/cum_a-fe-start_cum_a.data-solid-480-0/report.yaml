@@ -1,0 +1,20 @@
+average:
+  density: 0.0827412888897987
+  spring_constant: '2.068159982914843'
+  vol_atom: 12.085777680355216
+input:
+  concentration: '1.0'
+  element: Cu
+  lattice: start_cum_a.data
+  pressure: 0.0
+  temperature: 480
+results:
+  com_correction: -0.0010775107464978432
+  dissipation: -0.00029529529921501485
+  einstein_crystal: -0.1570878915815763
+  error: 0.0
+  free_energy: -3.6348183203079882
+  pv: 0.0
+  reference_system: -0.15816540232807413
+  unit: eV/atom
+  work: -3.476652917979914

@@ -1,0 +1,20 @@
+calculations:
+- mode: fe
+  lattice: start_w_1200.data
+  reference_phase: solid
+  element: [W]
+  mass: [183.84]
+  temperature: 1200
+  pressure: 0
+  npt: true
+  pair_style: [eam/alloy]
+  pair_coeff: ["* * /home/busta/opt/lammps-mace/potentials/W_zhou.eam.alloy W"]
+  n_equilibration_steps: 25000
+  n_switching_steps: 50000
+  n_iterations: 1
+  lammps_executable: /home/busta/miniforge3/envs/lammps-full/bin/lmp_mpi
+  mpi_executable: /home/busta/miniforge3/envs/lammps-full/bin/mpirun
+  folder_prefix: w_1200
+  queue:
+    scheduler: local
+    cores: 4

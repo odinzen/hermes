@@ -1,0 +1,16 @@
+fe_0700  bcc    700 K  exact   49.48  Hermes   49.75 (+0.27)  uncorrected   53.74 (+4.26)  correction  3.99  PASS
+fe_1400  bcc   1400 K  exact   68.87  Hermes   69.49 (+0.62)  uncorrected   74.30 (+5.43)  correction  4.81  PASS
+w_1200   bcc   1200 K  exact   68.25  Hermes   68.44 (+0.19)  uncorrected   71.67 (+3.42)  correction  3.23  PASS
+w_2400   bcc   2400 K  exact   86.95  Hermes   87.37 (+0.42)  uncorrected   91.25 (+4.30)  correction  3.88  PASS
+mg_0370  hcp    370 K  exact   34.66  Hermes   33.61 (-1.05)  uncorrected   38.95 (+4.29)  correction  5.34  FAIL
+mg_0740  hcp    740 K  exact   54.02  Hermes   53.64 (-0.38)  uncorrected   59.25 (+5.23)  correction  5.60  PASS
+zr_0450  hcp    450 K  exact   49.73  Hermes   49.03 (-0.71)  uncorrected   52.92 (+3.18)  correction  3.89  PASS
+zr_0900  hcp    900 K  exact   68.52  Hermes   68.54 (+0.02)  uncorrected   72.42 (+3.90)  correction  3.88  PASS
+al_0370  fcc    370 K  exact   33.47  Hermes   32.73 (-0.74)  uncorrected   37.00 (+3.53)  correction  4.27  PASS
+al_0740  fcc    740 K  exact   52.92  Hermes   52.55 (-0.37)  uncorrected   57.09 (+4.16)  correction  4.54  PASS
+ni_0700  fcc    700 K  exact   48.14  Hermes   47.52 (-0.62)  uncorrected   52.83 (+4.70)  correction  5.31  PASS
+ni_1400  fcc   1400 K  exact   67.52  Hermes   67.45 (-0.06)  uncorrected   73.65 (+6.13)  correction  6.19  PASS
+bcc: mean error +0.38, max |error| 0.62
+hcp: mean error -0.53, max |error| 1.05
+fcc: mean error -0.45, max |error| 0.74
+excluded []; verdict FAIL

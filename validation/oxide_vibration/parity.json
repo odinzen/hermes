@@ -1,0 +1,6 @@
+{
+ "max_force_difference_eV_A": 1.430511474609375e-06,
+ "tolerance": 0.001,
+ "verdict": "PASS",
+ "atoms": 216
+}

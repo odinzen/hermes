@@ -1,0 +1,6 @@
+# MD and calphy working output; the reports and averages used by the analyses are tracked explicitly
+*.log
+*.data
+*.dump
+*.out
+*-fe-*/
