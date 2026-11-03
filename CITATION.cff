@@ -5,8 +5,11 @@ type: software
 version: 0.3.0
 date-released: 2026-11-03
 license: MIT
-doi: 10.5281/zenodo.23423225
+doi: 10.5281/zenodo.23923573
 identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23923573
+    description: "This version, 0.3.0"
   - type: doi
     value: 10.5281/zenodo.23423225
     description: "All versions"

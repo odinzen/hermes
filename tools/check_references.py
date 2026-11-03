@@ -23,6 +23,7 @@ REFERENCES = [
     ("10.5281/zenodo.18262305", ["Hew"], "pyzentropy", None, None, None),
     ("10.5281/zenodo.23423225", ["Bustamante", "Hew"], "Hermes: an all-in-one entropy tool", None, None, None),
     ("10.5281/zenodo.23573417", ["Bustamante", "Hew"], "Hermes: an all-in-one entropy tool", None, None, None),
+    ("10.5281/zenodo.23923573", ["Bustamante", "Hew"], "Hermes: an all-in-one entropy tool", None, None, None),
     ("10.1063/1.1744724", ["Nettleton", "Green"],
      "Expression in Terms of Molecular Distribution Functions for the Entropy Density in an Infinite System",
      1958, "29", "1365"),

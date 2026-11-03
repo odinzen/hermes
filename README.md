@@ -127,6 +127,7 @@ Odinzen LLC.
 
 Hermes on Zenodo:
 
+- version 0.3.0: https://doi.org/10.5281/zenodo.23923573
 - version 0.2.0: https://doi.org/10.5281/zenodo.23573417
 - all versions: https://doi.org/10.5281/zenodo.23423225
 
