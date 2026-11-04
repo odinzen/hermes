@@ -28,7 +28,7 @@ from hermes.heat_capacity import entropy_from_heat_capacity  # noqa: E402
 from hermes.quantum_correction import quantum_correction, vibrational_density_of_states  # noqa: E402
 import volumes  # noqa: E402
 
-DATA = Path.home() / "Code/juno/assets/local-archive/hermes-validation/data"
+DATA = Path.home() / "Code/juno/our-data/local-only/hermes-validation"
 # Each model's runs, Sol first. MP-0's Al2O3 ran on the local GPU in the first campaign, with the same run_oxides.py.
 RUNS = {"mp-0": [VALIDATION / "oxide_vibration" / "runs"],
         **{m: [DATA / "bench-sol-2026-10-27/results" / m / "runs", DATA / "bench-local-2026-10-27" / m / "runs"]
