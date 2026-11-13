@@ -8,7 +8,7 @@ within a threshold epsilon. The Shannon entropy of the coefficient stream, in bi
 entropy through S = k_B ln(2) H (their Eqs. 2 and 7).
 
 The paper describes the compressor in words and its code was not released with it. This module is
-a clean-room implementation written from the preprint alone, https://arxiv.org/abs/2512.02221. The choices
+written from the preprint, https://arxiv.org/abs/2512.02221. The choices
 here are therefore this implementation's, and are stated where they are made:
 
 - the basis directions are the principal axes of the residuals, fixed once, and each step is two
@@ -444,7 +444,9 @@ def crystal_correlation_entropy(
     the entropy of a centre of mass free in the cell volume V less that of the centre of mass of N
     independent atoms of coordinate variance :math:`\sigma^2`, the convention used above. It is 0.6
     J/(K mol) at 256 atoms and 0.1 at 2048, and agrees within 0.015 with the centre-of-mass correction
-    calphy applies (12 EAM crystals). Leaving it out made the error depend on the box.
+    calphy applies (12 EAM crystals). Leaving it out made the error depend on the box. calphy's
+    source (academic licence) was read to see which correction its reference values carry; none
+    of its code is used here.
 
     That is the entropy of the box itself, ``limit="box"``, the quantity thermodynamic integration on the
     same box gives. A macroscopic crystal has no such term: its centre of mass carries a vanishing share

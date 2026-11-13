@@ -35,8 +35,8 @@ thermodynamic integration on the same box gives. A macroscopic crystal has no su
 and fills in the vibrations longer than the box from its long-wavelength sound waves. Compare with calorimetry, or
 build a database, with the bulk value: on seven oxides of 216 to 270 atoms it is within 0.08 J/(K mol) of the exact
 bulk entropy, where the box value is 0.4 to 0.6 above it. The
-compression is a clean-room implementation of Fisher and Hong [1], written from the preprint alone, independent of the
-authors, whose code was not released; it codes atoms in groups of 256 so that its calibrated offset, 5.83 J/(K mol)
+compression implements Fisher and Hong [1] from their preprint; the authors' code was not released, so there was
+none to consult; it codes atoms in groups of 256 so that its calibrated offset, 5.83 J/(K mol)
 from 60 exactly sampled Einstein solids, does not depend on the box. `gaussian_entropy` takes each atom's motion as
 Gaussian instead and needs no minimum amplitude. Both read high near melting, where correlation among three or more
 atoms is no longer Gaussian, so there `entropy_from_heat_capacity` anchors the entropy at about a third of the melting
